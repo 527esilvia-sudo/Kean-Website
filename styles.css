@@ -1,0 +1,473 @@
+body {
+    margin: 0;
+    font-family: "Outfit", sans-serif;
+    color: #1D1D1D;
+    background-color: #F5F5F2;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    background-color: #004B87;
+    padding: 10px 5%;
+    min-height: 75px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    margin-left: 30px;
+}
+
+.kean-logo {
+    height: 55px;
+    width: auto;
+}
+
+.navbar-nav {
+    gap: 8px;
+    align-items: center;
+}
+
+.nav-link {
+    color: white !important;
+    font-family: "Outfit", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 17px !important;
+    transition: 0.2s;
+}
+
+.nav-link:hover {
+    color: #C9E7FF !important;
+}
+
+.apply-link {
+    border: 2px solid white;
+    padding: 8px 18px !important;
+    margin-left: 8px;
+}
+
+.apply-link:hover {
+    background-color: white;
+    color: #004B87 !important;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: calc(100vh - 75px);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #004B87;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 55%;
+    padding-left: 9%;
+    color: white;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48%;
+    height: 100%;
+    background-image:
+        linear-gradient(to right, #004B87 0%, rgba(0, 75, 135, 0.8) 20%, transparent 75%),
+        url("kean-hero.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-label {
+    font-family: "Outfit", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-family: "Roboto Slab", serif;
+    font-size: clamp(55px, 7vw, 88px);
+    line-height: 0.98;
+    font-weight: 700;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+}
+
+.hero-text {
+    max-width: 520px;
+    font-family: "Outfit", sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+
+/* HERO BUTTON */
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 25px;
+    padding: 9px 9px 9px 22px;
+    background-color: white;
+    color: #004B87;
+    text-decoration: none;
+    font-family: "Outfit", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    border: 2px solid white;
+    transition: 0.25s;
+}
+
+.hero-button span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    background-color: #004B87;
+    color: white;
+    font-size: 23px;
+    transition: 0.25s;
+}
+
+.hero-button:hover {
+    background-color: #C9E7FF;
+    border-color: #C9E7FF;
+    color: #004B87;
+}
+
+.hero-button:hover span {
+    transform: translateX(5px);
+}
+
+
+/* SCROLL */
+
+.hero-scroll {
+    position: absolute;
+    bottom: 30px;
+    left: 9%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: white;
+    font-family: "Outfit", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    z-index: 3;
+}
+
+.scroll-line {
+    width: 60px;
+    height: 2px;
+    background-color: white;
+}
+
+
+/* GENERAL PAGE SECTIONS */
+
+main > section:not(.hero) {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.container {
+    max-width: 1150px;
+}
+
+.section-label {
+    font-family: "Outfit", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #004B87;
+    margin-bottom: 18px;
+}
+
+h2 {
+    font-family: "Roboto Slab", serif;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #1D1D1D;
+    margin-bottom: 25px;
+}
+
+h3 {
+    font-family: "Outfit", sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: #004B87;
+    margin-bottom: 14px;
+}
+
+p {
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+/* INTRO SECTIONS */
+
+.intro-section {
+    min-height: 55vh;
+    display: flex;
+    align-items: center;
+    background-color: #F5F5F2;
+    padding: 110px 0 !important;
+}
+
+.intro-section h2 {
+    max-width: 850px;
+    font-size: clamp(45px, 6vw, 70px);
+}
+
+.intro-section p:not(.section-label) {
+    max-width: 650px;
+    margin-top: 30px;
+}
+
+
+/* WHITE CONTENT SECTIONS */
+
+main > .container {
+    background-color: #F5F5F2;
+}
+
+
+/* CARDS */
+
+.border {
+    border: 0 !important;
+    border-top: 5px solid #004B87 !important;
+    background-color: white;
+    padding: 30px !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    transition: 0.25s;
+}
+
+.border:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+}
+
+.border h3 {
+    margin-top: 5px;
+}
+
+
+/* PROGRAM CARDS */
+
+.row .border {
+    height: 100%;
+}
+
+.row .border .section-label {
+    margin-bottom: 12px;
+}
+
+
+/* NUMBERS */
+
+.section-label + h3 {
+    margin-top: 5px;
+}
+
+
+/* IMAGES */
+
+img {
+    max-width: 100%;
+}
+
+.img-fluid {
+    display: block;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: #686868;
+}
+
+footer section {
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    background-color: #686868 !important;
+}
+
+footer h2 {
+    color: white;
+    font-size: clamp(40px, 5vw, 62px);
+}
+
+footer p {
+    color: white;
+}
+
+footer .section-label {
+    color: white !important;
+}
+
+footer .hero-button {
+    margin-top: 10px;
+}
+
+footer img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+
+/* COST PAGE */
+
+main .row {
+    margin-bottom: 10px;
+}
+
+main .row > [class*="col-"] {
+    margin-bottom: 25px;
+}
+
+
+/* APPLY PAGE */
+
+input,
+select,
+textarea {
+    font-family: "Outfit", sans-serif;
+    border: 1px solid #CFCFCB !important;
+    border-radius: 0 !important;
+    padding: 12px !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #004B87 !important;
+    box-shadow: 0 0 0 2px rgba(0, 75, 135, 0.15) !important;
+}
+
+label {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+
+/* LINKS */
+
+a {
+    transition: 0.2s;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 10px 6%;
+    }
+
+    .navbar-brand {
+        margin-left: 10px;
+    }
+
+    .kean-logo {
+        height: 45px;
+    }
+
+    .navbar-nav {
+        gap: 0;
+        align-items: flex-start;
+    }
+
+    .nav-link {
+        padding: 8px 0 !important;
+    }
+
+    .apply-link {
+        margin-left: 0;
+        margin-top: 5px;
+        display: inline-block;
+    }
+
+    .hero {
+        min-height: 650px;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 100px 8%;
+    }
+
+    .hero-image {
+        width: 100%;
+        opacity: 0.28;
+    }
+
+    .hero h1 {
+        font-size: 56px;
+        letter-spacing: -1px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .hero-scroll {
+        left: 8%;
+    }
+
+    main > section:not(.hero) {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .intro-section {
+        min-height: auto;
+        padding: 80px 0 !important;
+    }
+
+    .intro-section h2 {
+        font-size: 46px;
+    }
+
+    h2 {
+        font-size: 44px;
+    }
+
+    .border {
+        padding: 25px !important;
+    }
+
+    footer section {
+        padding: 60px 0;
+    }
+
+    footer img {
+        margin-top: 35px;
+        height: 220px;
+    }
+
+}
