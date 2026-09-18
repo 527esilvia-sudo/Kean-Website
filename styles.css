@@ -85,7 +85,7 @@ body {
             rgba(244, 241, 234, 0.72),
             rgba(244, 241, 234, 0.72)
         ),
-        url("students.png");
+        url("campus.jpeg");
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -124,7 +124,7 @@ letter-spacing: -25px;
     white-space: nowrap;
 
     /* Keep the photo INSIDE the letters */
-    background-image: url("students.png");
+    background-image: url("campus.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -134,7 +134,7 @@ letter-spacing: -25px;
     color: transparent;
 
     /* Thin outline that sits directly on the letter edge */
-    -webkit-text-stroke: 5 rgba(23, 45, 36, 0.25);
+    -webkit-text-stroke: 10 rgba(23, 45, 36, 0.25);
 
     z-index: 3;
     user-select: none;
@@ -858,24 +858,33 @@ a {
 }
 .hero .hero-title {
     position: absolute;
-    top: 50%;
+    top: 42%;
     left: 50%;
+    transform: translate(-50%, -50%);
+
     margin: 0;
     padding: 0;
 
-    transform: translate(-50%, -52%) scaleX(0.78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     font-family: "Arial Black", Impact, sans-serif;
-    font-size: 360px;
+    font-size: clamp(300px, 32vw, 500px);
     font-weight: 900;
     line-height: 0.8;
     letter-spacing: 15px;
     white-space: nowrap;
 
+    z-index: 3;
+    user-select: none;
+}
+.hero-letter {
+    display: inline-block;
+
     background-image: url("students.png");
-    background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center;
 
     -webkit-background-clip: text;
     background-clip: text;
@@ -883,6 +892,70 @@ a {
 
     -webkit-text-stroke: 4px #F4F1EA;
 
-    z-index: 3;
-    user-select: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hero-letter:hover {
+    transform: translateY(-12px) scale(1.04);
+    filter: brightness(1.1);
+}
+.hero-tagline {
+    position: absolute;
+    top: 67%;
+    z-index: 4;
+
+    margin: 0;
+
+    font-family: "Roboto Slab", serif;
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 500;
+
+    color: #172d24;
+}
+
+.hero-subtitle {
+    position: absolute;
+    top: 77%;
+    z-index: 4;
+
+    margin: 0;
+    max-width: 700px;
+
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: #4b514d;
+}
+
+.hero-button {
+    position: absolute;
+    top: 85%;
+    z-index: 4;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 15px 28px;
+
+    border: 1px solid #172d24;
+    border-radius: 100px;
+
+    color: #172d24;
+    background: transparent;
+
+    text-decoration: none;
+
+    font-family: "Outfit", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    transition: 0.3s ease;
 }
