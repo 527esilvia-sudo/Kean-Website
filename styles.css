@@ -869,7 +869,7 @@ a {
     font-size: 360px;
     font-weight: 900;
     line-height: 0.8;
-    letter-spacing: -15px;
+    letter-spacing: 15px;
     white-space: nowrap;
 
     background-image: url("students.png");
