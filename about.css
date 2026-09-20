@@ -1,0 +1,1008 @@
+:root {
+    --kean-blue: #004B87;
+    --kean-blue-dark: #00345F;
+    --kean-blue-light: #DCEAF4;
+    --kean-gray: #EEF1F4;
+    --kean-gray-dark: #5C6670;
+    --kean-black: #111820;
+    --kean-white: #FFFFFF;
+    --content-max: 1400px;
+    --content-padding: clamp(1.25rem, 4vw, 4rem);
+    --space-xs: .5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+    --space-2xl: 6rem;
+}
+
+.about-page,
+.about-page * {
+    min-width: 0;
+}
+
+.about-page {
+    background: var(--kean-white);
+    color: var(--kean-black);
+    font-family: "Barlow", sans-serif;
+    line-height: 1.6;
+}
+
+.about-page main,
+.about-page section,
+.about-page .story-copy,
+.about-page .map-detail,
+.about-page .global-content,
+.about-page .ocean-overlay {
+    min-width: 0;
+}
+
+.about-page h1,
+.about-page h2,
+.about-page h3,
+.about-page .nav-link,
+.about-page .eyebrow,
+.about-page .hero-date,
+.about-page .hero-index,
+.about-page .detail-link,
+.about-page .map-back,
+.about-page .final-links,
+.about-page footer {
+    font-family: "Oswald", sans-serif;
+}
+
+.about-page p {
+    max-width: 65ch;
+    font-size: clamp(1rem, 1.1vw, 1.12rem);
+    line-height: 1.6;
+}
+
+.about-page .navbar {
+    min-height: 76px;
+    padding: .65rem var(--content-padding);
+    background: var(--kean-blue);
+}
+
+.about-page .navbar-brand {
+    margin-left: 0;
+}
+
+.about-page .kean-logo {
+    width: auto;
+    height: 56px;
+}
+
+.about-page .navbar-nav {
+    gap: .35rem;
+    align-items: center;
+}
+
+.about-page .nav-link {
+    color: var(--kean-white) !important;
+    font-size: .9rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    padding: .65rem .9rem !important;
+    text-transform: uppercase;
+}
+
+.about-page .nav-link:hover,
+.about-page .nav-link:focus-visible {
+    color: var(--kean-blue-light) !important;
+}
+
+.about-page .apply-link {
+    border: 1px solid var(--kean-white);
+}
+
+.about-page .apply-link:hover,
+.about-page .apply-link:focus-visible {
+    background: var(--kean-white);
+    color: var(--kean-blue) !important;
+}
+
+.about-page .eyebrow {
+    margin: 0 0 var(--space-sm);
+    color: var(--kean-blue);
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.about-page .reveal {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.about-page .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.about-page .editorial-hero {
+    position: relative;
+    min-height: max(620px, calc(100svh - 76px));
+    overflow: hidden;
+    background: var(--kean-blue-dark);
+    color: var(--kean-white);
+}
+
+.about-page .hero-ghost {
+    position: absolute;
+    top: 12%;
+    left: -1vw;
+    color: rgba(255, 255, 255, .08);
+    font: 700 clamp(10rem, 26vw, 25rem)/.75 "Oswald", sans-serif;
+    letter-spacing: -.06em;
+    pointer-events: none;
+}
+
+.about-page .hero-image {
+    position: absolute;
+    top: 10%;
+    right: max(var(--content-padding), 7vw);
+    width: min(35vw, 520px);
+    height: 78%;
+    background: linear-gradient(180deg, rgba(0, 52, 95, .08), rgba(0, 20, 40, .62)), url("students.png") center / cover;
+    clip-path: polygon(16% 0, 100% 0, 100% 88%, 78% 100%, 0 92%, 0 15%);
+    opacity: .9;
+}
+
+.about-page .hero-frame {
+    position: relative;
+    z-index: 1;
+    width: min(100% - 2 * var(--content-padding), var(--content-max));
+    margin-inline: auto;
+    padding: clamp(7rem, 15vh, 10rem) 0 clamp(6rem, 12vh, 9rem);
+}
+
+.about-page .hero-frame h1 {
+    max-width: 7ch;
+    color: var(--kean-white);
+    font: 700 clamp(5rem, 13vw, 12rem)/.86 "Oswald", sans-serif;
+    letter-spacing: -.035em;
+}
+
+.about-page .hero-frame .eyebrow,
+.about-page .hero-frame .hero-line,
+.about-page .hero-frame .hero-copy {
+    color: rgba(255, 255, 255, .88);
+}
+
+.about-page .hero-line {
+    margin: var(--space-lg) 0 var(--space-sm);
+    font: 500 clamp(1.3rem, 2.5vw, 2.3rem)/1.15 "Oswald", sans-serif;
+}
+
+.about-page .hero-copy {
+    max-width: 42rem;
+    margin-bottom: var(--space-lg);
+}
+
+.about-page .hero-link,
+.about-page .detail-link,
+.about-page .map-back {
+    color: var(--kean-white);
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.about-page .hero-link:hover,
+.about-page .detail-link:hover,
+.about-page .map-back:hover {
+    color: var(--kean-blue-light);
+}
+
+.about-page .hero-link span,
+.about-page .detail-link span,
+.about-page .final-links span {
+    display: inline-block;
+    margin-left: .4rem;
+    font-size: 1.1rem;
+}
+
+.about-page .hero-date,
+.about-page .hero-index {
+    position: absolute;
+    z-index: 2;
+    color: rgba(255, 255, 255, .78);
+    font-size: .78rem;
+    font-weight: 500;
+    letter-spacing: .1em;
+}
+
+.about-page .hero-date {
+    right: var(--content-padding);
+    bottom: 8%;
+    writing-mode: vertical-rl;
+}
+
+.about-page .hero-index {
+    bottom: 7%;
+    left: var(--content-padding);
+}
+
+.about-page .interruption,
+.about-page .history-track,
+.about-page .why-kean-type {
+    position: relative;
+    background: var(--kean-white);
+}
+
+.about-page .interruption {
+    min-height: 620px;
+    padding: clamp(7rem, 12vw, 11rem) var(--content-padding);
+    overflow: hidden;
+}
+
+.about-page .section-number,
+.about-page .story-number,
+.about-page .skylands-mark {
+    position: absolute;
+    color: rgba(0, 75, 135, .12);
+    font: 700 clamp(9rem, 20vw, 21rem)/.72 "Oswald", sans-serif;
+    letter-spacing: -.06em;
+    pointer-events: none;
+}
+
+.about-page .section-number {
+    top: 2rem;
+    left: -1vw;
+}
+
+.about-page .interruption-copy {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 700px);
+    margin-inline: auto;
+}
+
+.about-page .interruption h2,
+.about-page .history-heading h2,
+.about-page .why-type-heading h2 {
+    color: var(--kean-blue);
+    font: 600 clamp(3rem, 7vw, 7rem)/.95 "Oswald", sans-serif;
+    letter-spacing: -.025em;
+}
+
+.about-page .interruption-copy > p:last-child {
+    max-width: 52ch;
+    margin: var(--space-lg) 0 0 clamp(0rem, 10vw, 8rem);
+}
+
+.about-page .interruption-note {
+    position: absolute;
+    right: var(--content-padding);
+    bottom: clamp(3rem, 8vw, 7rem);
+    color: var(--kean-blue);
+    font: 600 .8rem/1.4 "Oswald", sans-serif;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.about-page .history-track {
+    padding: clamp(7rem, 11vw, 10rem) var(--content-padding);
+    background: var(--kean-gray);
+}
+
+.about-page .history-heading {
+    width: min(100%, 680px);
+    margin: 0 auto var(--space-2xl);
+}
+
+.about-page .history-line {
+    position: absolute;
+    top: 21rem;
+    bottom: 7rem;
+    left: max(var(--content-padding), calc((100% - var(--content-max)) / 2 + 8.5rem));
+    width: 2px;
+    background: var(--kean-blue);
+    opacity: .35;
+}
+
+.about-page .history-line::before,
+.about-page .history-line::after {
+    position: absolute;
+    left: -6px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--kean-blue);
+    border-radius: 50%;
+    background: var(--kean-gray);
+    content: "";
+}
+
+.about-page .history-line::before { top: 0; }
+.about-page .history-line::after { bottom: 0; }
+
+.about-page .history-stop {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(120px, 180px) minmax(0, 1fr);
+    column-gap: clamp(2rem, 5vw, 6rem);
+    align-items: start;
+    width: min(100%, 1060px);
+    margin: 0 auto;
+    padding-block: clamp(2.5rem, 5vw, 5rem);
+    border-top: 1px solid rgba(0, 75, 135, .22);
+}
+
+.about-page .history-stop > div {
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.about-page .history-stop-one,
+.about-page .history-stop-two,
+.about-page .history-stop-three,
+.about-page .history-stop-four {
+    inset: auto;
+}
+
+.about-page .history-year {
+    color: var(--kean-blue);
+    font: 600 clamp(2rem, 4vw, 3.7rem)/.95 "Oswald", sans-serif;
+    letter-spacing: -.02em;
+}
+
+.about-page .history-stop h3 {
+    margin: 0 0 .25rem;
+    color: var(--kean-black);
+    font: 600 clamp(1.7rem, 2.7vw, 2.8rem)/1.05 "Oswald", sans-serif;
+    letter-spacing: -.01em;
+}
+
+.about-page .history-stop p:last-child {
+    max-width: 60ch;
+    margin: 0;
+}
+
+.about-page .map-moment {
+    padding: clamp(7rem, 10vw, 9rem) var(--content-padding);
+    background: var(--kean-blue);
+    color: var(--kean-white);
+}
+
+.about-page .map-heading {
+    width: min(100%, 600px);
+    margin-inline: auto;
+}
+
+.about-page .map-heading .eyebrow,
+.about-page .map-heading p,
+.about-page .map-detail .eyebrow,
+.about-page .map-detail p {
+    color: rgba(255, 255, 255, .86);
+}
+
+.about-page .map-heading h2 {
+    color: var(--kean-white);
+    font: 600 clamp(3.5rem, 8vw, 8rem)/.9 "Oswald", sans-serif;
+    letter-spacing: -.025em;
+}
+
+.about-page .map-heading > p:last-child {
+    max-width: 32ch;
+    margin: var(--space-lg) 0 0 clamp(0rem, 8vw, 7rem);
+}
+
+.about-page .map-stage {
+    display: grid;
+    grid-template-columns: minmax(220px, .65fr) minmax(0, 1.35fr);
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: center;
+    width: min(100%, var(--content-max));
+    margin: var(--space-2xl) auto 0;
+}
+
+.about-page .nj-map-wrapper {
+    position: relative;
+    grid-column: 2;
+    grid-row: 1;
+    width: min(100%, 900px);
+    margin-inline: auto;
+    aspect-ratio: 860 / 876;
+}
+
+.about-page .nj-map-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.about-page .map-detail {
+    position: relative;
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    padding: var(--space-lg) 0 0;
+    border-top: 1px solid rgba(255, 255, 255, .5);
+}
+
+.about-page .map-detail h3 {
+    color: var(--kean-white);
+    font: 600 clamp(2.4rem, 4vw, 4.5rem)/.95 "Oswald", sans-serif;
+}
+
+.about-page .detail-count {
+    color: var(--kean-white);
+    font: 600 1.5rem/1 "Oswald", sans-serif;
+}
+
+.about-page .preview-location {
+    margin-top: -.25rem;
+    font-weight: 600;
+}
+
+.about-page .map-pin {
+    position: absolute;
+    z-index: 4;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--kean-white);
+    cursor: pointer;
+    text-align: left;
+    transform: translate(-50%, -50%);
+}
+
+.about-page .pin-core {
+    display: grid;
+    width: clamp(2.4rem, 4vw, 3rem);
+    height: clamp(2.4rem, 4vw, 3rem);
+    place-items: center;
+    border: 2px solid var(--kean-white);
+    border-radius: 50%;
+    background: var(--kean-blue-dark);
+    color: var(--kean-white);
+    font: 600 .8rem/1 "Oswald", sans-serif;
+}
+
+.about-page .map-pin:hover .pin-core,
+.about-page .map-pin:focus-visible .pin-core,
+.about-page .map-pin.is-active .pin-core {
+    background: var(--kean-blue-light);
+    color: var(--kean-blue-dark);
+}
+
+.about-page .pin-label {
+    position: absolute;
+    top: 50%;
+    left: calc(100% + .8rem);
+    width: max-content;
+    max-width: 11rem;
+    color: var(--kean-white);
+    font: 600 .78rem/1.2 "Oswald", sans-serif;
+    letter-spacing: .05em;
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: opacity .2s ease;
+}
+
+.about-page .map-pin:hover .pin-label,
+.about-page .map-pin:focus-visible .pin-label,
+.about-page .map-pin.is-active .pin-label {
+    opacity: 1;
+}
+
+.about-page .kean-line {
+    position: absolute;
+    z-index: 1;
+    width: 26%;
+    height: 2px;
+    background: var(--kean-white);
+    opacity: .7;
+    pointer-events: none;
+    transform-origin: left center;
+}
+
+.about-page .kean-line-north { top: 39%; left: 42%; transform: rotate(12deg); }
+.about-page .kean-line-west { top: 39%; left: 41%; width: 20%; transform: rotate(65deg); }
+.about-page .kean-line-south { top: 54%; left: 49%; width: 24%; transform: rotate(63deg); }
+
+.about-page .campus-story {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(2rem, 6vw, 7rem);
+    align-items: center;
+    min-height: 680px;
+    padding: clamp(6rem, 10vw, 9rem) var(--content-padding);
+    overflow: hidden;
+}
+
+.about-page .story-number,
+.about-page .skylands-mark {
+    z-index: 0;
+}
+
+.about-page .story-copy {
+    position: relative;
+    z-index: 2;
+    grid-row: 1;
+    width: min(100%, 560px);
+}
+
+.about-page .story-copy h2,
+.about-page .ocean-overlay h2 {
+    color: var(--kean-blue);
+    font: 600 clamp(4rem, 9vw, 9rem)/.9 "Oswald", sans-serif;
+    letter-spacing: -.025em;
+}
+
+.about-page .story-copy > p:nth-of-type(2) {
+    margin: var(--space-lg) 0 0;
+}
+
+.about-page .story-fact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .8rem;
+    margin: var(--space-lg) 0;
+    padding-top: var(--space-sm);
+    border-top: 1px solid rgba(0, 75, 135, .3);
+}
+
+.about-page .story-fact strong {
+    color: var(--kean-blue);
+    font: 600 3rem/1 "Oswald", sans-serif;
+}
+
+.about-page .story-fact span {
+    font: 600 .8rem/1.3 "Oswald", sans-serif;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.about-page .story-photo {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    background-position: center;
+    background-size: cover;
+}
+
+.about-page .photo-union {
+    grid-column: 2;
+    grid-row: 1;
+    aspect-ratio: 4 / 5;
+    background-image: linear-gradient(180deg, rgba(0, 52, 95, .04), rgba(0, 20, 40, .45)), url("campus.jpeg");
+    clip-path: polygon(12% 0, 100% 5%, 92% 100%, 0 92%);
+}
+
+.about-page .story-union .story-copy {
+    grid-column: 1;
+}
+
+.about-page .story-jersey {
+    background: var(--kean-gray);
+}
+
+.about-page .story-jersey .story-copy {
+    grid-column: 2;
+    margin-left: 0;
+}
+
+.about-page .story-jersey .story-number {
+    right: -2vw;
+    left: auto;
+}
+
+.about-page .photo-jersey {
+    grid-column: 1;
+    grid-row: 1;
+    aspect-ratio: 16 / 9;
+    background-image: linear-gradient(180deg, rgba(0, 52, 95, .05), rgba(0, 20, 40, .5)), url("campus.jpeg");
+    clip-path: polygon(0 7%, 85% 0, 100% 92%, 10% 100%);
+}
+
+.about-page .story-ocean {
+    background: var(--kean-white);
+}
+
+.about-page .ocean-photo {
+    grid-column: 1;
+    grid-row: 1;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(90deg, rgba(0, 20, 40, .55), rgba(0, 20, 40, .08)), url("campus.jpeg") center / cover;
+}
+
+.about-page .ocean-overlay {
+    position: relative;
+    z-index: 2;
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    background: var(--kean-gray);
+}
+
+.about-page .story-skylands {
+    background: var(--kean-gray);
+}
+
+.about-page .story-skylands .story-copy {
+    grid-column: 1;
+    margin-left: 0;
+}
+
+.about-page .skylands-photo {
+    grid-column: 2;
+    grid-row: 1;
+    aspect-ratio: 3 / 2;
+    background-image: linear-gradient(180deg, rgba(0, 52, 95, .04), rgba(0, 20, 40, .45)), url("campus.jpeg");
+    clip-path: polygon(21% 0, 100% 9%, 89% 100%, 0 90%);
+}
+
+.about-page .why-kean-type {
+    padding: clamp(7rem, 10vw, 9rem) var(--content-padding);
+}
+
+.about-page .why-type-heading {
+    width: min(100%, var(--content-max));
+    margin-inline: auto;
+}
+
+.about-page .word-field {
+    position: relative;
+    width: min(100%, var(--content-max));
+    min-height: clamp(28rem, 42vw, 38rem);
+    margin: var(--space-xl) auto 0;
+    color: var(--kean-blue);
+    font: 600 clamp(3rem, 7vw, 8rem)/.85 "Oswald", sans-serif;
+    letter-spacing: -.035em;
+}
+
+.about-page .word {
+    position: absolute;
+    max-width: 100%;
+}
+
+.about-page .word-access { top: 2%; left: 0; }
+.about-page .word-opportunity { top: 22%; right: 2%; color: var(--kean-blue-dark); }
+.about-page .word-discovery { top: 43%; left: 13%; color: var(--kean-blue); }
+.about-page .word-community { top: 64%; right: 8%; }
+.about-page .word-research { top: 84%; left: 2%; color: var(--kean-blue-dark); }
+
+.about-page .global-reach {
+    position: relative;
+    min-height: 0;
+    padding: clamp(7rem, 10vw, 9rem) var(--content-padding);
+    overflow: hidden;
+    background: var(--kean-blue-dark);
+    color: var(--kean-white);
+}
+
+.about-page .global-giant {
+    position: absolute;
+    top: 8%;
+    left: -2%;
+    max-width: 100%;
+    color: rgba(255, 255, 255, .13);
+    font: 600 clamp(4rem, 10vw, 10rem)/.8 "Oswald", sans-serif;
+    letter-spacing: -.04em;
+}
+
+.about-page .global-giant span {
+    color: var(--kean-blue-light);
+}
+
+.about-page .global-content {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 600px);
+    padding-top: clamp(8rem, 18vw, 14rem);
+}
+
+.about-page .global-content .eyebrow,
+.about-page .global-content p {
+    color: rgba(255, 255, 255, .88);
+}
+
+.about-page .global-content h2 {
+    color: var(--kean-white);
+    font: 600 clamp(3.2rem, 6vw, 6.5rem)/.95 "Oswald", sans-serif;
+}
+
+.about-page .global-photo {
+    position: absolute;
+    right: var(--content-padding);
+    bottom: 0;
+    width: min(36%, 500px);
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(180deg, rgba(0, 52, 95, .08), rgba(0, 20, 40, .6)), url("students.png") center / cover;
+    clip-path: polygon(14% 0, 100% 8%, 86% 100%, 0 92%);
+}
+
+.about-page .final-statement {
+    position: relative;
+    min-height: 0;
+    overflow: hidden;
+    background: var(--kean-blue-dark);
+    color: var(--kean-white);
+}
+
+.about-page .final-image {
+    position: absolute;
+    inset: 0 0 0 43%;
+    background: linear-gradient(90deg, rgba(0, 20, 40, .95), rgba(0, 20, 40, .12)), url("campus.jpeg") center / cover;
+}
+
+.about-page .final-copy {
+    position: relative;
+    z-index: 2;
+    width: min(100% - 2 * var(--content-padding), var(--content-max));
+    margin-inline: auto;
+    padding: clamp(7rem, 12vw, 10rem) 0;
+}
+
+.about-page .final-copy .eyebrow,
+.about-page .final-copy h2,
+.about-page .final-links a {
+    color: var(--kean-white);
+}
+
+.about-page .final-copy h2 {
+    font: 600 clamp(4rem, 10vw, 10rem)/.88 "Oswald", sans-serif;
+}
+
+.about-page .final-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md) var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.about-page .final-links a {
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.about-page footer {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: var(--space-md) var(--content-padding);
+    background: var(--kean-black);
+    color: var(--kean-white);
+    font-size: .8rem;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.about-page footer p,
+.about-page footer span {
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+}
+
+@media (max-width: 900px) {
+    .about-page .hero-image {
+        right: -7vw;
+        width: 58vw;
+        opacity: .38;
+    }
+
+    .about-page .hero-frame {
+        width: min(100% - 2 * var(--content-padding), var(--content-max));
+    }
+
+    .about-page .history-line {
+        left: var(--content-padding);
+    }
+
+    .about-page .history-stop {
+        width: min(100% - 2rem, 900px);
+        margin-inline: 2rem auto;
+    }
+
+    .about-page .map-stage {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .about-page .nj-map-wrapper {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .about-page .map-detail {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .about-page .campus-story {
+        padding-block: 7rem;
+    }
+
+    .about-page .global-content {
+        width: min(70%, 600px);
+    }
+
+    .about-page .global-photo {
+        width: 48%;
+        opacity: .6;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-page .navbar {
+        padding-inline: var(--content-padding);
+    }
+
+    .about-page .kean-logo {
+        height: 48px;
+    }
+
+    .about-page .hero-frame {
+        padding-block: 7rem 6rem;
+    }
+
+    .about-page .hero-frame h1 {
+        font-size: clamp(5rem, 25vw, 8rem);
+    }
+
+    .about-page .hero-image {
+        width: 88vw;
+        opacity: .28;
+    }
+
+    .about-page .hero-date {
+        right: 1rem;
+        font-size: .7rem;
+    }
+
+    .about-page .interruption {
+        min-height: 0;
+        padding-block: 7rem;
+    }
+
+    .about-page .interruption-copy > p:last-child {
+        margin-left: 0;
+    }
+
+    .about-page .interruption-note {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin-top: var(--space-xl);
+    }
+
+    .about-page .history-track {
+        padding-block: 7rem;
+    }
+
+    .about-page .history-heading {
+        margin-bottom: var(--space-xl);
+    }
+
+    .about-page .history-line {
+        top: 18rem;
+        bottom: 4rem;
+    }
+
+    .about-page .history-stop {
+        grid-template-columns: 1fr;
+        row-gap: var(--space-sm);
+        width: auto;
+        margin: 0 0 0 2rem;
+        padding-block: 2.5rem;
+    }
+
+    .about-page .history-stop > div {
+        gap: .6rem;
+    }
+
+    .about-page .history-year {
+        font-size: 2.6rem;
+    }
+
+    .about-page .map-moment {
+        padding-block: 7rem 5rem;
+    }
+
+    .about-page .map-heading h2 {
+        font-size: clamp(3.4rem, 16vw, 5rem);
+    }
+
+    .about-page .pin-label {
+        max-width: 8rem;
+        font-size: .7rem;
+        white-space: normal;
+    }
+
+    .about-page .campus-story {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+        min-height: 0;
+        padding-block: 6rem;
+    }
+
+    .about-page .story-copy,
+    .about-page .story-union .story-copy,
+    .about-page .story-jersey .story-copy,
+    .about-page .story-skylands .story-copy,
+    .about-page .photo-union,
+    .about-page .photo-jersey,
+    .about-page .ocean-photo,
+    .about-page .ocean-overlay,
+    .about-page .skylands-photo {
+        grid-column: 1;
+        grid-row: auto;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .about-page .story-copy {
+        order: 2;
+    }
+
+    .about-page .photo-union,
+    .about-page .photo-jersey,
+    .about-page .ocean-photo,
+    .about-page .skylands-photo {
+        order: 1;
+        opacity: 1;
+    }
+
+    .about-page .ocean-overlay {
+        order: 2;
+        padding: var(--space-lg);
+    }
+
+    .about-page .story-copy h2,
+    .about-page .ocean-overlay h2 {
+        font-size: clamp(4rem, 18vw, 6rem);
+    }
+
+    .about-page .why-kean-type {
+        padding-block: 7rem;
+    }
+
+    .about-page .word-field {
+        min-height: 28rem;
+        margin-top: var(--space-xl);
+        font-size: 3.2rem;
+    }
+
+    .about-page .global-content {
+        width: 100%;
+        padding-top: 10rem;
+    }
+
+    .about-page .global-photo {
+        right: -8%;
+        width: 65%;
+        opacity: .28;
+    }
+
+    .about-page .final-image {
+        left: 0;
+        opacity: .35;
+    }
+
+    .about-page .final-copy {
+        padding-block: 7rem;
+    }
+
+    .about-page footer {
+        display: block;
+    }
+
+    .about-page footer span {
+        display: block;
+        margin-top: var(--space-xs);
+    }
+}
