@@ -1,3 +1,16 @@
+/* ==============================
+   KEAN UNIVERSITY
+   MAIN STYLESHEET
+   ============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: "Outfit", sans-serif;
@@ -5,8 +18,22 @@ body {
     background-color: #F5F5F2;
 }
 
+img {
+    max-width: 100%;
+}
 
-/* NAVBAR */
+.img-fluid {
+    display: block;
+}
+
+a {
+    transition: 0.2s ease;
+}
+
+
+/* ==============================
+   NAVBAR
+   ============================== */
 
 .navbar {
     background-color: #004B87;
@@ -37,7 +64,7 @@ body {
     font-size: 14px;
     font-weight: 600;
     padding: 10px 17px !important;
-    transition: 0.2s;
+    transition: 0.2s ease;
 }
 
 .nav-link:hover {
@@ -57,13 +84,12 @@ body {
 
 
 /* ==============================
-   GIANT KEAN HERO
+   HERO
    ============================== */
 
 .hero {
     width: 100%;
-    height: 200px;
-    min-height: 200px;
+    height: 550px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -76,14 +102,11 @@ body {
 .hero::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background-image:
         linear-gradient(
-            rgba(244, 241, 234, 0.72),
-            rgba(244, 241, 234, 0.72)
+            rgba(244, 241, 234, 0.78),
+            rgba(244, 241, 234, 0.78)
         ),
         url("students.png");
     background-size: cover;
@@ -93,67 +116,359 @@ body {
 
 .hero-content {
     position: relative;
+    z-index: 2;
     width: 100%;
     height: 100%;
-    max-width: none;
-    padding: 0;
-    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* ==============================
+   KEAN LETTER COLLAGE
+   ============================== */
+
+.hero-title {
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* =================================
-   GIANT KEAN
-   ================================= */
-
-.hero .hero-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
 
     margin: 0;
     padding: 0;
 
-    transform: translate(-50%, -52%);
-
     font-family: "Arial Black", Impact, sans-serif;
- font-size: 360px;
-line-height: 0.8;
-letter-spacing: 25px;
+    font-size: clamp(210px, 27vw, 360px);
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: 8px;
     white-space: nowrap;
 
-    /* Keep the photo INSIDE the letters */
-    background-image: url("students.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-
-    /* Thin outline that sits directly on the letter edge */
-    -webkit-text-stroke: 10 rgba(23, 45, 36, 0.25);
-
     z-index: 3;
-    user-select: none;
 }
 
-/* =================================
+
+/* ==============================
+   LETTER
+   ============================== */
+
+.hero-letter {
+    position: relative;
+
+    display: inline-block;
+
+    font-family: "Arial Black", Impact, sans-serif;
+    font-size: inherit;
+    font-weight: 900;
+    line-height: 0.8;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    /* Keeps the letters separated */
+    margin: 0 5px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* ==============================
+   PHOTO LAYERS
+   ============================== */
+
+.letter-photo {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    /* Put the image inside the letter */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    background-repeat: no-repeat;
+
+    /*
+       IMPORTANT:
+       The photo fills the letter area without
+       stretching the people in the photo.
+    */
+    background-size: cover;
+    background-position: center;
+
+    pointer-events: none;
+
+    -webkit-text-stroke: 0;
+
+    z-index: 2;
+}
+
+
+/* ==============================
+   COLLAGE QUADRANTS
+   ============================== */
+
+/* TOP LEFT */
+
+.photo-1 {
+    clip-path: inset(0 50% 50% 0);
+}
+
+
+/* TOP RIGHT */
+
+.photo-2 {
+    clip-path: inset(0 0 50% 50%);
+}
+
+
+/* BOTTOM LEFT */
+
+.photo-3 {
+    clip-path: inset(50% 50% 0 0);
+}
+
+
+/* BOTTOM RIGHT */
+
+.photo-4 {
+    clip-path: inset(50% 0 0 50%);
+}
+
+
+/* ==============================
+   K COLLAGE
+   ============================== */
+
+.hero-letter:nth-child(1) .photo-1 {
+    background-image: url("sportimgs/football.jpg");
+}
+
+.hero-letter:nth-child(1) .photo-2 {
+    background-image: url("sportimgs/lacrosse.webp");
+}
+
+.hero-letter:nth-child(1) .photo-3 {
+    background-image: url("sportimgs/soccer.jpg");
+}
+
+.hero-letter:nth-child(1) .photo-4 {
+    background-image: url("sportimgs/swimming.jpeg");
+}
+
+
+/* ==============================
+   E COLLAGE
+   ============================== */
+
+.hero-letter:nth-child(2) .photo-1 {
+    background-image: url("campus.jpeg");
+}
+
+.hero-letter:nth-child(2) .photo-2 {
+    background-image: url("campus.jpeg");
+}
+
+.hero-letter:nth-child(2) .photo-3 {
+    background-image: url("campus.jpeg");
+}
+
+.hero-letter:nth-child(2) .photo-4 {
+    background-image: url("campus.jpeg");
+}
+
+
+/* ==============================
+   A COLLAGE
+   ============================== */
+
+.hero-letter:nth-child(3) .photo-1 {
+    background-image: url("campus.jpeg");
+}
+
+.hero-letter:nth-child(3) .photo-2 {
+    background-image: url("campus.jpeg");
+}
+
+.hero-letter:nth-child(3) .photo-3 {
+    background-image: url("campus.jpeg");
+}
+
+.hero-letter:nth-child(3) .photo-4 {
+    background-image: url("campus.jpeg");
+}
+
+
+/* ==============================
+   N COLLAGE
+   ============================== */
+
+.hero-letter:nth-child(4) .photo-1 {
+    background-image: url("campus.jpeg");
+}
+
+.hero-letter:nth-child(4) .photo-2 {
+    background-image: url("campus.jpeg");
+}
+
+.hero-letter:nth-child(4) .photo-3 {
+    background-image: url("campus.jpeg");
+}
+
+.hero-letter:nth-child(4) .photo-4 {
+    background-image: url("campus.jpeg");
+}
+
+
+/* ==============================
+   LETTER OUTLINE
+   ============================== */
+
+.hero-letter::before {
+    content: attr(data-letter);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+
+    -webkit-text-stroke: 5px #172D24;
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+/* ==============================
+   HOVER
+   ============================== */
+
+.hero-letter:hover {
+    transform: translateY(-10px);
+}
+
+
+/* ==============================
+   HOVER LABEL
+   ============================== */
+
+.hero-letter::after {
+    content: attr(data-label);
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+
+    color: white;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 0;
+
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(12px, 1.4vw, 20px);
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    line-height: 1.1;
+
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    opacity: 0;
+
+
+}
+
+
+/* ==============================
+   HOVER LABEL
+   ============================== */
+
+.hero-letter::after {
+    content: attr(data-label);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 10;
+
+    color: white;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke: 0;
+
+    font-family: "Outfit", sans-serif;
+    font-size: clamp(12px, 1.4vw, 20px);
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    opacity: 0;
+    pointer-events: none;
+
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.65);
+
+    transition: opacity 0.25s ease;
+}
+
+.hero-letter:hover::after {
+    opacity: 1;
+}
+
+
+/* ==============================
    HERO TEXT
-   ================================= */
+   ============================== */
 
 .hero-tagline {
     position: absolute;
-    top: 360px;
-
+    top: 67%;
+    z-index: 4;
     margin: 0;
-    z-index: 5;
 
     font-family: "Roboto Slab", serif;
-    font-size: 42px;
-    font-weight: 600;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 500;
     line-height: 1;
 
     color: #172D24;
@@ -161,15 +476,18 @@ letter-spacing: 25px;
 
 .hero-subtitle {
     position: absolute;
-    top: 415px;
+    top: 79%;
+    z-index: 4;
 
+    max-width: 700px;
     margin: 0;
-    z-index: 5;
 
     font-family: "Outfit", sans-serif;
     font-size: 15px;
+    line-height: 1.6;
     font-weight: 600;
-    letter-spacing: 30px;
+    letter-spacing: 3px;
+    text-align: center;
     text-transform: uppercase;
 
     color: #4B514D;
@@ -177,16 +495,17 @@ letter-spacing: 25px;
 
 .hero-button {
     position: absolute;
-    top: 455px;
+    top: 88%;
+    z-index: 4;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 14px;
 
-    padding: 12px 25px;
+    padding: 12px 24px;
 
-    border: 2px solid #172D24;
+    border: 1px solid #172D24;
     border-radius: 100px;
 
     background-color: #F4F1EA;
@@ -195,13 +514,12 @@ letter-spacing: 25px;
     text-decoration: none;
 
     font-family: "Outfit", sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
     text-transform: uppercase;
 
-    z-index: 5;
-    transition: 0.25s;
+    transition: 0.25s ease;
 }
 
 .hero-button span {
@@ -209,24 +527,26 @@ letter-spacing: 25px;
     align-items: center;
     justify-content: center;
 
-    width: 42px;
-    height: 42px;
+    font-size: 20px;
 
-    font-size: 24px;
-
-    transition: 0.25s;
+    transition: 0.25s ease;
 }
 
 .hero-button:hover {
     background-color: #172D24;
     color: #F4F1EA;
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .hero-button:hover span {
-    transform: translateX(7px);
+    transform: translateX(6px);
 }
+
+
+/* ==============================
+   HERO SIDE LABEL
+   ============================== */
 
 .hero::after {
     content: "KEAN UNIVERSITY";
@@ -238,128 +558,20 @@ letter-spacing: 25px;
     font-family: "Outfit", sans-serif;
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: 40px;
+    letter-spacing: 4px;
     text-transform: uppercase;
 
     color: rgba(23, 45, 36, 0.65);
 
     writing-mode: vertical-rl;
 
-    z-index: 6;
+    z-index: 5;
 }
 
 
-/* =================================
-   HERO RESPONSIVE
-   ================================= */
-
-@media (max-width: 1200px) {
-
-    .hero {
-        height: 460px;
-        min-height: 460px;
-    }
-
-    .hero .hero-title {
-        font-size: 350px;
-        letter-spacing: 38px;
-    }
-
-    .hero-tagline {
-        top: 345px;
-        font-size: 38px;
-    }
-
-    .hero-subtitle {
-        top: 395px;
-        font-size: 14px;
-    }
-
-    .hero-button {
-        top: 435px;
-    }
-}
-
-
-@media (max-width: 900px) {
-
-    .hero {
-        height: 420px;
-        min-height: 420px;
-    }
-
-    .hero .hero-title {
-        font-size: 275px;
-        letter-spacing: 28px;
-        transform: translate(-50%, -50%);
-    }
-
-    .hero-tagline {
-        top: 315px;
-        font-size: 34px;
-    }
-
-    .hero-subtitle {
-        top: 360px;
-        font-size: 13px;
-        letter-spacing: 2px;
-    }
-
-    .hero-button {
-        top: 395px;
-        font-size: 14px;
-        padding: 11px 22px;
-    }
-}
-
-
-@media (max-width: 600px) {
-
-    .hero {
-        height: 360px;
-        min-height: 360px;
-    }
-
-    .hero .hero-title {
-        font-size: 175px;
-        letter-spacing: 18px;
-        transform: translate(-50%, -48%);
-    }
-
-    .hero-tagline {
-        top: 270px;
-        font-size: 27px;
-    }
-
-    .hero-subtitle {
-        top: 310px;
-        max-width: 320px;
-        text-align: center;
-        line-height: 1.4;
-        font-size: 10px;
-        letter-spacing: 1.5px;
-    }
-
-    .hero-button {
-        top: 345px;
-        padding: 10px 18px;
-        font-size: 11px;
-        letter-spacing: 1px;
-    }
-
-    .hero-button span {
-        width: 34px;
-        height: 34px;
-        font-size: 20px;
-    }
-
-    .hero::after {
-        display: none;
-    }
-}
-
-
-/* GENERAL PAGE SECTIONS */
+/* ==============================
+   GENERAL PAGE SECTIONS
+   ============================== */
 
 main > section:not(.hero) {
     padding-top: 90px;
@@ -370,31 +582,41 @@ main > section:not(.hero) {
     max-width: 1150px;
 }
 
+main > .container {
+    background-color: #F5F5F2;
+}
+
 .section-label {
+    margin-bottom: 18px;
+
     font-family: "Outfit", sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 3px;
+
     color: #004B87;
-    margin-bottom: 18px;
 }
 
 h2 {
+    margin-bottom: 25px;
+
     font-family: "Roboto Slab", serif;
     font-size: clamp(38px, 5vw, 62px);
-    line-height: 1.05;
     font-weight: 700;
-    letter-spacing: 10px;
+    line-height: 1.05;
+    letter-spacing: -1px;
+
     color: #1D1D1D;
-    margin-bottom: 25px;
 }
 
 h3 {
+    margin-bottom: 14px;
+
     font-family: "Outfit", sans-serif;
     font-size: 21px;
     font-weight: 700;
+
     color: #004B87;
-    margin-bottom: 14px;
 }
 
 p {
@@ -404,13 +626,18 @@ p {
 }
 
 
-/* INTRO SECTIONS */
+/* ==============================
+   INTRO SECTIONS
+   ============================== */
 
 .intro-section {
     min-height: 55vh;
+
     display: flex;
     align-items: center;
+
     background-color: #F5F5F2;
+
     padding: 110px 0 !important;
 }
 
@@ -425,22 +652,23 @@ p {
 }
 
 
-/* WHITE CONTENT SECTIONS */
-
-main > .container {
-    background-color: #F5F5F2;
-}
-
-
-/* CARDS */
+/* ==============================
+   CARDS
+   ============================== */
 
 .border {
+    height: 100%;
+
     border: 0 !important;
     border-top: 5px solid #004B87 !important;
+
     background-color: white;
+
     padding: 30px !important;
+
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-    transition: 0.25s;
+
+    transition: 0.25s ease;
 }
 
 .border:hover {
@@ -452,9 +680,6 @@ main > .container {
     margin-top: 5px;
 }
 
-
-/* PROGRAM CARDS */
-
 .row .border {
     height: 100%;
 }
@@ -463,26 +688,27 @@ main > .container {
     margin-bottom: 12px;
 }
 
-
-/* NUMBERS */
-
 .section-label + h3 {
     margin-top: 5px;
 }
 
 
-/* IMAGES */
+/* ==============================
+   PAGE ROWS
+   ============================== */
 
-img {
-    max-width: 100%;
+main .row {
+    margin-bottom: 10px;
 }
 
-.img-fluid {
-    display: block;
+main .row > [class*="col-"] {
+    margin-bottom: 25px;
 }
 
 
-/* FOOTER */
+/* ==============================
+   FOOTER
+   ============================== */
 
 footer {
     background-color: #686868;
@@ -490,8 +716,10 @@ footer {
 
 footer section {
     min-height: 380px;
+
     display: flex;
     align-items: center;
+
     background-color: #686868 !important;
 }
 
@@ -519,26 +747,19 @@ footer img {
 }
 
 
-/* COST PAGE */
-
-main .row {
-    margin-bottom: 10px;
-}
-
-main .row > [class*="col-"] {
-    margin-bottom: 25px;
-}
-
-
-/* APPLY PAGE */
+/* ==============================
+   APPLY PAGE
+   ============================== */
 
 input,
 select,
 textarea {
-    font-family: "Outfit", sans-serif;
+    padding: 12px !important;
+
     border: 1px solid #CFCFCB !important;
     border-radius: 0 !important;
-    padding: 12px !important;
+
+    font-family: "Outfit", sans-serif;
 }
 
 input:focus,
@@ -549,20 +770,56 @@ textarea:focus {
 }
 
 label {
+    margin-bottom: 7px;
+
     font-family: "Outfit", sans-serif;
     font-weight: 600;
-    margin-bottom: 7px;
 }
 
 
-/* LINKS */
+/* ==============================
+   TABLET
+   ============================== */
 
-a {
-    transition: 0.2s;
+@media (max-width: 900px) {
+
+    .hero {
+        height: 400px;
+    }
+
+    .hero-title {
+        top: 40%;
+        font-size: clamp(180px, 30vw, 275px);
+        letter-spacing: 4px;
+    }
+
+    .hero-tagline {
+        top: 65%;
+        font-size: 34px;
+    }
+
+    .hero-subtitle {
+        top: 77%;
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+
+    .hero-button {
+        top: 87%;
+        font-size: 12px;
+    }
+
+    .hero::after {
+        right: 15px;
+        bottom: 20px;
+        font-size: 8px;
+    }
 }
 
 
-/* MOBILE */
+/* ==============================
+   MOBILE
+   ============================== */
 
 @media (max-width: 768px) {
 
@@ -623,340 +880,59 @@ a {
         margin-top: 35px;
         height: 220px;
     }
-
-}
-/* ==============================
-   GIANT KEAN HERO
-================================ */
-
-.hero {
-    height: calc(100vh - 75px);
-    min-height: 650px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f4f1ea;
-    padding: 0;
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(
-            rgba(244, 241, 234, 0.78),
-            rgba(244, 241, 234, 0.78)
-        ),
-        /* IMG IN BG */
-        url("campus.jpeg");
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-    max-width: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-/* THE GIANT WORD */
-
-.hero-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -54%);
-
-    margin: 0;
-
-    font-family: "Arial Black", Impact, sans-serif;
-    font-size: 30vw;
-    font-weight: 900;
-    line-height: 0.7;
-    letter-spacing: 0.13em;
-    white-space: nowrap;
-
-    background-image: url("students.png");
-    background-size: cover;
-    background-position: center;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-
-    -webkit-text-stroke: 3px rgba(0, 0, 0, 0.08);
-
-    user-select: none;
-}
-
-/* TEXT UNDER KEAN */
-
-.hero-tagline {
-    position: absolute;
-    top: 67%;
-    z-index: 4;
-
-    margin: 0;
-
-    font-family: "Roboto Slab", serif;
-    font-size: clamp(2rem, 4vw, 4rem);
-    font-weight: 500;
-
-    color: #172d24;
-}
-
-.hero-subtitle {
-    position: absolute;
-    top: 79%;
-    z-index: 4;
-
-    margin: 0;
-
-    font-family: "Outfit", sans-serif;
-    font-size: 0.95rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-
-    color: #4b514d;
-}
-
-.hero-button {
-    position: absolute;
-    top: 85%;
-    z-index: 4;
-
-    display: inline-flex;
-    align-items: center;
-    gap: 20px;
-
-    padding: 15px 28px;
-
-    border: 1px solid #172d24;
-    border-radius: 100px;
-
-    color: #172d24;
-    background: transparent;
-
-    text-decoration: none;
-
-    font-family: "Outfit", sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 5em;
-    text-transform: uppercase;
-
-    transition: 0.3s ease;
-}
-
-.hero-button span {
-    font-size: 1.2rem;
-    transition: 0.3s ease;
-}
-
-.hero-button:hover {
-    background: #172d24;
-    color: #f4f1ea;
-    padding-left: 35px;
-    padding-right: 35px;
-}
-
-.hero-button:hover span {
-    transform: translateX(6px);
-}
-
-.hero::after {
-    content: "KEAN UNIVERSITY";
-
-    position: absolute;
-    right: 35px;
-    bottom: 30px;
-
-    font-family: "Outfit", sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 25em;
-    text-transform: uppercase;
-
-    color: rgba(23, 45, 36, 0.6);
-
-    writing-mode: vertical-rl;
-
-    z-index: 5;
-}
-
-
-/* ==============================
-   TABLET
-================================ */
-
-@media (max-width: 900px) {
-
-    .hero-title {
-        font-size: 34;
-    }
-
-    .hero-tagline {
-        top: 66%;
-    }
-
-    .hero-subtitle {
-        top: 77%;
-    }
-
-    .hero-button {
-        top: 84%;
-    }
-}
-
-
-/* ==============================
-   PHONE
-================================ */
 
 @media (max-width: 600px) {
 
     .hero {
-        height: calc(100vh - 65px);
-        min-height: 600px;
+        height: 360px;
     }
 
     .hero-title {
-        font-size: 32vw;
-        letter-spacing: 9em;
-        top: 42%;
+        top: 38%;
+        font-size: clamp(125px, 31vw, 175px);
+        letter-spacing: 2px;
+    }
+
+    .hero-letter {
+        -webkit-text-stroke: 4px #172D24;
+    }
+
+    .hero-letter::before {
+        -webkit-text-stroke: 4px #172D24;
+    }
+
+    .hero-letter::after {
+        font-size: 10px;
+        letter-spacing: 1px;
     }
 
     .hero-tagline {
         top: 61%;
-        font-size: 2rem;
+        font-size: 27px;
     }
 
     .hero-subtitle {
         top: 72%;
-        max-width: 300px;
-        line-height: 1.6;
-        font-size: 0.75rem;
+        max-width: 320px;
+        font-size: 10px;
+        line-height: 1.4;
+        letter-spacing: 1.5px;
     }
 
     .hero-button {
-        top: 82%;
-        padding: 13px 20px;
+        top: 83%;
+        padding: 10px 18px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .hero-button span {
+        font-size: 18px;
     }
 
     .hero::after {
         display: none;
     }
-}
-.hero .hero-title {
-    position: absolute;
-    top: 42%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    margin: 0;
-    padding: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: "Arial Black", Impact, sans-serif;
-    font-size: clamp(300px, 32vw, 500px);
-    font-weight: 900;
-    line-height: 0.75;
-    letter-spacing: 3px;
-    white-space: nowrap;
-
-    z-index: 3;
-    user-select: none;
-}
-.hero-letter {
-    display: inline-block;
-/* LETTR IMGS */
-    background-image: url("students.png");
-    background-size: cover;
-    background-position: center;
-
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-
-    -webkit-text-stroke: 4px #F4F1EA;
-
-    cursor: pointer;
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-.hero-letter:hover {
-    transform: translateY(-12px) scale(1.04);
-    filter: brightness(1.1);
-}
-.hero-tagline {
-    position: absolute;
-    top: 67%;
-    z-index: 4;
-
-    margin: 0;
-
-    font-family: "Roboto Slab", serif;
-    font-size: clamp(2rem, 4vw, 4rem);
-    font-weight: 500;
-
-    color: #172d24;
-}
-
-.hero-subtitle {
-    position: absolute;
-    top: 77%;
-    z-index: 4;
-
-    margin: 0;
-    max-width: 700px;
-
-    font-family: "Outfit", sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-align: center;
-
-    color: #4b514d;
-}
-
-.hero-button {
-    position: absolute;
-    top: 85%;
-    z-index: 4;
-
-    display: inline-flex;
-    align-items: center;
-    gap: 20px;
-
-    padding: 15px 28px;
-
-    border: 1px solid #172d24;
-    border-radius: 100px;
-
-    color: #172d24;
-    background: transparent;
-
-    text-decoration: none;
-
-    font-family: "Outfit", sans-serif;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-
-    transition: 0.3s ease;
 }
