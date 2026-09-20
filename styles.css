@@ -85,7 +85,7 @@ body {
             rgba(244, 241, 234, 0.72),
             rgba(244, 241, 234, 0.72)
         ),
-        url("campus.jpeg");
+        url("students.png");
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -120,11 +120,11 @@ body {
     font-family: "Arial Black", Impact, sans-serif;
  font-size: 360px;
 line-height: 0.8;
-letter-spacing: -25px;
+letter-spacing: 25px;
     white-space: nowrap;
 
     /* Keep the photo INSIDE the letters */
-    background-image: url("campus.jpeg");
+    background-image: url("students.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -169,7 +169,7 @@ letter-spacing: -25px;
     font-family: "Outfit", sans-serif;
     font-size: 15px;
     font-weight: 600;
-    letter-spacing: 3px;
+    letter-spacing: 30px;
     text-transform: uppercase;
 
     color: #4B514D;
@@ -197,7 +197,7 @@ letter-spacing: -25px;
     font-family: "Outfit", sans-serif;
     font-size: 15px;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 20px;
     text-transform: uppercase;
 
     z-index: 5;
@@ -238,7 +238,7 @@ letter-spacing: -25px;
     font-family: "Outfit", sans-serif;
     font-size: 10px;
     font-weight: 700;
-    letter-spacing: 4px;
+    letter-spacing: 40px;
     text-transform: uppercase;
 
     color: rgba(23, 45, 36, 0.65);
@@ -262,7 +262,7 @@ letter-spacing: -25px;
 
     .hero .hero-title {
         font-size: 350px;
-        letter-spacing: -38px;
+        letter-spacing: 38px;
     }
 
     .hero-tagline {
@@ -290,7 +290,7 @@ letter-spacing: -25px;
 
     .hero .hero-title {
         font-size: 275px;
-        letter-spacing: -28px;
+        letter-spacing: 28px;
         transform: translate(-50%, -50%);
     }
 
@@ -322,7 +322,7 @@ letter-spacing: -25px;
 
     .hero .hero-title {
         font-size: 175px;
-        letter-spacing: -18px;
+        letter-spacing: 18px;
         transform: translate(-50%, -48%);
     }
 
@@ -384,7 +384,7 @@ h2 {
     font-size: clamp(38px, 5vw, 62px);
     line-height: 1.05;
     font-weight: 700;
-    letter-spacing: -1px;
+    letter-spacing: 10px;
     color: #1D1D1D;
     margin-bottom: 25px;
 }
@@ -650,7 +650,8 @@ a {
             rgba(244, 241, 234, 0.78),
             rgba(244, 241, 234, 0.78)
         ),
-        url("students.png");
+        /* IMG IN BG */
+        url("campus.jpeg");
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -683,7 +684,7 @@ a {
     font-size: 30vw;
     font-weight: 900;
     line-height: 0.7;
-    letter-spacing: -0.13em;
+    letter-spacing: 0.13em;
     white-space: nowrap;
 
     background-image: url("students.png");
@@ -752,7 +753,7 @@ a {
     font-family: "Outfit", sans-serif;
     font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 5em;
     text-transform: uppercase;
 
     transition: 0.3s ease;
@@ -783,7 +784,7 @@ a {
 
     font-family: "Outfit", sans-serif;
     font-size: 0.65rem;
-    letter-spacing: 0.25em;
+    letter-spacing: 25em;
     text-transform: uppercase;
 
     color: rgba(23, 45, 36, 0.6);
@@ -831,7 +832,7 @@ a {
 
     .hero-title {
         font-size: 32vw;
-        letter-spacing: -0.09em;
+        letter-spacing: 9em;
         top: 42%;
     }
 
@@ -873,7 +874,7 @@ a {
     font-size: clamp(300px, 32vw, 500px);
     font-weight: 900;
     line-height: 0.75;
-    letter-spacing: -0.08em;
+    letter-spacing: 3px;
     white-space: nowrap;
 
     z-index: 3;
@@ -881,7 +882,7 @@ a {
 }
 .hero-letter {
     display: inline-block;
-
+/* LETTR IMGS */
     background-image: url("students.png");
     background-size: cover;
     background-position: center;
