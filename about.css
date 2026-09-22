@@ -901,6 +901,47 @@
         width: 48%;
         opacity: .6;
     }
+
+    .about-page .campus-story {
+        grid-template-columns: minmax(0, 1fr);
+        min-height: 0;
+    }
+
+    .about-page .story-copy,
+    .about-page .story-jersey .story-copy,
+    .about-page .story-skylands .story-copy,
+    .about-page .photo-union,
+    .about-page .photo-jersey,
+    .about-page .ocean-photo,
+    .about-page .ocean-overlay,
+    .about-page .skylands-photo {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .about-page .story-photo {
+        width: min(100%, 42rem);
+        margin-inline: auto;
+    }
+
+    .about-page .story-jersey .story-copy,
+    .about-page .story-skylands .story-copy {
+        order: 1;
+    }
+
+    .about-page .photo-jersey,
+    .about-page .skylands-photo,
+    .about-page .photo-union {
+        order: 2;
+    }
+
+    .about-page .ocean-photo {
+        order: 2;
+    }
+
+    .about-page .ocean-overlay {
+        order: 1;
+    }
 }
 
 @media (max-width: 600px) {
@@ -977,6 +1018,39 @@
 
     .about-page .map-moment {
         padding-block: 7rem 5rem;
+    }
+
+    .about-page .history-line {
+        top: 20rem;
+    }
+
+    .about-page .map-pin .pin-label {
+        display: none;
+    }
+
+    .about-page .global-content {
+        width: 100%;
+        padding-top: 9rem;
+    }
+
+    .about-page .global-photo {
+        right: -8%;
+        width: 70%;
+        opacity: .28;
+    }
+
+    .about-page .final-image {
+        inset: 0;
+        opacity: .3;
+    }
+
+    .about-page footer {
+        display: block;
+    }
+
+    .about-page footer span {
+        display: block;
+        margin-top: .4rem;
     }
 
     .about-page .map-heading h2 {

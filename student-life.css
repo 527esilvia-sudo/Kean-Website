@@ -136,3 +136,22 @@
     .student-life-page .student-life-footer span + span { display: block; margin-top: .4rem; }
 }
 @media (max-width: 480px) { .student-life-page .student-life-hero h1, .student-life-page .student-life-section-heading h2, .student-life-page .student-life-learn-heading h2, .student-life-page .student-life-choose-intro h2, .student-life-page .student-life-paths-heading h2, .student-life-page .student-life-first-semester-heading h2, .student-life-page .student-life-connect h2, .student-life-page .student-life-explore-more h2 { font-size: clamp(3.2rem, 17vw, 5rem); } .student-life-page .student-life-residence-strip, .student-life-page .student-life-foundation-list, .student-life-page .student-life-academic-areas, .student-life-page .student-life-resource-links { grid-template-columns: 1fr; } .student-life-page .student-life-path-grid { display: block; } .student-life-page .student-life-path-grid article + article { padding-left: 0; border-left: 0; } }
+
+@media (max-width: 576px) {
+    .student-life-page .student-life-section,
+    .student-life-page .student-life-paths,
+    .student-life-page .student-life-first-semester,
+    .student-life-page .student-life-connect,
+    .student-life-page .student-life-explore-more {
+        padding-inline: max(1rem, 5vw);
+    }
+
+    .student-life-page .student-life-connect-content li,
+    .student-life-page .student-life-timeline article {
+        overflow-wrap: anywhere;
+    }
+
+    .student-life-page .student-life-footer {
+        padding-inline: max(1rem, 5vw);
+    }
+}

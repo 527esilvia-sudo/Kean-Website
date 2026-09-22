@@ -173,3 +173,44 @@ body:not(.about-page) footer img { width: 100%; height: 280px; object-fit: cover
     body:not(.about-page) .hero-button { top: 83%; padding: 10px 18px; font-size: 10px; letter-spacing: 1px; }
     body:not(.about-page) .hero::after { display: none; }
 }
+
+/* Bootstrap container defaults keep every page inside the viewport. */
+section.container-fluid,
+main,
+footer {
+    max-width: 100%;
+}
+
+img,
+svg,
+video {
+    max-width: 100%;
+}
+
+@media (max-width: 576px) {
+    body:not(.about-page) .hero {
+        height: auto;
+        min-height: 480px;
+    }
+
+    body:not(.about-page) .hero-title {
+        top: 29%;
+        font-size: clamp(4rem, 23vw, 8rem);
+        letter-spacing: 0;
+    }
+
+    body:not(.about-page) .hero-tagline {
+        top: 57%;
+        font-size: clamp(1.6rem, 8vw, 2.2rem);
+    }
+
+    body:not(.about-page) .hero-subtitle {
+        top: 70%;
+        max-width: calc(100% - 2rem);
+    }
+
+    body:not(.about-page) .hero-button {
+        top: auto;
+        bottom: 2rem;
+    }
+}

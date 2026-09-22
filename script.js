@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("main section").forEach((section) => {
+        section.classList.add("container-fluid");
+    });
+
     const campusData = {
         union: {
             number: "01",
