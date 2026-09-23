@@ -155,3 +155,67 @@
         padding-inline: max(1rem, 5vw);
     }
 }
+
+/* Full-width section surfaces with wider, readable desktop content. */
+.student-life-page .student-life-section,
+.student-life-page .student-life-connect {
+    width: 100%;
+    max-width: none;
+}
+.student-life-page .student-life-section,
+.student-life-page .student-life-paths,
+.student-life-page .student-life-first-semester,
+.student-life-page .student-life-connect,
+.student-life-page .student-life-explore-more {
+    padding-inline: clamp(1.5rem, 7vw, 8rem);
+}
+.student-life-page .student-life-section-heading,
+.student-life-page .student-life-learn-heading,
+.student-life-page .student-life-choose-intro,
+.student-life-page .student-life-connect > div:first-child {
+    min-width: 0;
+}
+.student-life-page .student-life-section-heading > p:last-child,
+.student-life-page .student-life-learn-heading > p:last-child,
+.student-life-page .student-life-choose-intro > p:not(.student-life-kicker),
+.student-life-page .student-life-connect-content > p {
+    max-width: 42ch;
+}
+.student-life-page .student-life-section-heading h2,
+.student-life-page .student-life-learn-heading h2,
+.student-life-page .student-life-choose-intro h2,
+.student-life-page .student-life-connect h2,
+.student-life-page .student-life-explore-more h2 {
+    max-width: 10ch;
+}
+.student-life-page .student-life-first-semester-heading,
+.student-life-page .student-life-timeline {
+    max-width: 1500px;
+}
+.student-life-page .student-life-timeline { width: 100%; }
+
+@media (min-width: 901px) {
+    .student-life-page .student-life-section,
+    .student-life-page .student-life-paths,
+    .student-life-page .student-life-first-semester,
+    .student-life-page .student-life-connect,
+    .student-life-page .student-life-explore-more {
+        grid-template-columns: minmax(260px, .62fr) minmax(0, 1.38fr);
+    }
+    .student-life-page .student-life-hero { padding-block: clamp(3.5rem, 6vw, 5.5rem); }
+    .student-life-page .student-life-hero-copy { max-width: 720px; }
+    .student-life-page .student-life-residence-showcase { gap: 2rem; }
+    .student-life-page .student-life-residence-feature { grid-template-columns: minmax(240px, .9fr) minmax(0, 1.1fr); }
+    .student-life-page .student-life-first-semester { padding-block: clamp(4rem, 6vw, 5.5rem); }
+    .student-life-page .student-life-connect-content > p { max-width: 58ch; }
+}
+
+@media (max-width: 700px) {
+    .student-life-page .student-life-section,
+    .student-life-page .student-life-paths,
+    .student-life-page .student-life-first-semester,
+    .student-life-page .student-life-connect,
+    .student-life-page .student-life-explore-more {
+        padding-inline: max(1rem, 6vw);
+    }
+}

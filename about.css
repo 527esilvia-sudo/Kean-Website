@@ -1149,3 +1149,29 @@
         margin-top: var(--space-xs);
     }
 }
+
+/* Proportion pass: use the desktop canvas without making the sections taller. */
+@media (min-width: 901px) {
+    .about-page .editorial-hero { min-height: max(560px, calc(100svh - 76px)); }
+    .about-page .hero-frame { padding-block: clamp(5rem, 10vh, 7rem); }
+    .about-page .hero-frame h1 { font-size: clamp(5rem, 10vw, 9rem); }
+    .about-page .interruption { min-height: 480px; padding-block: clamp(5rem, 8vw, 7rem); }
+    .about-page .interruption-copy { width: min(100%, 1080px); }
+    .about-page .interruption h2,
+    .about-page .history-heading h2,
+    .about-page .why-type-heading h2 { font-size: clamp(3rem, 5.5vw, 5.8rem); }
+    .about-page .history-track { padding-block: clamp(5rem, 7vw, 7rem); }
+    .about-page .history-heading { width: min(100%, 980px); margin-bottom: 2.5rem; }
+    .about-page .history-stop { width: min(100%, 1320px); padding-block: clamp(1.8rem, 3vw, 3rem); }
+    .about-page .map-moment { padding-block: clamp(5rem, 7vw, 7rem); }
+    .about-page .map-heading { width: min(100%, 900px); margin-left: max(0px, calc((100% - var(--content-max)) / 2)); }
+    .about-page .map-stage { width: min(100%, 1600px); margin-top: 3rem; }
+    .about-page .campus-story { min-height: 560px; padding-block: clamp(4.5rem, 7vw, 6rem); }
+    .about-page .story-copy { width: min(100%, 680px); }
+    .about-page .story-copy h2, .about-page .ocean-overlay h2 { font-size: clamp(4rem, 7vw, 7rem); }
+    .about-page .why-kean-type { padding-block: clamp(5rem, 7vw, 7rem); }
+    .about-page .word-field { min-height: clamp(24rem, 34vw, 32rem); margin-top: 2.5rem; }
+    .about-page .global-reach { padding-block: clamp(5rem, 7vw, 7rem); }
+    .about-page .global-content { width: min(58%, 760px); padding-top: clamp(5rem, 10vw, 9rem); }
+    .about-page .final-copy { padding-block: clamp(5rem, 8vw, 7rem); }
+}

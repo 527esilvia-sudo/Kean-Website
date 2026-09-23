@@ -214,3 +214,154 @@ video {
         bottom: 2rem;
     }
 }
+
+/* Landing collage composition */
+body:not(.about-page) .hero {
+    min-height: clamp(620px, calc(100svh - 75px), 780px);
+    background: #f4f1ea;
+}
+body:not(.about-page) .hero::before {
+    background-image: linear-gradient(90deg, rgba(244,241,234,.9) 0%, rgba(244,241,234,.56) 52%, rgba(244,241,234,.72) 100%), url("students.png");
+    background-position: center;
+    background-size: cover;
+}
+body:not(.about-page) .hero::after {
+    right: 4vw;
+    bottom: 3.5rem;
+    color: rgba(23,45,36,.74);
+}
+body:not(.about-page) .hero-content {
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: clamp(3rem, 7vh, 5rem) 5vw 3rem;
+}
+body:not(.about-page) .hero-title {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    align-self: center;
+    width: min(96vw, 1180px);
+    justify-content: space-between;
+    gap: clamp(3px, .65vw, 12px);
+    font-size: clamp(220px, 29vw, 390px);
+    letter-spacing: 0;
+}
+body:not(.about-page) .hero-title .hero-letter {
+    flex: 1 1 0;
+    width: auto;
+    max-width: 285px;
+    margin: 0;
+    filter: saturate(.88) contrast(1.02);
+    transition: transform .35s cubic-bezier(.2,.75,.25,1), filter .35s ease;
+}
+body:not(.about-page) .hero-title .hero-letter:hover,
+body:not(.about-page) .hero-title .hero-letter:focus-visible {
+    z-index: 4;
+    filter: saturate(1.18) contrast(1.12);
+    transform: translateY(-12px) scale(1.035);
+}
+body:not(.about-page) .hero-title .hero-letter::before { -webkit-text-stroke: 3px rgba(23,45,36,.9); }
+body:not(.about-page) .hero-title .hero-letter::after {
+    padding: .65rem .8rem;
+    border: 1px solid rgba(244,241,234,.65);
+    background: rgba(23,45,36,.82);
+    font-size: clamp(10px, 1.05vw, 15px);
+    letter-spacing: .12em;
+    text-shadow: none;
+}
+body:not(.about-page) .hero-letter:nth-child(2) .photo-1 { background-image: url("scienceimgs/lab-girl.jpg"); }
+body:not(.about-page) .hero-letter:nth-child(2) .photo-2 { background-image: url("scienceimgs/group.jpg"); }
+body:not(.about-page) .hero-letter:nth-child(2) .photo-3 { background-image: url("scienceimgs/env.jpg"); }
+body:not(.about-page) .hero-letter:nth-child(2) .photo-4 { background-image: url("scienceimgs/lab-girl-2.jpg"); }
+body:not(.about-page) .hero-letter:nth-child(3) .letter-photo { background-position: 35% center; }
+body:not(.about-page) .hero-letter:nth-child(4) .letter-photo { background-position: 68% center; }
+body:not(.about-page) .hero-tagline {
+    position: relative;
+    top: auto;
+    align-self: center;
+    margin: clamp(1.5rem, 3.2vh, 2.8rem) 0 .75rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid rgba(23,45,36,.45);
+    width: min(96vw, 1180px);
+    color: #172d24;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    text-align: left;
+}
+body:not(.about-page) .hero-subtitle {
+    position: relative;
+    top: auto;
+    align-self: center;
+    width: min(96vw, 1180px);
+    max-width: none;
+    color: #4b514d;
+    font-size: clamp(.8rem, 1.35vw, 1rem);
+    letter-spacing: .22em;
+    text-align: left;
+}
+body:not(.about-page) .hero-button {
+    position: relative;
+    top: auto;
+    align-self: flex-end;
+    margin: 1.4rem max(0px, calc((100% - 1180px) / 2)) 0 0;
+    background: rgba(244,241,234,.72);
+}
+body:not(.about-page) .intro-section {
+    position: relative;
+    min-height: 60vh;
+    align-items: flex-start;
+    overflow: hidden;
+    background: #f5f5f2;
+    padding: clamp(7rem, 12vw, 11rem) 0 clamp(8rem, 13vw, 12rem) !important;
+}
+body:not(.about-page) .intro-section .container { position: relative; z-index: 1; padding-left: 9vw; }
+body:not(.about-page) .intro-section::before {
+    content: "01 / BECOME";
+    position: absolute;
+    top: 3rem;
+    left: 9vw;
+    color: #004b87;
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .22em;
+}
+body:not(.about-page) .intro-section::after {
+    content: "KEAN";
+    position: absolute;
+    right: -2vw;
+    bottom: -4rem;
+    color: rgba(0,75,135,.075);
+    font: 900 clamp(12rem, 29vw, 28rem)/.7 "Roboto Slab", serif;
+    letter-spacing: -.1em;
+}
+body:not(.about-page) .intro-section h2 {
+    position: relative;
+    max-width: 800px;
+    margin-bottom: 2.2rem;
+    color: #172d24;
+    font-size: clamp(3.5rem, 7vw, 7rem);
+}
+body:not(.about-page) .intro-support { max-width: 35rem; margin: 0 0 0 18%; color: #4b514d; font-size: clamp(1rem, 1.6vw, 1.25rem); }
+body:not(.about-page) .intro-rule { display: block; width: min(52vw, 580px); margin: 3.5rem 0 0 18%; border-top: 1px solid rgba(0,75,135,.45); }
+body:not(.about-page) .intro-mark { position: absolute; top: 1rem; right: 8vw; color: #7b2d26; font-size: .7rem; font-weight: 700; letter-spacing: .2em; writing-mode: vertical-rl; }
+
+@media (max-width: 900px) {
+    body:not(.about-page) .hero-title { width: 100%; }
+    body:not(.about-page) .hero-content { padding-inline: 6vw; }
+}
+@media (max-width: 600px) {
+    body:not(.about-page) .hero { min-height: 560px; }
+    body:not(.about-page) .hero-content { padding: 3rem 6vw 2.5rem; }
+    body:not(.about-page) .hero-title { width: 100%; font-size: clamp(8rem, 28vw, 12rem); }
+    body:not(.about-page) .hero-title .hero-letter:hover { transform: translateY(-7px) scale(1.025); }
+    body:not(.about-page) .hero-tagline { margin-top: 1.5rem; font-size: clamp(1.75rem, 8vw, 2.4rem); }
+    body:not(.about-page) .hero-subtitle { font-size: .67rem; letter-spacing: .11em; }
+    body:not(.about-page) .hero-button { align-self: flex-start; margin-top: 1.2rem; }
+    body:not(.about-page) .intro-section { min-height: 520px; padding-block: 6rem 8rem !important; }
+    body:not(.about-page) .intro-section .container { padding-inline: 7vw; }
+    body:not(.about-page) .intro-section::before { left: 7vw; }
+    body:not(.about-page) .intro-section h2 { font-size: clamp(3rem, 14vw, 5rem); }
+    body:not(.about-page) .intro-support, body:not(.about-page) .intro-rule { margin-left: 0; }
+    body:not(.about-page) .intro-rule { width: 80%; margin-top: 2.5rem; }
+    body:not(.about-page) .intro-mark { right: 7vw; }
+}
