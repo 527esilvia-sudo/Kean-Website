@@ -35,21 +35,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("program-modal");
     const modalTitle = document.getElementById("program-modal-title");
     const modalSummary = document.getElementById("program-modal-summary");
-    const modalCourses = document.getElementById("program-modal-courses");
-    const modalSemester = document.getElementById("program-modal-semester");
-    const modalRelated = document.getElementById("program-modal-related");
-    const modalOpportunities = document.getElementById("program-modal-opportunities");
-    const modalOrgs = document.getElementById("program-modal-orgs");
+    const modalAudience = document.getElementById("program-modal-audience");
+    const modalDoing = document.getElementById("program-modal-doing");
+    const modalMatters = document.getElementById("program-modal-matters");
 
     const openModal = (card) => {
         if (!modal) return;
         modalTitle.textContent = card.dataset.title || card.querySelector("h3").textContent;
         modalSummary.textContent = card.dataset.description || "";
-        modalCourses.innerHTML = (card.dataset.courses ? `<ul>${card.dataset.courses.split("|").map((course) => `<li>${course.trim()}</li>`).join("")}</ul>` : "<p>Course details can be added as the program is finalized.</p>");
-        modalSemester.innerHTML = card.dataset.semester ? `<p>${card.dataset.semester}</p>` : "<p>Typical sequencing varies by specialization and advising plan.</p>";
-        modalRelated.innerHTML = card.dataset.related ? `<ul>${card.dataset.related.split("|").map((item) => `<li>${item.trim()}</li>`).join("")}</ul>` : "<p>Related fields can be added as academic requirements are confirmed.</p>";
-        modalOpportunities.innerHTML = card.dataset.opportunities ? `<p>${card.dataset.opportunities}</p>` : "<p>Experiential learning and field opportunities can be added as program planning expands.</p>";
-        modalOrgs.innerHTML = card.dataset.orgs ? `<ul>${card.dataset.orgs.split("|").map((item) => `<li>${item.trim()}</li>`).join("")}</ul>` : "<p>Student groups can be added as campus activities are confirmed.</p>";
+        modalAudience.innerHTML = `<p>${card.dataset.category || "Kean students exploring a direction"}. ${card.dataset.semester || "Course sequencing varies by specialization and advising plan."}</p>`;
+        modalDoing.innerHTML = `<p>${card.dataset.description || "Explore the questions and work at the center of this program."}</p>`;
+        modalMatters.innerHTML = `<p>${card.dataset.opportunities || card.dataset.related || "Build useful knowledge and experience for what comes next."}</p>`;
         modal.classList.add("is-open");
         modal.setAttribute("aria-hidden", "false");
         document.body.style.overflow = "hidden";

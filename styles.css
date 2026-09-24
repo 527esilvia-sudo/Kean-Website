@@ -36,21 +36,21 @@ img, svg, video { max-width: 100%; display: block; }
 .site-wordmark { display: inline-flex; flex-direction: column; color: #fff; font: 600 1.35rem/1 "Oswald", sans-serif; letter-spacing: .05em; }
 .site-wordmark small { margin-top: .25rem; color: #b9d59f; font: 600 .5rem/1 "Oswald", sans-serif; letter-spacing: .2em; }
 
-body:not(.about-page) {
+body.home-page {
     color: #1d1d1d;
     background: #f5f5f2;
 }
-body:not(.about-page) .navbar {
+body.home-page .navbar {
     background-color: var(--kean-blue);
     padding: 10px 5%;
     min-height: 75px;
 }
-body:not(.about-page) .navbar-brand { margin-left: 30px; }
-body:not(.about-page) .navbar-nav { gap: 8px; }
-body:not(.about-page) .nav-link { font-size: 14px; font-weight: 600; padding: 10px 17px !important; }
-body:not(.about-page) .apply-link { border: 2px solid #fff; padding: 8px 18px !important; margin-left: 8px; }
+body.home-page .navbar-brand { margin-left: 30px; }
+body.home-page .navbar-nav { gap: 8px; }
+body.home-page .nav-link { font-size: 14px; font-weight: 600; padding: 10px 17px !important; }
+body.home-page .apply-link { border: 2px solid #fff; padding: 8px 18px !important; margin-left: 8px; }
 
-body:not(.about-page) .hero {
+body.home-page .hero {
     position: relative;
     width: 100%;
     min-height: clamp(570px, calc(100svh - 75px), 700px);
@@ -61,7 +61,7 @@ body:not(.about-page) .hero {
     justify-content: center;
     background: #f4f1ea;
 }
-body:not(.about-page) .hero::before {
+body.home-page .hero::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -70,7 +70,7 @@ body:not(.about-page) .hero::before {
     background-position: center;
     z-index: 0;
 }
-body:not(.about-page) .hero-content {
+body.home-page .hero-content {
     position: relative;
     z-index: 2;
     width: 100%;
@@ -82,7 +82,7 @@ body:not(.about-page) .hero-content {
     justify-content: center;
     text-align: center;
 }
-body:not(.about-page) .hero-title {
+body.home-page .hero-title {
     position: relative;
     top: auto;
     left: auto;
@@ -92,8 +92,8 @@ body:not(.about-page) .hero-title {
     justify-content: space-between;
     width: min(96vw, 1180px);
     margin: 0;
-    gap: clamp(3px, .65vw, 12px);
-    font-family: "Arial Black", Impact, sans-serif;
+    gap: clamp(8px, 1.4vw, 24px);
+    font-family: "Barlow Condensed", sans-serif;
     font-size: clamp(175px, 22vw, 300px);
     font-weight: 900;
     line-height: .8;
@@ -101,7 +101,7 @@ body:not(.about-page) .hero-title {
     white-space: nowrap;
     z-index: 3;
 }
-body:not(.about-page) .hero-letter {
+body.home-page .hero-letter {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -112,43 +112,23 @@ body:not(.about-page) .hero-letter {
     cursor: pointer;
     transition: transform .3s ease;
     color: transparent;
-    font-family: "Arial Black", Impact, sans-serif;
+    font-family: "Barlow Condensed", sans-serif;
     font-size: inherit;
-    font-weight: 900;
-    line-height: .8;
+    font-weight: 800;
+    line-height: 1;
     isolation: isolate;
 }
-body:not(.about-page) .hero-letter:hover { transform: translateY(-6px); }
-body:not(.about-page) .letter-photo {
-    position: absolute;
-    inset: 0;
+body.home-page .hero-letter:hover { transform: translateY(-6px); }
+body.home-page .letter-svg {
+    display: block;
     width: 100%;
     height: 100%;
-    color: transparent;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    overflow: visible;
     pointer-events: none;
     z-index: 2;
 }
-body:not(.about-page) .photo-1 { clip-path: inset(0 50% 50% 0); }
-body:not(.about-page) .photo-2 { clip-path: inset(0 0 50% 50%); }
-body:not(.about-page) .photo-3 { clip-path: inset(50% 50% 0 0); }
-body:not(.about-page) .photo-4 { clip-path: inset(50% 0 0 50%); }
-body:not(.about-page) .hero-letter::before {
-    content: attr(data-letter);
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    color: rgba(23,45,36,.22);
-    -webkit-text-fill-color: rgba(23,45,36,.22);
-    z-index: 1;
-}
-body:not(.about-page) .hero-letter::after {
+body.home-page .letter-svg text { font-family: "Barlow Condensed", sans-serif; font-size: 128px; font-weight: 800; }
+body.home-page .hero-letter::after {
     content: attr(data-label);
     position: absolute;
     top: 50%;
@@ -156,7 +136,6 @@ body:not(.about-page) .hero-letter::after {
     transform: translate(-50%, -40%);
     z-index: 10;
     color: #fff;
-    -webkit-text-fill-color: #fff;
     font: 700 clamp(12px,1.4vw,20px)/1.1 "Outfit", sans-serif;
     letter-spacing: 2px;
     text-align: center;
@@ -167,22 +146,22 @@ body:not(.about-page) .hero-letter::after {
     text-shadow: 0 2px 10px rgba(0,0,0,.65);
     transition: opacity .25s ease;
 }
-body:not(.about-page) .hero-letter:hover::after { opacity: 1; }
-body:not(.about-page) .hero-tagline,
-body:not(.about-page) .hero-subtitle,
-body:not(.about-page) .hero-button {
+body.home-page .hero-letter:hover::after { opacity: 1; }
+body.home-page .hero-tagline,
+body.home-page .hero-subtitle,
+body.home-page .hero-button {
     position: relative;
     top: auto;
     left: auto;
     z-index: 4;
     margin: 0 auto;
 }
-body:not(.about-page) .hero-tagline {
+body.home-page .hero-tagline {
     margin-top: 1.25rem;
     color: #172d24;
     font: 500 clamp(2rem, 3vw, 3.2rem)/1 "Roboto Slab", serif;
 }
-body:not(.about-page) .hero-subtitle {
+body.home-page .hero-subtitle {
     margin-top: 1rem;
     max-width: 760px;
     color: #4b514d;
@@ -193,7 +172,7 @@ body:not(.about-page) .hero-subtitle {
     text-align: center;
     text-transform: uppercase;
 }
-body:not(.about-page) .hero-button {
+body.home-page .hero-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -211,15 +190,15 @@ body:not(.about-page) .hero-button {
     text-transform: uppercase;
     transition: .25s ease;
 }
-body:not(.about-page) .hero-button:hover {
+body.home-page .hero-button:hover {
     background: #172d24;
     color: #f4f1ea;
     padding-left: 1.8rem;
     padding-right: 1.8rem;
 }
-body:not(.about-page) .hero-button span { font-size: 20px; transition: .25s ease; }
-body:not(.about-page) .hero-button:hover span { transform: translateX(6px); }
-body:not(.about-page) .hero::after {
+body.home-page .hero-button span { font-size: 20px; transition: .25s ease; }
+body.home-page .hero-button:hover span { transform: translateX(6px); }
+body.home-page .hero::after {
     content: "KEAN UNIVERSITY";
     position: absolute;
     right: 25px;
@@ -232,15 +211,15 @@ body:not(.about-page) .hero::after {
     writing-mode: vertical-rl;
     z-index: 5;
 }
-body:not(.about-page) main > section:not(.hero) { padding-top: 90px; padding-bottom: 90px; }
-body:not(.about-page) .intro-section {
+body.home-page main > section:not(.hero) { padding-top: 90px; padding-bottom: 90px; }
+body.home-page .intro-section {
     min-height: 55vh;
     display: flex;
     align-items: center;
     background: #f5f5f2;
     padding: clamp(4rem, 8vw, 7rem) 5vw !important;
 }
-body:not(.about-page) .section-label {
+body.home-page .section-label {
     margin-bottom: 18px;
     color: #004b87;
     font-size: 11px;
@@ -248,16 +227,16 @@ body:not(.about-page) .section-label {
     letter-spacing: 3px;
     text-transform: uppercase;
 }
-body:not(.about-page) h2 {
+body.home-page h2 {
     margin-bottom: 25px;
     color: #1d1d1d;
     font-size: clamp(38px,5vw,62px);
     line-height: 1.05;
 }
-body:not(.about-page) .intro-section h2 { max-width: 850px; font-size: clamp(45px,6vw,70px); }
-body:not(.about-page) .intro-support { max-width: 50rem; color: var(--muted); }
-body:not(.about-page) .intro-rule { display: block; width: min(100%, 600px); margin: 2rem 0 1.25rem; border-top: 1px solid rgba(23,45,36,.2); }
-body:not(.about-page) .intro-mark { color: rgba(0,75,135,.22); font: 700 clamp(2.8rem, 7vw, 7rem) "Roboto Slab", serif; letter-spacing: -.08em; }
+body.home-page .intro-section h2 { max-width: 850px; font-size: clamp(45px,6vw,70px); }
+body.home-page .intro-support { max-width: 50rem; color: var(--muted); }
+body.home-page .intro-rule { display: block; width: min(100%, 600px); margin: 2rem 0 1.25rem; border-top: 1px solid rgba(23,45,36,.2); }
+body.home-page .intro-mark { color: rgba(0,75,135,.22); font: 700 clamp(2.8rem, 7vw, 7rem) "Roboto Slab", serif; letter-spacing: -.08em; }
 
 .travel-section {
     display: grid;
@@ -324,47 +303,34 @@ body:not(.about-page) .intro-mark { color: rgba(0,75,135,.22); font: 700 clamp(2
 .site-footer a:hover { color: #b9d59f; }
 .site-footer small { text-align: right; }
 
-body:not(.about-page) .hero-letter[data-letter="K"] .photo-1 { background-image: url("sportimgs/football.jpg"); background-position: 25% 35%; }
-body:not(.about-page) .hero-letter[data-letter="K"] .photo-2 { background-image: url("sportimgs/lacrosse.webp"); background-position: center; }
-body:not(.about-page) .hero-letter[data-letter="K"] .photo-3 { background-image: url("sportimgs/soccer.jpg"); background-position: center 42%; }
-body:not(.about-page) .hero-letter[data-letter="K"] .photo-4 { background-image: url("sportimgs/swimming.jpeg"); background-position: center 28%; }
-body:not(.about-page) .hero-letter[data-letter="E"] .photo-1 { background-image: url("scienceimgs/env.jpg"); background-position: center; }
-body:not(.about-page) .hero-letter[data-letter="E"] .photo-2 { background-image: url("scienceimgs/lab-girl.jpg"); background-position: center 38%; }
-body:not(.about-page) .hero-letter[data-letter="E"] .photo-3 { background-image: url("scienceimgs/group.jpg"); background-position: center 20%; }
-body:not(.about-page) .hero-letter[data-letter="E"] .photo-4 { background-image: url("scienceimgs/lab-girl-2.jpg"); background-position: center 48%; }
-body:not(.about-page) .hero-letter[data-letter="A"] .photo-1 { background-image: url("artimgs/girl-art.jpg"); background-position: center 25%; }
-body:not(.about-page) .hero-letter[data-letter="A"] .photo-2 { background-image: url("artimgs/statue.jpg"); background-position: center 28%; }
-body:not(.about-page) .hero-letter[data-letter="A"] .photo-3 { background-image: url("artimgs/paint.jpg"); background-position: center 52%; }
-body:not(.about-page) .hero-letter[data-letter="A"] .photo-4 { background-image: url("artimgs/theater.jpg"); background-position: center; }
-body:not(.about-page) .hero-letter[data-letter="N"] .photo-1 { background-image: url("students.png"); background-position: center 30%; }
-body:not(.about-page) .hero-letter[data-letter="N"] .photo-2 { background-image: url("campus.jpeg"); background-position: center; }
-body:not(.about-page) .hero-letter[data-letter="N"] .photo-3 { background-image: url("students.png"); background-position: 57% center; }
-body:not(.about-page) .hero-letter[data-letter="N"] .photo-4 { background-image: url("campus.jpeg"); background-position: center 15%; }
+body.home-page .hero-letter[data-letter="K"] .photo-1 { background-image: url("sportimgs/football.jpg"); background-position: 25% 35%; }
+body.home-page .hero-letter[data-letter="E"] .photo-1 { background-image: url("scienceimgs/env.jpg"); background-position: center; }
+body.home-page .hero-letter[data-letter="A"] .photo-1 { background-image: url("artimgs/girl-art.jpg"); background-position: center 25%; }
+body.home-page .hero-letter[data-letter="N"] .photo-1 { background-image: url("students.png"); background-position: center 30%; }
 
 @media (max-width: 900px) {
-    body:not(.about-page) .hero { height: 400px; }
-    body:not(.about-page) .hero-title { letter-spacing: 4px; }
-    body:not(.about-page) .hero-subtitle { letter-spacing: .12em; }
+    body.home-page .hero { min-height: 0; }
+    body.home-page .hero-title { letter-spacing: 4px; }
+    body.home-page .hero-subtitle { letter-spacing: .12em; }
     .travel-section { grid-template-columns: 1fr; }
     .travel-cards { max-width: 850px; }
 }
 @media (max-width: 768px) {
-    body:not(.about-page) .navbar { padding: 10px 6%; }
-    body:not(.about-page) .navbar-brand { margin-left: 10px; }
-    body:not(.about-page) .navbar-nav { gap: 0; align-items: flex-start; }
-    body:not(.about-page) .nav-link { padding: 8px 0 !important; }
-    body:not(.about-page) .apply-link { margin-left: 0; margin-top: 5px; display: inline-block; }
-    body:not(.about-page) .intro-section { min-height: auto; padding: 80px 0 !important; }
-    body:not(.about-page) .intro-section h2 { font-size: 46px; }
+    body.home-page .navbar { padding: 10px 6%; }
+    body.home-page .navbar-brand { margin-left: 10px; }
+    body.home-page .navbar-nav { gap: 0; align-items: flex-start; }
+    body.home-page .nav-link { padding: 8px 0 !important; }
+    body.home-page .apply-link { margin-left: 0; margin-top: 5px; display: inline-block; }
+    body.home-page .intro-section { min-height: auto; padding: 80px 0 !important; }
+    body.home-page .intro-section h2 { font-size: 46px; }
 }
 @media (max-width: 600px) {
-    body:not(.about-page) .hero { height: auto; min-height: 480px; }
-    body:not(.about-page) .hero-title { width: min(96vw, 900px); letter-spacing: 0; font-size: clamp(4rem, 23vw, 8rem); }
-    body:not(.about-page) .hero-letter::before { color: rgba(23,45,36,.33); }
-    body:not(.about-page) .hero-letter::after { font-size: 10px; letter-spacing: 1px; }
-    body:not(.about-page) .hero-subtitle { max-width: calc(100% - 2rem); font-size: 10px; line-height: 1.4; letter-spacing: 1.5px; }
-    body:not(.about-page) .hero-button { margin-bottom: 1rem; }
-    body:not(.about-page) .hero::after { display: none; }
+    body.home-page .hero { min-height: 480px; }
+    body.home-page .hero-title { width: min(96vw, 900px); letter-spacing: 0; font-size: clamp(4rem, 23vw, 8rem); }
+    body.home-page .hero-letter::after { font-size: 10px; letter-spacing: 1px; }
+    body.home-page .hero-subtitle { max-width: calc(100% - 2rem); font-size: 10px; line-height: 1.4; letter-spacing: 1.5px; }
+    body.home-page .hero-button { margin-bottom: 1rem; }
+    body.home-page .hero::after { display: none; }
     .travel-section { padding-inline: 7vw; }
     .travel-cards { grid-template-columns: 1fr; }
     .travel-cards img { height: 190px; }

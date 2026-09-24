@@ -91,14 +91,14 @@
 .program-modal { position: fixed; inset: 0; display: grid; place-items: center; padding: 1.5rem; background: rgba(17,24,32,.58); opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility .2s ease; z-index: 9999; }
 .program-modal.is-open { opacity: 1; visibility: visible; }
 .program-modal-backdrop { position: absolute; inset: 0; }
-.program-modal-dialog { position: relative; z-index: 1; width: min(760px, 100%); max-height: 85vh; overflow-y: auto; background: #fff; padding: 2rem; box-shadow: 0 30px 80px rgba(0,0,0,.28); }
+.program-modal-dialog { position: relative; z-index: 1; width: min(760px, 100%); max-height: 85vh; overflow-y: auto; border: 1px solid rgba(0,75,135,.2); border-radius: 4px; background: #fff; padding: clamp(1.5rem, 4vw, 2.5rem); box-shadow: 0 30px 80px rgba(0,0,0,.28); }
 .program-modal-close { position: absolute; top: 1rem; right: 1rem; width: 2.5rem; height: 2.5rem; border: 1px solid var(--program-line); background: transparent; font-size: 1.5rem; cursor: pointer; }
 .program-modal-header { display: grid; gap: .5rem; padding-right: 2.5rem; margin-bottom: 1.5rem; }
 .program-modal-header .programs-kicker { color: var(--program-blue); margin-bottom: 0; }
 .program-modal-header h3 { color: var(--program-navy); font-size: clamp(2.3rem, 4vw, 4rem); }
-.program-modal-body { display: grid; gap: 1.5rem; }
+.program-modal-body { display: grid; gap: 1.25rem; }
 .program-modal-summary { color: var(--program-ink); font-size: 1.05rem; }
-.program-modal-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 1.5rem; }
+.program-modal-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
 .program-modal-grid article { padding: 1rem; background: #f7f9fb; border-top: 3px solid var(--program-blue); }
 .program-modal-grid h4 { margin: 0 0 .5rem; color: var(--program-navy); font: 600 1rem "Oswald", sans-serif; letter-spacing: .06em; text-transform: uppercase; }
 .program-modal-grid p, .program-modal-grid li { margin: 0; color: #485460; font-size: .96rem; line-height: 1.5; }
