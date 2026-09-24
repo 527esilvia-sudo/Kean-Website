@@ -110,6 +110,11 @@
 .student-life-page .student-life-timeline-number { color: var(--student-blue); font-family: "Oswald", sans-serif; font-size: 2.5rem; line-height: .9; }
 .student-life-page .student-life-timeline h3 { margin-bottom: .45rem; color: var(--student-blue-dark); font-size: 1.7rem; line-height: 1; }
 .student-life-page .student-life-timeline p { margin: 0; color: var(--student-muted); }
+.student-life-page .student-life-timeline article:has(figure) { background: #e6eef3; }
+.student-life-page .student-life-timeline article:has(figure) figure { box-shadow: 8px 8px 0 rgba(0, 85, 140, .14); }
+.student-life-page .student-life-timeline article:nth-child(1) figure img { object-position: 58% center; }
+.student-life-page .student-life-timeline article:nth-child(3) figure img { object-position: 35% center; }
+.student-life-page .student-life-timeline article:nth-child(5) figure img { object-position: 60% center; }
 .student-life-page .student-life-connect { display: grid; grid-template-columns: minmax(220px, .7fr) minmax(0, 1.3fr); gap: var(--student-gap); max-width: 1500px; margin: 0 auto; padding: clamp(4.5rem, 8vw, 7rem) var(--student-pad); }
 .student-life-page .student-life-connect-content > p { max-width: 48ch; font-size: 1.15rem; }
 .student-life-page .student-life-connect-content ul { margin: 1.5rem 0; padding: 0; list-style: none; border-top: 1px solid var(--student-line); }
@@ -225,6 +230,9 @@
     .student-life-page .student-life-residence-showcase { gap: 2rem; }
     .student-life-page .student-life-residence-feature { grid-template-columns: minmax(240px, .9fr) minmax(0, 1.1fr); }
     .student-life-page .student-life-first-semester { padding-block: clamp(4rem, 6vw, 5.5rem); }
+    .student-life-page .student-life-learn { align-items: start; }
+    .student-life-page .student-life-foundation { padding: 2rem; }
+    .student-life-page .student-life-checklist { margin-top: 1rem; }
     .student-life-page .student-life-connect-content > p { max-width: 58ch; }
 }
 

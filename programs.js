@@ -6,8 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let category = "all";
 
     const renderPrograms = () => {
-        const query = search.value.trim().toLowerCase();
+        const query = search ? search.value.trim().toLowerCase() : "";
         let visible = 0;
+
         cards.forEach((card) => {
             const matchesCategory = category === "all" || card.dataset.category === category;
             const matchesSearch = !query || card.dataset.search.includes(query);
@@ -15,38 +16,104 @@ document.addEventListener("DOMContentLoaded", () => {
             card.hidden = !shouldShow;
             if (shouldShow) visible += 1;
         });
-        empty.hidden = visible !== 0;
+
+        if (empty) empty.hidden = visible !== 0;
     };
 
-    if (search) {
-        filters.forEach((filter) => {
-            filter.addEventListener("click", () => {
-                category = filter.dataset.category;
-                filters.forEach((item) => item.classList.toggle("is-active", item === filter));
-                renderPrograms();
-            });
+    filters.forEach((filter) => {
+        filter.addEventListener("click", () => {
+            category = filter.dataset.category;
+            filters.forEach((item) => item.classList.toggle("is-active", item === filter));
+            renderPrograms();
         });
+    });
+
+    if (search) {
         search.addEventListener("input", renderPrograms);
+    }
+
+    const modal = document.getElementById("program-modal");
+    const modalTitle = document.getElementById("program-modal-title");
+    const modalSummary = document.getElementById("program-modal-summary");
+    const modalCourses = document.getElementById("program-modal-courses");
+    const modalSemester = document.getElementById("program-modal-semester");
+    const modalRelated = document.getElementById("program-modal-related");
+    const modalOpportunities = document.getElementById("program-modal-opportunities");
+    const modalOrgs = document.getElementById("program-modal-orgs");
+
+    const openModal = (card) => {
+        if (!modal) return;
+        modalTitle.textContent = card.dataset.title || card.querySelector("h3").textContent;
+        modalSummary.textContent = card.dataset.description || "";
+        modalCourses.innerHTML = (card.dataset.courses ? `<ul>${card.dataset.courses.split("|").map((course) => `<li>${course.trim()}</li>`).join("")}</ul>` : "<p>Course details can be added as the program is finalized.</p>");
+        modalSemester.innerHTML = card.dataset.semester ? `<p>${card.dataset.semester}</p>` : "<p>Typical sequencing varies by specialization and advising plan.</p>";
+        modalRelated.innerHTML = card.dataset.related ? `<ul>${card.dataset.related.split("|").map((item) => `<li>${item.trim()}</li>`).join("")}</ul>` : "<p>Related fields can be added as academic requirements are confirmed.</p>";
+        modalOpportunities.innerHTML = card.dataset.opportunities ? `<p>${card.dataset.opportunities}</p>` : "<p>Experiential learning and field opportunities can be added as program planning expands.</p>";
+        modalOrgs.innerHTML = card.dataset.orgs ? `<ul>${card.dataset.orgs.split("|").map((item) => `<li>${item.trim()}</li>`).join("")}</ul>` : "<p>Student groups can be added as campus activities are confirmed.</p>";
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    };
+
+    const closeModal = () => {
+        if (!modal) return;
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    };
+
+    cards.forEach((card) => {
+        card.addEventListener("click", () => openModal(card));
+        card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                openModal(card);
+            }
+        });
+        card.setAttribute("tabindex", "0");
+    });
+
+    if (modal) {
+        modal.querySelector(".program-modal-close").addEventListener("click", closeModal);
+        modal.querySelector(".program-modal-backdrop").addEventListener("click", closeModal);
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape") closeModal();
+        });
     }
 
     const livingData = {
         commuter: { housing: "$1,900", transport: "$1,800", total: "$13,100" },
         resident: { housing: "$14,600", transport: "$700", total: "$25,200" }
     };
+
     const updateLiving = (living) => {
         const values = livingData[living];
-        document.getElementById("living-housing").textContent = values.housing;
-        document.getElementById("living-transport").textContent = values.transport;
-        document.getElementById("living-total").textContent = values.total;
-        document.querySelectorAll(".living-option").forEach((button) => button.classList.toggle("is-active", button.dataset.living === living));
-        document.getElementById("housing").value = living;
+        const housingEl = document.getElementById("living-housing");
+        const transportEl = document.getElementById("living-transport");
+        const totalEl = document.getElementById("living-total");
+
+        if (housingEl) housingEl.textContent = values.housing;
+        if (transportEl) transportEl.textContent = values.transport;
+        if (totalEl) totalEl.textContent = values.total;
+
+        document.querySelectorAll(".living-option").forEach((button) => {
+            button.classList.toggle("is-active", button.dataset.living === living);
+        });
+
+        const housingSelect = document.getElementById("housing");
+        if (housingSelect) housingSelect.value = living;
     };
-    document.querySelectorAll(".living-option").forEach((button) => button.addEventListener("click", () => updateLiving(button.dataset.living)));
+
+    document.querySelectorAll(".living-option").forEach((button) => {
+        button.addEventListener("click", () => updateLiving(button.dataset.living));
+    });
 
     const residency = document.getElementById("residency");
     const housing = document.getElementById("housing");
     const output = document.getElementById("estimate-output");
+
     const updateEstimate = () => {
+        if (!residency || !housing || !output) return;
         const tuition = residency.value === "out" ? 16000 : 8200;
         const living = housing.value === "resident" ? 14600 : 1900;
         const transport = housing.value === "resident" ? 700 : 1800;
@@ -54,6 +121,10 @@ document.addEventListener("DOMContentLoaded", () => {
         output.textContent = `Estimated annual cost: $${total.toLocaleString()}`;
         updateLiving(housing.value);
     };
-    residency.addEventListener("change", updateEstimate);
-    housing.addEventListener("change", updateEstimate);
+
+    if (residency && housing) {
+        residency.addEventListener("change", updateEstimate);
+        housing.addEventListener("change", updateEstimate);
+        updateEstimate();
+    }
 });
