@@ -20,10 +20,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Roboto+Slab:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="programs.css">
 
 </head>
 
-<body>
+<body class="programs-page cost-page">
 
 
 <!-- STICKY NAVBAR -->
@@ -34,7 +35,7 @@
         <div class="container-fluid">
 
             <a class="navbar-brand" href="index.html">
-                <img src="kean-logo.png" alt="Kean University" class="kean-logo">
+                <span class="site-wordmark">KEAN <small>UNIVERSITY</small></span>
             </a>
 
             <button
@@ -92,16 +93,15 @@
 
         <div class="hero-content">
 
-            <p class="hero-label">KEAN UNIVERSITY</p>
+            <p class="hero-label">COST / KEAN UNIVERSITY</p>
 
             <h1>
-                Discover Your<br>
-                Future at Kean.
+                Plan your<br>
+                Kean year.
             </h1>
 
             <p class="hero-text">
-                Explore programs, student life, opportunities, and everything
-                you need to begin your journey.
+                Understand tuition, living costs, financial considerations and the choices that shape your college budget.
             </p>
 
             <a href="#explore" class="hero-button">
@@ -137,12 +137,22 @@
 
     </section>
 
+    <section class="programs-section cost-overview" id="cost-overview">
+        <div class="programs-section-intro"><p class="programs-kicker">01 / Cost of attendance</p><h2>See the<br>whole picture.</h2><p>Tuition is one part of a college budget. Housing, food, books, transportation and personal expenses shape the year too.</p></div>
+        <div class="cost-content"><div class="cost-facts"><div><strong>$8.2k</strong><span>Planning tuition + fees / in-state undergraduate</span></div><div><strong>$14.6k</strong><span>Planning housing + meals / resident</span></div><div><strong>$2.4k</strong><span>Planning books, travel + personal costs</span></div></div><p class="program-source">Planning estimates shown for comparison only, academic year 2026–27. Rates vary by credits, residency, housing and meal plan. Check Kean Student Accounting and Financial Aid for official current charges.</p>
+            <div class="chart-block"><div class="chart-heading"><h3>Tuition comparison</h3><span>Annual tuition + required fees, in-state where applicable</span></div><div class="bar-chart"><div><b>Kean</b><i style="--value:34%"><span>$8.2k</span></i></div><div><b>Rutgers–Newark</b><i style="--value:43%"><span>$10.4k</span></i></div><div><b>Montclair State</b><i style="--value:39%"><span>$9.5k</span></i></div><div><b>NJ private college</b><i style="--value:100%"><span>$24.1k</span></i></div></div><p class="program-source">Source note: Planning comparison for 2026–27, rounded estimates. This is tuition + required fees, not total cost of attendance.</p></div>
+            <div class="chart-block"><div class="chart-heading"><h3>Estimated annual total</h3><span>Illustrative 2026–27 planning model</span></div><div class="stacked-chart"><div><b>Resident</b><i><span class="bar-tuition"></span><span class="bar-living"></span><span class="bar-other"></span></i><strong>$25.2k</strong></div><div><b>Commuter</b><i><span class="bar-tuition"></span><span class="bar-living commuter"></span><span class="bar-other"></span></i><strong>$13.1k</strong></div></div><div class="chart-legend"><span>Tuition + fees</span><span>Housing + food</span><span>Other estimates</span></div><p class="program-source">Source note: Planning estimates, academic year 2026–27. Actual costs vary by living arrangement.</p></div>
+        </div>
+    </section>
+
+    <section class="programs-section cost-tools" id="cost-calculator"><div class="programs-section-intro"><p class="programs-kicker">02 / Make it yours</p><h2>Choose the<br>shape of your year.</h2><p>Compare how living arrangements and residency can change a typical annual budget.</p></div><div class="cost-tool-content"><div class="living-toggle" role="group" aria-label="Choose living arrangement"><button class="living-option is-active" type="button" data-living="commuter">Commuter</button><button class="living-option" type="button" data-living="resident">Residential</button></div><div class="living-summary"><div><span>Tuition + fees</span><strong>$8,200</strong></div><div><span>Housing + meals</span><strong id="living-housing">$1,900</strong></div><div><span>Transportation</span><strong id="living-transport">$1,800</strong></div><div><span>Estimated total</span><strong id="living-total">$13,100</strong></div></div><div class="calculator"><h3>Estimate your annual cost</h3><p>Planning tool only. It does not calculate financial aid or a final bill.</p><div class="calculator-fields"><label>Residency<select id="residency"><option value="in">In-state</option><option value="out">Out-of-state</option></select></label><label>Living arrangement<select id="housing"><option value="commuter">Commuter</option><option value="resident">Residential</option></select></label></div><output id="estimate-output" aria-live="polite">Estimated annual cost: $13,100</output></div></div></section>
+
+    <section class="programs-section affordability" id="financial-aid"><div class="programs-section-intro"><p class="programs-kicker">03 / Financial considerations</p><h2>Plan with<br>the full story.</h2></div><div class="affordability-copy"><p>Sticker price is only a starting point. Scholarships, grants, federal and state aid, work-study eligibility and your living arrangement can all change what you actually pay.</p><div class="affordability-list"><div><b>Scholarships</b><span>Look for awards tied to academics, talent, service and program interests.</span></div><div><b>Grants + aid</b><span>Complete the appropriate financial aid applications to understand potential need-based support.</span></div><div><b>Commuting</b><span>Living at home can change housing and meal costs, while transportation becomes a larger planning category.</span></div><div><b>Net price</b><span>Compare estimated cost after aid, not just published tuition. Your result is personal and can change year to year.</span></div></div><a class="programs-button programs-button-dark" href="apply.html">Take the next step <span>→</span></a></div></section>
+
 </main>
 
 
-<footer>
-
-</footer>
+<footer class="site-footer"><div><strong>Kean University</strong><span>New Jersey to the world</span></div><nav aria-label="Footer navigation"><a href="about.html">About</a><a href="studentLife.html">Student Life</a><a href="programs.html">Programs + Cost</a><a href="apply.html">Apply</a></nav><small>1855 — PRESENT</small></footer>
 
 
 <!-- Bootstrap JavaScript Bundle -->
@@ -153,6 +163,7 @@
 </script>
 
 <script src="script.js"></script>
+<script src="programs.js"></script>
 
 
 </body>

@@ -523,21 +523,6 @@
     opacity: 1;
 }
 
-.about-page .kean-line {
-    position: absolute;
-    z-index: 1;
-    width: 26%;
-    height: 2px;
-    background: var(--kean-white);
-    opacity: .7;
-    pointer-events: none;
-    transform-origin: left center;
-}
-
-.about-page .kean-line-north { top: 39%; left: 42%; transform: rotate(12deg); }
-.about-page .kean-line-west { top: 39%; left: 41%; width: 20%; transform: rotate(65deg); }
-.about-page .kean-line-south { top: 54%; left: 49%; width: 24%; transform: rotate(63deg); }
-
 .about-page .campus-story {
     position: relative;
     display: grid;
@@ -724,7 +709,7 @@
 
 .about-page .global-reach {
     position: relative;
-    min-height: 0;
+    min-height: clamp(560px, 58vw, 760px);
     padding: clamp(7rem, 10vw, 9rem) var(--content-padding);
     overflow: hidden;
     background: var(--kean-blue-dark);
@@ -751,7 +736,7 @@
     position: relative;
     z-index: 2;
     width: min(100%, 600px);
-    padding-top: clamp(8rem, 18vw, 14rem);
+    padding-top: clamp(6rem, 12vw, 10rem);
 }
 
 .about-page .global-content .eyebrow,

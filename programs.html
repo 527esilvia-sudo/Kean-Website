@@ -1,160 +1,38 @@
 <!doctype html>
-
 <html lang="en" data-bs-theme="light">
-
 <head>
-
-
-<title>Kean University</title>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Bootstrap CSS v5.3.8 -->
-<link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-    crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Roboto+Slab:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-
+    <title>Programs | Kean University</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="programs.css">
 </head>
-
-<body>
-
-
-<!-- STICKY NAVBAR -->
-<header>
-
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-
-        <div class="container-fluid">
-
-            <a class="navbar-brand" href="index.html">
-                <img src="kean-logo.png" alt="Kean University" class="kean-logo">
-            </a>
-
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainNav"
-                aria-controls="mainNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-
-                <span class="navbar-toggler-icon"></span>
-
-            </button>
-
-            <div class="collapse navbar-collapse" id="mainNav">
-
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="studentLife.html">Student Life</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="programs.html">Programs</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="admissions.html">Cost</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link apply-link" href="apply.html">Apply</a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-    </nav>
-
-</header>
-
-
+<body class="programs-page">
+<header><nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation"><div class="container-fluid"><a class="navbar-brand programs-wordmark" href="index.html">KEAN <span>UNIVERSITY</span></a><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#programsNav" aria-controls="programsNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="programsNav"><ul class="navbar-nav ms-auto"><li class="nav-item"><a class="nav-link" href="about.html">About</a></li><li class="nav-item"><a class="nav-link" href="studentLife.html">Student Life</a></li><li class="nav-item"><a class="nav-link is-current" href="programs.html" aria-current="page">Programs</a></li><li class="nav-item"><a class="nav-link" href="admissions.html">Cost</a></li><li class="nav-item"><a class="nav-link apply-link" href="apply.html">Apply</a></li></ul></div></div></nav></header>
 <main>
-
-    <!-- HERO -->
-    <section class="hero">
-
-        <div class="hero-content">
-
-            <p class="hero-label">KEAN UNIVERSITY</p>
-
-            <h1>
-                Discover Your<br>
-                Future at Kean.
-            </h1>
-
-            <p class="hero-text">
-                Explore programs, student life, opportunities, and everything
-                you need to begin your journey.
-            </p>
-
-            <a href="#explore" class="hero-button">
-                Explore Kean
-                <span>→</span>
-            </a>
-
-        </div>
-
-        <div class="hero-image"></div>
-
-        <div class="hero-scroll">
-            <span>SCROLL TO EXPLORE</span>
-            <div class="scroll-line"></div>
-        </div>
-
-    </section>
-
-
-    <!-- INTRO -->
-    <section id="explore" class="intro-section">
-
-        <div class="container">
-
-            <p class="section-label">WELCOME TO KEAN</p>
-
-            <h2>
-                More than a university.<br>
-                A place to become.
-            </h2>
-
-        </div>
-
-    </section>
-
+<section class="programs-hero"><div><p class="programs-kicker">Programs / Kean University</p><h1>Find the work<br>you want to do.</h1><p>Explore academic areas, compare the kinds of questions they ask and find a direction that feels like yours.</p><a class="programs-button" href="#explorer">Explore programs <span>↓</span></a></div><div class="programs-hero-mark" aria-hidden="true">KEAN</div></section>
+<section class="programs-section programs-explorer" id="explorer"><div class="programs-section-intro"><p class="programs-kicker">01 / Explore</p><h2>Start with<br>curiosity.</h2><p>Search the academic areas below. Program names and degree types reflect Kean offerings; confirm current requirements and availability on official Kean program pages.</p></div><div class="program-browser"><div class="program-controls"><label class="program-search">Search programs<input id="program-search" type="search" placeholder="Try biology or design" aria-label="Search programs"></label><div class="program-filters" role="group" aria-label="Filter programs by category"><button class="program-filter is-active" type="button" data-category="all">All</button><button class="program-filter" type="button" data-category="Business">Business</button><button class="program-filter" type="button" data-category="Education">Education</button><button class="program-filter" type="button" data-category="Health Sciences">Health</button><button class="program-filter" type="button" data-category="Science & Technology">Science + Tech</button><button class="program-filter" type="button" data-category="Arts & Design">Arts + Design</button><button class="program-filter" type="button" data-category="Humanities & Social Sciences">Humanities + Social</button></div></div><div class="program-grid" id="program-grid">
+<article class="program-card" data-category="Business" data-search="accounting business bachelor"><span>Business</span><h3>Accounting</h3><p>Build a foundation in financial reporting, analysis and business decision-making.</p><b>B.S. / Undergraduate</b></article>
+<article class="program-card" data-category="Business" data-search="finance business bachelor"><span>Business</span><h3>Finance</h3><p>Study markets, investments and the financial choices shaping organizations.</p><b>B.S. / Undergraduate</b></article>
+<article class="program-card" data-category="Education" data-search="elementary education teaching"><span>Education</span><h3>Elementary Education</h3><p>Prepare to support young learners through subject knowledge and classroom practice.</p><b>B.A. / Undergraduate</b></article>
+<article class="program-card" data-category="Education" data-search="special education teaching"><span>Education</span><h3>Special Education</h3><p>Explore inclusive teaching, learner development and educational support.</p><b>B.A. / Undergraduate</b></article>
+<article class="program-card" data-category="Health Sciences" data-search="nursing health healthcare"><span>Health Sciences</span><h3>Nursing</h3><p>Develop the knowledge and clinical habits used in professional nursing care.</p><b>B.S.N. / Undergraduate</b></article>
+<article class="program-card" data-category="Health Sciences" data-search="public health community"><span>Health Sciences</span><h3>Public Health</h3><p>Study the systems, behaviors and communities that shape population health.</p><b>B.S. / Undergraduate</b></article>
+<article class="program-card" data-category="Science & Technology" data-search="computer science coding computing"><span>Science + Technology</span><h3>Computer Science</h3><p>Learn computational thinking, programming and the systems behind digital tools.</p><b>B.S. / Undergraduate</b></article>
+<article class="program-card" data-category="Science & Technology" data-search="biology laboratory natural"><span>Science + Technology</span><h3>Biology</h3><p>Investigate living systems through laboratory learning and scientific inquiry.</p><b>B.S. / Undergraduate</b></article>
+<article class="program-card" data-category="Arts & Design" data-search="graphic design art visual"><span>Arts & Design</span><h3>Graphic Design</h3><p>Turn research and ideas into visual communication across print and digital media.</p><b>B.F.A. / Undergraduate</b></article>
+<article class="program-card" data-category="Arts & Design" data-search="architectural design interior"><span>Arts & Design</span><h3>Architectural Studies</h3><p>Explore design, space and the built environment through studio-centered work.</p><b>B.A. / Undergraduate</b></article>
+<article class="program-card" data-category="Humanities & Social Sciences" data-search="communication media humanities"><span>Humanities + Social Sciences</span><h3>Communication</h3><p>Practice clear storytelling, media analysis and communication across audiences.</p><b>B.A. / Undergraduate</b></article>
+<article class="program-card" data-category="Humanities & Social Sciences" data-search="political science government social"><span>Humanities + Social Sciences</span><h3>Political Science</h3><p>Examine institutions, public life and the ideas that shape civic decisions.</p><b>B.A. / Undergraduate</b></article>
+</div><p class="program-empty" id="program-empty" hidden>No programs match that search yet.</p><p class="program-source">Program examples: Kean University academic offerings. Confirm current degree requirements and availability on official Kean program pages.</p></div></section>
+<section class="programs-section programs-next"><div class="programs-section-intro"><p class="programs-kicker">02 / Next question</p><h2>What will your<br>year look like?</h2><p>Once you have a direction, visit the Cost page to understand the planning categories behind a Kean education.</p></div><div><a class="programs-button programs-button-dark" href="admissions.html">Explore cost planning <span>→</span></a></div></section>
 </main>
-
-
-<footer>
-
-</footer>
-
-
-<!-- Bootstrap JavaScript Bundle -->
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous">
-</script>
-
-<script src="script.js"></script>
-
-
+<footer class="site-footer"><div><strong>Kean University</strong><span>New Jersey to the world</span></div><nav aria-label="Footer navigation"><a href="about.html">About</a><a href="studentLife.html">Student Life</a><a href="programs.html">Programs</a><a href="admissions.html">Cost</a><a href="apply.html">Apply</a></nav><small>1855 — PRESENT</small></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoGlyvwxH9j09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<script src="script.js"></script><script src="programs.js"></script>
 </body>
-
 </html>

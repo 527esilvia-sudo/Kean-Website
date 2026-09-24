@@ -62,13 +62,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    previewButton.addEventListener("click", () => {
-        const targetId = previewButton.dataset.target;
-        const target = document.getElementById(targetId);
-        if (target) {
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-    });
+    if (previewButton) {
+        previewButton.addEventListener("click", () => {
+            const targetId = previewButton.dataset.target;
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        });
+    }
 
     document.querySelectorAll(".map-back").forEach((button) => {
         button.addEventListener("click", () => {
