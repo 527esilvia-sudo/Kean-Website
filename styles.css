@@ -1,5 +1,6 @@
 /* =========================================================
    KEAN UNIVERSITY — GLOBAL STYLES
+   Cleaned version: one global navbar definition, no duplicates
    ========================================================= */
 
 :root {
@@ -18,11 +19,6 @@
     --font-hero: "Changa One", sans-serif;
 }
 
-
-/* =========================================================
-   BASE
-   ========================================================= */
-
 html {
     scroll-behavior: smooth;
 }
@@ -33,6 +29,11 @@ body {
     color: var(--kean-ink);
     font-family: var(--font-body);
     line-height: 1.6;
+}
+
+/* Leave room for the fixed navbar */
+body {
+    padding-top: 76px;
 }
 
 img {
@@ -61,17 +62,25 @@ textarea {
     outline-offset: 3px;
 }
 
-
 /* =========================================================
-   NAVIGATION
+   GLOBAL NAVIGATION
+   One navbar definition for every regular site page
    ========================================================= */
 
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    min-height: 76px;
     padding: 14px 5%;
-    background: var(--kean-navy-deep);
+    background-color: var(--kean-navy-deep) !important;
 }
 
-.navbar-brand {
+.navbar-brand,
+.navbar-brand:hover,
+.navbar-brand:focus {
     margin: 0;
     color: var(--kean-white) !important;
 }
@@ -80,6 +89,7 @@ textarea {
     display: flex;
     align-items: baseline;
     gap: 8px;
+    color: var(--kean-white) !important;
     font-family: var(--font-display);
     font-size: 1.5rem;
     font-weight: 600;
@@ -87,25 +97,36 @@ textarea {
 }
 
 .site-wordmark small {
-    font-family: var(--font-body);
+    color: var(--kean-white) !important;
+    font-family: var(--font-display);
     font-size: .48em;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: .18em;
 }
 
 .navbar-nav {
     gap: 8px;
+    align-items: center;
 }
 
-.nav-link {
+.nav-link,
+.nav-link:visited {
     position: relative;
     padding: 8px 14px !important;
     color: rgba(255, 255, 255, .85) !important;
+    font-family: var(--font-display);
     font-size: .82rem;
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: .08em;
     text-transform: uppercase;
     transition: color .2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link:active,
+.nav-link.is-current {
+    color: var(--kean-white) !important;
 }
 
 .nav-link::after {
@@ -121,21 +142,18 @@ textarea {
     transition: transform .2s ease;
 }
 
-.nav-link:hover,
-.nav-link:focus-visible {
-    color: var(--kean-white) !important;
-}
-
 .nav-link:hover::after,
-.nav-link:focus-visible::after {
+.nav-link:focus-visible::after,
+.nav-link.is-current::after {
     transform: scaleX(1);
 }
 
 .apply-link {
     margin-left: 8px;
-    border: 1px solid rgba(255, 255, 255, .65);
+    border: 1px solid var(--kean-white);
     border-radius: 100px;
     padding-inline: 18px !important;
+    color: var(--kean-white) !important;
 }
 
 .apply-link::after {
@@ -144,10 +162,22 @@ textarea {
 
 .apply-link:hover,
 .apply-link:focus-visible {
-    background: var(--kean-white);
+    background-color: var(--kean-white) !important;
     color: var(--kean-navy-deep) !important;
 }
 
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, .7) !important;
+    box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+    filter: none;
+}
 
 /* =========================================================
    GLOBAL TYPOGRAPHY
@@ -169,7 +199,6 @@ textarea {
     text-transform: uppercase;
 }
 
-
 /* =========================================================
    HOME — HERO
    ========================================================= */
@@ -183,13 +212,10 @@ body.home-page {
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     height: clamp(560px, calc(100svh - 76px), 820px);
-
     overflow: hidden;
     padding: 0;
-
     background: #f4f1ea;
 }
 
@@ -198,14 +224,12 @@ body.home-page {
     position: absolute;
     inset: 0;
     z-index: 0;
-
     background-image:
         linear-gradient(
             rgba(244, 241, 234, .78),
             rgba(244, 241, 234, .78)
         ),
         url("campus.jpeg");
-
     background-size: cover;
     background-position: center;
 }
@@ -213,18 +237,14 @@ body.home-page {
 .home-page .hero-content {
     position: relative;
     z-index: 2;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     width: 100%;
     height: 100%;
-
     text-align: center;
 }
-
 
 /* =========================================================
    KEAN PHOTO LETTERS
@@ -235,241 +255,147 @@ body.home-page {
     top: 38%;
     left: 50%;
     z-index: 3;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     width: max-content;
     margin: 0;
     padding: 0;
-
     transform: translate(-50%, -50%);
-
     font-family: var(--font-hero);
     font-size: clamp(200px, 28vw, 480px);
     font-weight: 400;
     line-height: .78;
-
     letter-spacing: 7px;
     white-space: nowrap;
 }
 
-
-/* Individual letters */
-
 .home-page .hero-letter {
     position: relative;
-
     display: inline-block;
-
     width: .62em;
     height: 1em;
-
     margin: 0 9px;
-
     overflow: visible;
-
     color: transparent;
-
     font-family: var(--font-hero);
     font-size: inherit;
     font-weight: 400;
     line-height: .78;
-
     -webkit-text-fill-color: transparent;
-
     cursor: pointer;
-
     transition: transform .3s ease;
 }
-
-
-/* Photos clipped inside each letter */
 
 .home-page .letter-photo {
     position: absolute;
     inset: 0;
     z-index: 2;
-
     display: block;
-
     width: 100%;
     height: 100%;
-
     color: transparent;
-
     font-family: var(--font-hero);
     font-size: inherit;
     font-weight: 400;
     line-height: .78;
-
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
-
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-
     pointer-events: none;
 }
 
+.home-page .photo-1 { clip-path: inset(0 50% 50% 0); }
+.home-page .photo-2 { clip-path: inset(0 0 50% 50%); }
+.home-page .photo-3 { clip-path: inset(50% 50% 0 0); }
+.home-page .photo-4 { clip-path: inset(50% 0 0 50%); }
 
-/* =========================================================
-   PHOTO QUADRANTS
-   ========================================================= */
-
-.home-page .photo-1 {
-    clip-path: inset(0 50% 50% 0);
-}
-
-.home-page .photo-2 {
-    clip-path: inset(0 0 50% 50%);
-}
-
-.home-page .photo-3 {
-    clip-path: inset(50% 50% 0 0);
-}
-
-.home-page .photo-4 {
-    clip-path: inset(50% 0 0 50%);
-}
-
-
-/* =========================================================
-   K — ATHLETICS
-   ========================================================= */
-
+/* K — ATHLETICS */
 .home-page .hero-letter[data-letter="K"] .photo-1 {
     background-image: url("sportimgs/football.jpg");
 }
-
 .home-page .hero-letter[data-letter="K"] .photo-2 {
     background-image: url("sportimgs/lacrosse.webp");
 }
-
 .home-page .hero-letter[data-letter="K"] .photo-3 {
     background-image: url("sportimgs/soccer.jpg");
 }
-
 .home-page .hero-letter[data-letter="K"] .photo-4 {
     background-image: url("sportimgs/swimming.jpeg");
 }
 
-
-/* =========================================================
-   E — SCIENCE
-   ========================================================= */
-
+/* E — SCIENCE */
 .home-page .hero-letter[data-letter="E"] .photo-1 {
-    background-image: url("/scienceimgs/env.jpg");
+    background-image: url("scienceimgs/env.jpg");
 }
-
 .home-page .hero-letter[data-letter="E"] .photo-2 {
-    background-image: url("/scienceimgs/group.jpg");
+    background-image: url("scienceimgs/group.jpg");
 }
-
 .home-page .hero-letter[data-letter="E"] .photo-3 {
-    background-image: url("/scienceimgs/lab-girl-2.jpg");
+    background-image: url("scienceimgs/lab-girl-2.jpg");
 }
-
 .home-page .hero-letter[data-letter="E"] .photo-4 {
-    background-image: url("/scienceimgs/lab-girl.jpg");
+    background-image: url("scienceimgs/lab-girl.jpg");
 }
 
-
-/* =========================================================
-   A — ARTS
-   ========================================================= */
-
+/* A — ARTS */
 .home-page .hero-letter[data-letter="A"] .photo-1 {
-    background-image: url("/artimgs/statue.jpg");
+    background-image: url("artimgs/statue.jpg");
 }
-
 .home-page .hero-letter[data-letter="A"] .photo-2 {
-    background-image: url("/artimgs/theater.jpg");
+    background-image: url("artimgs/theater.jpg");
 }
-
 .home-page .hero-letter[data-letter="A"] .photo-3 {
-    background-image: url("/artimgs/paint.jpg");
+    background-image: url("artimgs/paint.jpg");
 }
-
 .home-page .hero-letter[data-letter="A"] .photo-4 {
-    background-image: url("/artimgs/girl-art.jpg");
+    background-image: url("artimgs/girl-art.jpg");
 }
 
-
-/* =========================================================
-   N — STUDENT LIFE
-   ========================================================= */
-
+/* N — STUDENT LIFE */
 .home-page .hero-letter[data-letter="N"] .photo-1 {
     background-image: url("pep.png");
 }
-
 .home-page .hero-letter[data-letter="N"] .photo-2 {
     background-image: url("mascot.jpg");
 }
-
 .home-page .hero-letter[data-letter="N"] .photo-3 {
     background-image: url("event-2.jpg");
 }
-
 .home-page .hero-letter[data-letter="N"] .photo-4 {
     background-image: url("event.jpg");
 }
 
-
-/* =========================================================
-   LETTER OUTLINE
-   ========================================================= */
-
 .home-page .hero-letter::before {
     content: attr(data-letter);
-
     position: absolute;
     inset: 0;
     z-index: 5;
-
     color: transparent;
-
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 4px #172d24;
-
     pointer-events: none;
 }
 
-
-/* =========================================================
-   HOVER LABEL
-   ========================================================= */
-
 .home-page .hero-letter::after {
     content: attr(data-label);
-
     position: absolute;
     top: 50%;
     left: 50%;
     z-index: 10;
-
     transform: translate(-50%, -50%);
-
     color: #ffffff;
     -webkit-text-fill-color: #ffffff;
-
     font: 700 clamp(12px, 1.4vw, 20px)/1.1 var(--font-body);
     letter-spacing: 2px;
-
     text-align: center;
     text-transform: uppercase;
-
     text-shadow: 0 2px 10px rgba(0, 0, 0, .65);
-
     opacity: 0;
-
     pointer-events: none;
-
     transition: opacity .25s ease;
 }
 
@@ -482,20 +408,12 @@ body.home-page {
     opacity: 1;
 }
 
-
-/* =========================================================
-   HERO COPY
-   ========================================================= */
-
 .home-page .hero-tagline {
     position: absolute;
     top: 67%;
     z-index: 4;
-
     margin: 0;
-
     color: #172d24;
-
     font: 500 clamp(28px, 4vw, 48px)/1 var(--font-display);
 }
 
@@ -503,17 +421,13 @@ body.home-page {
     position: absolute;
     top: 79%;
     z-index: 4;
-
     max-width: 700px;
     margin: 0;
-
     color: #4b514d;
-
     font-size: 15px;
     font-weight: 600;
     line-height: 1.6;
     letter-spacing: 3px;
-
     text-align: center;
     text-transform: uppercase;
 }
@@ -522,31 +436,21 @@ body.home-page {
     position: absolute;
     top: 88%;
     z-index: 4;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 14px;
-
     padding: 12px 24px;
-
     border: 1px solid #172d24;
     border-radius: 100px;
-
     background: #f4f1ea;
     color: #172d24;
-
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 2px;
-
     text-transform: uppercase;
     white-space: nowrap;
-
-    transition:
-        background-color .25s ease,
-        color .25s ease,
-        padding .25s ease;
+    transition: background-color .25s ease, color .25s ease, padding .25s ease;
 }
 
 .home-page .hero-button:hover,
@@ -558,7 +462,6 @@ body.home-page {
 
 .home-page .hero-button span {
     font-size: 20px;
-
     transition: transform .25s ease;
 }
 
@@ -567,29 +470,19 @@ body.home-page {
     transform: translateX(6px);
 }
 
-
-/* =========================================================
-   HERO SIDE LABEL
-   ========================================================= */
-
 .home-page .hero::after {
     content: "KEAN UNIVERSITY";
-
     position: absolute;
     right: 25px;
     bottom: 25px;
     z-index: 5;
-
     color: rgba(23, 45, 36, .65);
-
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 4px;
-
     text-transform: uppercase;
     writing-mode: vertical-rl;
 }
-
 
 /* =========================================================
    HOME — INTRO
@@ -607,9 +500,7 @@ body.home-page {
 
 .home-page h2 {
     margin: 0 0 1.5rem;
-
     color: var(--kean-navy-deep);
-
     font-family: var(--font-display);
     font-size: clamp(2.4rem, 4vw, 4rem);
     line-height: 1.05;
@@ -624,13 +515,10 @@ body.home-page {
 
 .home-intro-grid p {
     margin: 0;
-
     color: var(--kean-muted);
-
     font-size: 1.05rem;
     line-height: 1.7;
 }
-
 
 /* =========================================================
    HOME — FEATURE CARDS
@@ -640,30 +528,21 @@ body.home-page {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.25rem;
-
     max-width: 1180px;
     margin: 0 auto;
-
     padding: 0 clamp(1.25rem, 5vw, 5rem) clamp(4rem, 8vw, 7rem);
 }
 
 .home-feature-card {
     display: grid;
     gap: .85rem;
-
     min-height: 300px;
     padding: 1.75rem;
-
     background: var(--kean-white);
-
     border: 1px solid rgba(13, 30, 57, .08);
     border-radius: 18px;
-
     box-shadow: 0 12px 24px rgba(13, 30, 57, .05);
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+    transition: transform .25s ease, box-shadow .25s ease;
 }
 
 .home-feature-card:hover {
@@ -678,12 +557,10 @@ body.home-page {
 
 .home-feature-badge {
     color: var(--kean-blue);
-
     font-family: var(--font-display);
     font-size: .72rem;
     font-weight: 600;
     letter-spacing: .14em;
-
     text-transform: uppercase;
 }
 
@@ -693,9 +570,7 @@ body.home-page {
 
 .home-feature-card h3 {
     margin: 0;
-
     color: inherit;
-
     font-family: var(--font-display);
     font-size: clamp(1.75rem, 3vw, 2.5rem);
     line-height: 1;
@@ -703,9 +578,7 @@ body.home-page {
 
 .home-feature-card p {
     margin: 0;
-
     color: inherit;
-
     line-height: 1.7;
     opacity: .9;
 }
@@ -714,17 +587,13 @@ body.home-page {
     display: inline-flex;
     align-items: center;
     gap: .5rem;
-
     width: fit-content;
     margin-top: auto;
-
     color: var(--kean-navy);
-
     font-family: var(--font-display);
     font-size: .8rem;
     font-weight: 600;
     letter-spacing: .12em;
-
     text-transform: uppercase;
     white-space: nowrap;
 }
@@ -739,7 +608,6 @@ body.home-page {
     color: var(--kean-white);
 }
 
-
 /* =========================================================
    GENERIC SITE ELEMENTS
    ========================================================= */
@@ -751,13 +619,9 @@ main > .container {
 .border {
     border: 0 !important;
     border-top: 5px solid #004b87 !important;
-
     background-color: #ffffff;
-
     padding: 30px !important;
-
     box-shadow: 0 5px 20px rgba(0, 0, 0, .06);
-
     transition: .25s ease;
 }
 
@@ -782,7 +646,6 @@ main > .container {
     margin-top: 5px;
 }
 
-
 /* =========================================================
    FORMS
    ========================================================= */
@@ -791,10 +654,8 @@ input,
 select,
 textarea {
     font-family: var(--font-body);
-
     border: 1px solid #cfcfcb !important;
     border-radius: 0 !important;
-
     padding: 12px !important;
 }
 
@@ -807,11 +668,9 @@ textarea:focus {
 
 label {
     margin-bottom: 7px;
-
     font-family: var(--font-body);
     font-weight: 600;
 }
-
 
 /* =========================================================
    FOOTER
@@ -821,9 +680,7 @@ label {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
     gap: 3rem;
-
     padding: 4rem clamp(1.5rem, 5vw, 5rem);
-
     background: var(--footer-bg);
     color: var(--kean-white);
 }
@@ -843,31 +700,25 @@ label {
 
 .site-footer-brand span {
     color: #cfe9ff;
-
     font-size: .8rem;
     font-weight: 600;
     letter-spacing: .12em;
-
     text-transform: uppercase;
 }
 
 .site-footer-brand p {
     max-width: 260px;
     margin: .8rem 0 0;
-
     color: rgba(255, 255, 255, .68);
-
     font-size: .9rem;
 }
 
 .site-footer-column h2 {
     margin: 0 0 1rem;
-
     font-family: var(--font-display);
     font-size: .8rem;
     font-weight: 600;
     letter-spacing: .15em;
-
     text-transform: uppercase;
 }
 
@@ -879,11 +730,8 @@ label {
 
 .site-footer-column a {
     width: fit-content;
-
     color: rgba(255, 255, 255, .72);
-
     font-size: .9rem;
-
     transition: color .2s ease;
 }
 
@@ -902,7 +750,6 @@ label {
 
 .site-footer-meta small {
     color: rgba(255, 255, 255, .5);
-
     font-size: .68rem;
     font-weight: 600;
     letter-spacing: .2em;
@@ -912,24 +759,16 @@ label {
     display: inline-flex;
     align-items: center;
     gap: .7rem;
-
     padding: 11px 18px;
-
     border: 1px solid rgba(255, 255, 255, .55);
     border-radius: 100px;
-
     color: var(--kean-white);
-
     font-size: .78rem;
     font-weight: 600;
     letter-spacing: .08em;
-
     text-transform: uppercase;
     white-space: nowrap;
-
-    transition:
-        background-color .2s ease,
-        color .2s ease;
+    transition: background-color .2s ease, color .2s ease;
 }
 
 .site-footer-meta > a:hover,
@@ -942,628 +781,14 @@ label {
     font-size: 1.1rem;
 }
 
-
 /* =========================================================
-   TABLET
-   ========================================================= */
-
-@media (max-width: 900px) {
-
-    .home-page .hero {
-        height: clamp(520px, calc(100svh - 76px), 700px);
-    }
-
-    .home-page .hero-title {
-        top: 40%;
-        font-size: clamp(165px, 28vw, 330px);
-        letter-spacing: 3px;
-    }
-
-    .home-page .hero-letter {
-        margin: 0 5px;
-    }
-
-    .home-page .hero-tagline {
-        top: 65%;
-        font-size: 34px;
-    }
-
-    .home-page .hero-subtitle {
-        top: 77%;
-        font-size: 13px;
-        letter-spacing: 2px;
-    }
-
-    .home-page .hero-button {
-        top: 87%;
-        font-size: 12px;
-    }
-
-    .home-intro-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .home-feature-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .home-feature-card {
-        min-height: 260px;
-    }
-
-    .site-footer {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    .navbar {
-        padding: 10px 6%;
-    }
-
-    .navbar-brand {
-        margin-left: 10px;
-    }
-
-    .navbar-nav {
-        gap: 0;
-        align-items: flex-start;
-    }
-
-    .nav-link {
-        padding: 8px 0 !important;
-    }
-
-    .apply-link {
-        display: inline-block;
-        margin-top: 5px;
-        margin-left: 0;
-        padding-inline: 15px !important;
-    }
-
-    main > section:not(.hero) {
-        padding-top: 65px;
-        padding-bottom: 65px;
-    }
-
-    .site-footer {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem 1.5rem;
-    }
-
-    .site-footer-brand,
-    .site-footer-meta {
-        grid-column: 1 / -1;
-    }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .home-page .hero {
-        height: 520px;
-    }
-
-    .home-page .hero-title {
-        top: 38%;
-        font-size: clamp(120px, 30vw, 170px);
-        letter-spacing: 0;
-    }
-
-    .home-page .hero-letter {
-        margin: 0 2px;
-    }
-
-    .home-page .hero-letter::before {
-        -webkit-text-stroke: 3px #172d24;
-    }
-
-    .home-page .hero-letter::after {
-        font-size: 10px;
-        letter-spacing: 1px;
-    }
-
-    .home-page .hero-tagline {
-        top: 61%;
-        font-size: 27px;
-    }
-
-    .home-page .hero-subtitle {
-        top: 72%;
-        max-width: 320px;
-
-        font-size: 10px;
-        line-height: 1.4;
-        letter-spacing: 1.5px;
-    }
-
-    .home-page .hero-button {
-        top: 83%;
-
-        padding: 10px 18px;
-
-        font-size: 10px;
-        letter-spacing: 1px;
-    }
-
-    .home-page .hero::after {
-        display: none;
-    }
-
-    .home-intro {
-        padding-inline: 1.25rem;
-    }
-
-    .home-page h2 {
-        font-size: clamp(2.4rem, 12vw, 3.4rem);
-    }
-
-    .home-feature-grid {
-        padding-inline: 1.25rem;
-    }
-
-    .home-feature-card {
-        min-height: 250px;
-        padding: 1.5rem;
-    }
-
-    .site-footer {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    html {
-        scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-        transition-duration: .01ms !important;
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-    }
-}
-/* =========================================================
-   BOOTSTRAP NAVBAR
-   ========================================================= */
-
-.student-life-header {
-    position: relative;
-    z-index: 1050;
-}
-
-.student-life-navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1050;
-    width: 100%;
-    min-height: 76px;
-    padding: 0;
-    background: var(--student-blue-dark);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.student-life-nav-container {
-    min-height: 76px;
-    padding: 0 clamp(1rem, 5vw, 5rem);
-}
-
-/* Brand */
-
-.student-life-brand {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.55rem;
-    flex-shrink: 0;
-    color: #ffffff;
-}
-
-.student-life-brand:hover {
-    color: #ffffff;
-}
-
-.student-life-brand-main {
-    font-family: "Oswald", sans-serif;
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: 0.03em;
-    line-height: 1;
-}
-
-.student-life-brand-sub {
-    font-family: "Oswald", sans-serif;
-    font-size: 0.65rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    line-height: 1;
-}
-
-/* Bootstrap hamburger */
-
-.student-life-navbar-toggler {
-    width: 46px;
-    height: 42px;
-    padding: 0;
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    border-radius: 2px;
-    background: transparent;
-    box-shadow: none !important;
-}
-
-.student-life-navbar-toggler:focus {
-    box-shadow: none !important;
-}
-
-.student-life-menu-icon {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    width: 22px;
-    height: 22px;
-    margin: auto;
-}
-
-.student-life-menu-icon span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background: #ffffff;
-}
-
-/* Navigation */
-
-.student-life-nav-list {
-    align-items: center;
-    gap: clamp(0.3rem, 1.2vw, 1.25rem);
-    margin: 0;
-}
-
-.student-life-nav-link {
-    position: relative;
-    display: block;
-    padding: 0.55rem 0.7rem !important;
-
-    color: rgba(255, 255, 255, 0.78) !important;
-
-    font-family: "Oswald", sans-serif;
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-
-    transition:
-        color 0.2s ease,
-        background 0.2s ease;
-}
-
-.student-life-nav-link:hover,
-.student-life-nav-link:focus-visible {
-    color: #ffffff !important;
-}
-
-.student-life-nav-link.active {
-    color: #ffffff !important;
-}
-
-.student-life-nav-link.active::after {
-    position: absolute;
-    right: 0.7rem;
-    bottom: 0.1rem;
-    left: 0.7rem;
-    height: 2px;
-    background: var(--student-sky);
-    content: "";
-}
-
-/* Apply button */
-
-.student-life-apply-link {
-    margin-left: 0.4rem;
-    padding-inline: 1rem !important;
-    border: 1px solid var(--student-sky);
-    color: #ffffff !important;
-}
-
-.student-life-apply-link:hover,
-.student-life-apply-link:focus-visible {
-    background: var(--student-sky);
-    color: var(--student-blue-dark) !important;
-}
-
-
-/* =========================================================
-   BOOTSTRAP NAVBAR — MOBILE
+   RESPONSIVE NAVIGATION
    ========================================================= */
 
 @media (max-width: 991.98px) {
-
-    .student-life-navbar {
-        min-height: 68px;
+    body {
+        padding-top: 68px;
     }
-
-    .student-life-nav-container {
-        min-height: 68px;
-    }
-
-    .student-life-navbar-collapse {
-        width: 100%;
-        padding-bottom: 1rem;
-    }
-
-    .student-life-nav-list {
-        align-items: stretch;
-        gap: 0;
-        padding-top: 0.75rem;
-    }
-
-    .student-life-nav-link {
-        padding: 0.8rem 0 !important;
-    }
-
-    .student-life-nav-link.active::after {
-        right: auto;
-        bottom: 0.25rem;
-        left: 0;
-        width: 4rem;
-    }
-
-    .student-life-apply-link {
-        width: fit-content;
-        margin: 0.4rem 0 0;
-        padding-inline: 1rem !important;
-    }
-}
-
-
-/* =========================================================
-   MOBILE BRAND
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-    .student-life-nav-container {
-        padding-inline: 1rem;
-    }
-
-    .student-life-brand-main {
-        font-size: 1.7rem;
-    }
-
-    .student-life-brand-sub {
-        font-size: 0.55rem;
-    }
-}
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
-.navbar {
-    padding: 14px 5%;
-    background: var(--kean-navy-deep);
-}
-
-.navbar-brand {
-    margin: 0;
-    color: var(--kean-white) !important;
-}
-
-.site-wordmark {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: .08em;
-}
-
-.site-wordmark small {
-    font-family: var(--font-display);
-    font-size: .48em;
-    font-weight: 500;
-    letter-spacing: .18em;
-}
-
-.navbar-nav {
-    gap: 8px;
-}
-
-.nav-link {
-    position: relative;
-    padding: 8px 14px !important;
-    color: rgba(255, 255, 255, .85) !important;
-    font-family: var(--font-display);
-    font-size: .82rem;
-    font-weight: 500;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    transition: color .2s ease;
-}
-
-.nav-link::after {
-    content: "";
-    position: absolute;
-    right: 14px;
-    bottom: 3px;
-    left: 14px;
-    height: 2px;
-    background: var(--kean-white);
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform .2s ease;
-}
-
-.nav-link:hover,
-.nav-link:focus-visible {
-    color: var(--kean-white) !important;
-}
-
-.nav-link:hover::after,
-.nav-link:focus-visible::after {
-    transform: scaleX(1);
-}
-
-.nav-link.is-current {
-    color: var(--kean-white) !important;
-}
-
-.nav-link.is-current::after {
-    transform: scaleX(1);
-}
-
-.apply-link {
-    margin-left: 8px;
-    border: 1px solid rgba(255, 255, 255, .65);
-    border-radius: 100px;
-    padding-inline: 18px !important;
-}
-
-.apply-link::after {
-    display: none;
-}
-
-.apply-link:hover,
-.apply-link:focus-visible {
-    background: var(--kean-white);
-    color: var(--kean-navy-deep) !important;
-}
-
-/* =========================================================
-   GLOBAL NAVIGATION
-   SAME NAVBAR COLOR ON EVERY PAGE
-   ========================================================= */
-
-.navbar {
-    background-color: #0d1e39 !important;
-    padding: 14px 5%;
-}
-
-.navbar-brand,
-.navbar-brand:hover,
-.navbar-brand:focus {
-    color: #ffffff !important;
-}
-
-.site-wordmark {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
-    color: #ffffff !important;
-    font-family: "Oswald", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: .08em;
-}
-
-.site-wordmark small {
-    color: #ffffff !important;
-    font-family: "Oswald", sans-serif;
-    font-size: .48em;
-    font-weight: 500;
-    letter-spacing: .18em;
-}
-
-.navbar-nav {
-    gap: 8px;
-}
-
-.nav-link,
-.nav-link:visited {
-    position: relative;
-    padding: 8px 14px !important;
-    color: #ffffff !important;
-    font-family: "Oswald", sans-serif;
-    font-size: .82rem;
-    font-weight: 500;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-}
-
-.nav-link:hover,
-.nav-link:focus,
-.nav-link:active,
-.nav-link.is-current {
-    color: #ffffff !important;
-}
-
-.nav-link::after {
-    content: "";
-    position: absolute;
-    right: 14px;
-    bottom: 3px;
-    left: 14px;
-    height: 2px;
-    background-color: #ffffff;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform .2s ease;
-}
-
-.nav-link:hover::after,
-.nav-link:focus-visible::after,
-.nav-link.is-current::after {
-    transform: scaleX(1);
-}
-
-.apply-link {
-    margin-left: 8px;
-    border: 1px solid #ffffff;
-    border-radius: 100px;
-    padding-inline: 18px !important;
-    color: #ffffff !important;
-}
-
-.apply-link::after {
-    display: none;
-}
-
-.apply-link:hover,
-.apply-link:focus-visible {
-    background-color: #ffffff !important;
-    color: #0d1e39 !important;
-}
-
-/* HAMBURGER */
-
-.navbar-toggler {
-    border: 1px solid rgba(255, 255, 255, .7) !important;
-    box-shadow: none !important;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none !important;
-}
-
-.navbar-toggler-icon {
-    filter: none;
-}
-
-
-/* =========================================================
-   MOBILE NAVIGATION
-   ========================================================= */
-
-@media (max-width: 991.98px) {
 
     .navbar {
         padding: 10px 6%;
@@ -1602,12 +827,58 @@ label {
         margin-left: 0;
         padding: 8px 16px !important;
     }
+
+    .home-page .hero {
+        height: clamp(520px, calc(100svh - 76px), 700px);
+    }
+
+    .home-page .hero-title {
+        top: 40%;
+        font-size: clamp(165px, 28vw, 330px);
+        letter-spacing: 3px;
+    }
+
+    .home-page .hero-letter {
+        margin: 0 5px;
+    }
+
+    .home-page .hero-tagline {
+        top: 65%;
+        font-size: 34px;
+    }
+
+    .home-page .hero-subtitle {
+        top: 77%;
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+
+    .home-page .hero-button {
+        top: 87%;
+        font-size: 12px;
+    }
+
+    .home-intro-grid,
+    .home-feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-feature-card {
+        min-height: 260px;
+    }
+
+    .site-footer {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
-@media (max-width: 600px) {
-
+@media (max-width: 768px) {
     .navbar {
-        padding: 10px 5%;
+        padding: 10px 6%;
+    }
+
+    .navbar-brand {
+        margin-left: 10px;
     }
 
     .site-wordmark {
@@ -1617,6 +888,103 @@ label {
     .site-wordmark small {
         font-size: .45em;
     }
+
+    main > section:not(.hero) {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .site-footer {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem 1.5rem;
+    }
+
+    .site-footer-brand,
+    .site-footer-meta {
+        grid-column: 1 / -1;
+    }
 }
 
+@media (max-width: 600px) {
+    .home-page .hero {
+        height: 520px;
+    }
 
+    .home-page .hero-title {
+        top: 38%;
+        font-size: clamp(120px, 30vw, 170px);
+        letter-spacing: 0;
+    }
+
+    .home-page .hero-letter {
+        margin: 0 2px;
+    }
+
+    .home-page .hero-letter::before {
+        -webkit-text-stroke: 3px #172d24;
+    }
+
+    .home-page .hero-letter::after {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .home-page .hero-tagline {
+        top: 61%;
+        font-size: 27px;
+    }
+
+    .home-page .hero-subtitle {
+        top: 72%;
+        max-width: 320px;
+        font-size: 10px;
+        line-height: 1.4;
+        letter-spacing: 1.5px;
+    }
+
+    .home-page .hero-button {
+        top: 83%;
+        padding: 10px 18px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .home-page .hero::after {
+        display: none;
+    }
+
+    .home-intro {
+        padding-inline: 1.25rem;
+    }
+
+    .home-page h2 {
+        font-size: clamp(2.4rem, 12vw, 3.4rem);
+    }
+
+    .home-feature-grid {
+        padding-inline: 1.25rem;
+    }
+
+    .home-feature-card {
+        min-height: 250px;
+        padding: 1.5rem;
+    }
+
+    .site-footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
