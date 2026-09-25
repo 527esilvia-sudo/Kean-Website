@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
        Keeps the program explorer usable without affecting pages
        that do not render the .program-card markup.
     --------------------------------------------------------- */
+    // AI Executed
     const cards = [...document.querySelectorAll(".program-card")];
     const filters = document.querySelectorAll(".program-filter");
     const search = document.getElementById("program-search");
@@ -49,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
        Opens a compact review panel with key program information.
        HTML: #program-modal and .program-card
     --------------------------------------------------------- */
+    // From object project, used AI to adapt my code
     const modal = document.getElementById("program-modal");
     const modalTitle = document.getElementById("program-modal-title");
     const modalSummary = document.getElementById("program-modal-summary");
@@ -103,6 +105,7 @@ document.addEventListener("DOMContentLoaded", () => {
        Keeps the living-arrangement estimate aligned with the
        selected residency and housing type.
     --------------------------------------------------------- */
+    // my idea; AI executed
     const livingData = {
         commuter: { housing: "$1,900", transport: "$1,800", total: "$13,100" },
         resident: { housing: "$14,600", transport: "$700", total: "$25,200" }
