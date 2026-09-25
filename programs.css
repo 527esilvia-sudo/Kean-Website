@@ -1,200 +1,1660 @@
+/* =========================================================
+   KEAN UNIVERSITY — PROGRAMS + COST
+   Clean, editorial, Kean-focused styling
+   ========================================================= */
+
 :root {
-    --program-blue: #004b87;
-    --program-navy: #00345f;
+    --program-blue: #003a70;
+    --program-blue-light: #0056a6;
+    --program-navy: #00294f;
     --program-sky: #dceaf4;
-    --program-ink: #111820;
     --program-paper: #f4f1ea;
-    --program-line: rgba(0, 75, 135, .2);
+    --program-white: #ffffff;
+    --program-ink: #17212b;
+    --program-muted: #586570;
+    --program-silver: #a7adb2;
+    --program-line: rgba(0, 58, 112, 0.18);
 }
 
-.programs-page { background: var(--program-paper); color: var(--program-ink); font-family: var(--font-body); }
-.programs-page .navbar { background: var(--program-blue); padding: .65rem clamp(1.25rem, 5vw, 5rem); }
-.programs-wordmark { color: #fff; font: 600 1.35rem/1 "Oswald", sans-serif; letter-spacing: .05em; }
-.programs-wordmark span { display: block; margin-top: .25rem; color: var(--program-sky); font-size: .52rem; letter-spacing: .2em; }
-.programs-page .nav-link { font-family: "Oswald", sans-serif; text-transform: uppercase; }
-.programs-page .nav-link.is-current { background: rgba(255,255,255,.14); }
-.programs-hero, .cost-page .hero { position: relative; min-height: 520px; display: grid; align-items: center; padding: clamp(4rem, 9vw, 8rem) clamp(1.25rem, 8vw, 9rem); overflow: hidden; background: var(--program-navy); color: #fff; }
-.programs-hero h1, .cost-page .hero h1 { position: relative; z-index: 1; max-width: 9ch; color: #fff; font: 600 clamp(4rem, 9vw, 9rem)/.87 "Oswald", sans-serif; }
-.programs-hero > div:first-child, .cost-page .hero-content { position: relative; z-index: 1; max-width: 650px; }
-.programs-hero > div:first-child > p:not(.programs-kicker), .cost-page .hero-text { max-width: 40rem; margin: 1.5rem 0 2rem; color: #e3eff7; font-size: clamp(1.05rem, 1.7vw, 1.3rem); }
-.programs-kicker, .cost-page .hero-label { margin: 0 0 .9rem; color: var(--program-blue); font: 600 .78rem/1.2 "Oswald", sans-serif; letter-spacing: .13em; text-transform: uppercase; }
-.programs-hero .programs-kicker, .cost-page .hero-label { color: #a8d4eb; }
-.programs-hero-mark { position: absolute; right: -2vw; bottom: -2rem; color: rgba(255,255,255,.08); font: 600 clamp(10rem, 28vw, 30rem)/.7 "Oswald", sans-serif; letter-spacing: -.06em; }
-.programs-button, .cost-page .hero-button { display: inline-flex; align-items: center; gap: .7rem; min-height: 2.8rem; padding: .7rem 1rem; border: 2px solid currentColor; color: #fff; font: 600 .8rem/1.2 "Oswald", sans-serif; letter-spacing: .06em; text-decoration: none; text-transform: uppercase; }
-.programs-button:hover, .cost-page .hero-button:hover { background: #fff; color: var(--program-navy); }
-.programs-section, .cost-page .programs-section { display: grid; grid-template-columns: minmax(220px, .55fr) minmax(0, 1.45fr); gap: clamp(2rem, 6vw, 7rem); width: 100%; max-width: none; padding: clamp(5rem, 9vw, 8rem) clamp(1.25rem, 8vw, 9rem); }
-.programs-section-intro h2 { max-width: 8ch; color: var(--program-blue); font: 600 clamp(3.4rem, 6.5vw, 7rem)/.88 "Oswald", sans-serif; }
-.programs-section-intro > p:last-child { max-width: 35ch; margin-top: 1.5rem; color: #526572; font-size: 1.05rem; }
-.program-browser, .cost-content, .cost-tool-content, .affordability-copy { min-width: 0; }
-.program-controls { display: grid; gap: 1.25rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--program-blue); }
-.program-search { display: grid; gap: .45rem; color: var(--program-blue); font: 600 .8rem "Oswald", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
-.program-search input { width: 100%; padding: .8rem 1rem; border: 1px solid var(--program-line); border-radius: 0; background: #fff; color: var(--program-ink); font: 400 1rem var(--font-body); }
-.program-filters { display: flex; flex-wrap: wrap; gap: .5rem; }
-.program-filter, .living-option { padding: .55rem .75rem; border: 1px solid var(--program-blue); background: transparent; color: var(--program-blue); font: 600 .75rem "Oswald", sans-serif; cursor: pointer; }
-.program-filter:hover, .program-filter.is-active, .living-option:hover, .living-option.is-active { background: var(--program-blue); color: #fff; }
-.program-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 1.5rem; background: var(--program-line); }
-.program-card { min-height: 220px; padding: 1.25rem; background: #fff; transition: transform .2s ease, background .2s ease; cursor: pointer; }
-.program-card:hover { position: relative; z-index: 1; background: var(--program-sky); transform: translateY(-4px); }
-.program-card > span { color: var(--program-blue); font: 600 .72rem "Oswald", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
-.program-card h3 { margin: .7rem 0 .6rem; color: var(--program-navy); font: 600 1.65rem/1 "Oswald", sans-serif; }
-.program-card p { margin: 0 0 1rem; color: #526572; font-size: .98rem; line-height: 1.4; }
-.program-card b { color: var(--program-blue); font: 600 .72rem "Oswald", sans-serif; letter-spacing: .05em; text-transform: uppercase; }
-.program-card-button { display: inline-flex; align-items: center; gap: .4rem; border: 0; padding: 0; background: transparent; color: var(--program-blue); font: 600 .72rem "Oswald", sans-serif; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; }
-.program-source { margin: 1rem 0 0; color: #667781; font-size: .82rem; line-height: 1.45; }
-.cost-overview { background: #dceaf1; }
-.cost-facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-.cost-facts div { padding: 1.2rem; border-top: 3px solid var(--program-blue); background: rgba(255,255,255,.55); }
-.cost-facts strong { display: block; color: var(--program-navy); font: 600 2.4rem/1 "Oswald", sans-serif; }
-.cost-facts span { display: block; margin-top: .6rem; color: #526572; font-size: .85rem; line-height: 1.3; }
-.chart-block { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--program-line); }
-.chart-heading { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
-.chart-heading h3, .calculator h3 { margin: 0; color: var(--program-navy); font: 600 1.7rem/1 "Oswald", sans-serif; }
-.chart-heading span { color: #526572; font-size: .9rem; }
-.bar-chart { display: grid; gap: .8rem; margin-top: 1.5rem; }
-.bar-chart > div { display: grid; grid-template-columns: 9rem 1fr; gap: .8rem; align-items: center; }
-.bar-chart b, .stacked-chart b { color: var(--program-navy); font-size: .9rem; }
-.bar-chart i { display: block; width: var(--value); min-width: 4.5rem; padding: .45rem .6rem; background: var(--program-blue); color: #fff; font-style: normal; font-size: .8rem; }
-.stacked-chart { display: grid; gap: 1rem; margin-top: 1.5rem; }
-.stacked-chart > div { display: grid; grid-template-columns: 7rem 1fr 4rem; gap: .8rem; align-items: center; }
-.stacked-chart i { display: flex; height: 1.7rem; background: #c6d5df; }
-.stacked-chart i span { display: block; height: 100%; }
-.bar-tuition { width: 34%; background: var(--program-blue); }
-.bar-living { width: 58%; background: #7da9bd; }
-.bar-living.commuter { width: 15%; }
-.bar-other { width: 8%; background: #c4886c; }
-.stacked-chart strong { color: var(--program-navy); font: 600 .85rem "Oswald", sans-serif; }
-.chart-legend { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; color: #526572; font-size: .78rem; }
-.chart-legend span::before { display: inline-block; width: .7rem; height: .7rem; margin-right: .35rem; background: var(--program-blue); content: ""; }
-.chart-legend span:nth-child(2)::before { background: #7da9bd; }
-.chart-legend span:nth-child(3)::before { background: #c4886c; }
-.cost-tools { background: #fff; }
-.living-toggle { display: flex; gap: .5rem; }
-.living-summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; }
-.living-summary div { padding: 1rem 0; border-bottom: 2px solid var(--program-blue); }
-.living-summary span { display: block; color: #526572; font-size: .85rem; }
-.living-summary strong { display: block; margin-top: .4rem; color: var(--program-navy); font: 600 1.8rem "Oswald", sans-serif; }
-.calculator { margin-top: 3rem; padding: 1.5rem; background: var(--program-navy); color: #fff; }
-.calculator h3 { color: #fff; }
-.calculator p { color: #dceaf4; }
-.calculator-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.calculator label { display: grid; gap: .4rem; color: #a8d4eb; font: 600 .78rem "Oswald", sans-serif; text-transform: uppercase; }
-.calculator select { padding: .7rem; border: 0; background: #fff; color: var(--program-ink); font: 400 1rem var(--font-body); }
-.calculator output { display: block; margin-top: 1.5rem; color: #fff; font: 600 1.5rem "Oswald", sans-serif; }
-.affordability { background: var(--program-blue); color: #fff; }
-.affordability .programs-section-intro h2, .affordability .programs-kicker { color: #fff; }
-.affordability-copy > p { max-width: 55ch; color: #e3eff7; font-size: 1.15rem; }
-.affordability-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 2rem; margin: 2rem 0; border-top: 1px solid rgba(255,255,255,.35); }
-.affordability-list div { display: grid; gap: .3rem; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,.35); }
-.affordability-list b { font: 600 1.2rem "Oswald", sans-serif; }
-.affordability-list span { color: #dceaf4; }
-.programs-button-dark { color: #fff; }
-.program-modal { position: fixed; inset: 0; display: grid; place-items: center; padding: 1.5rem; background: rgba(17,24,32,.58); opacity: 0; visibility: hidden; transition: opacity .2s ease, visibility .2s ease; z-index: 9999; }
-.program-modal.is-open { opacity: 1; visibility: visible; }
-.program-modal-backdrop { position: absolute; inset: 0; }
-.program-modal-dialog { position: relative; z-index: 1; width: min(760px, 100%); max-height: 85vh; overflow-y: auto; border: 1px solid rgba(0,75,135,.2); border-radius: 4px; background: #fff; padding: clamp(1.5rem, 4vw, 2.5rem); box-shadow: 0 30px 80px rgba(0,0,0,.28); }
-.program-modal-close { position: absolute; top: 1rem; right: 1rem; width: 2.5rem; height: 2.5rem; border: 1px solid var(--program-line); background: transparent; font-size: 1.5rem; cursor: pointer; }
-.program-modal-header { display: grid; gap: .5rem; padding-right: 2.5rem; margin-bottom: 1.5rem; }
-.program-modal-header .programs-kicker { color: var(--program-blue); margin-bottom: 0; }
-.program-modal-header h3 { color: var(--program-navy); font-size: clamp(2.3rem, 4vw, 4rem); }
-.program-modal-body { display: grid; gap: 1.25rem; }
-.program-modal-summary { color: var(--program-ink); font-size: 1.05rem; }
-.program-modal-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-.program-modal-grid article { padding: 1rem; background: #f7f9fb; border-top: 3px solid var(--program-blue); }
-.program-modal-grid h4 { margin: 0 0 .5rem; color: var(--program-navy); font: 600 1rem "Oswald", sans-serif; letter-spacing: .06em; text-transform: uppercase; }
-.program-modal-grid p, .program-modal-grid li { margin: 0; color: #485460; font-size: .96rem; line-height: 1.5; }
-.program-modal-grid ul { margin: 0; padding-left: 1rem; }
-.cost-page .hero-image {
-    position: absolute;
-    right: clamp(1rem, 5vw, 3rem);
-    top: 10%;
-    width: min(32vw, 520px);
-    height: 72%;
-    background: linear-gradient(180deg, rgba(0,52,95,.12), rgba(0, 20, 40, .52)), url("students.png") center / cover; clip-path: polygon(12% 0,100% 0,100% 88%,75% 100%,0 92%,0 15%);
+/* =========================================================
+   BASE
+   ========================================================= */
+
+.programs-page {
+    background: var(--program-paper);
+    color: var(--program-ink);
+    font-family: var(--font-body, "Outfit", sans-serif);
 }
-.cost-page .hero-scroll {
-    position: absolute;
-    right: 4vw;
-    bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: .8rem;
-    color: rgba(255,255,255,.8);
-    font: 600 .72rem "Oswald", sans-serif;
-    letter-spacing: .12em;
+
+.programs-page *,
+.cost-page * {
+    box-sizing: border-box;
+}
+
+.programs-page img,
+.cost-page img {
+    max-width: 100%;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.programs-page .navbar {
+    position: relative;
+    z-index: 100;
+    background: var(--program-blue);
+    padding: 0.65rem clamp(1.25rem, 5vw, 5rem);
+}
+
+.programs-page .navbar-brand {
+    text-decoration: none;
+}
+
+.programs-wordmark,
+.site-wordmark {
+    color: var(--program-white);
+    font: 600 1.35rem/1 "Oswald", sans-serif;
+    letter-spacing: 0.05em;
+}
+
+.programs-wordmark span,
+.site-wordmark small {
+    display: block;
+    margin-top: 0.25rem;
+    color: var(--program-sky);
+    font-size: 0.52rem;
+    letter-spacing: 0.2em;
+}
+
+.programs-page .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: "Oswald", sans-serif;
     text-transform: uppercase;
+    transition: color 180ms ease, background-color 180ms ease;
 }
-.cost-page .scroll-line { width: 62px; height: 1px; background: rgba(255,255,255,.6); }
-.cost-page .intro-section { padding: clamp(4rem, 8vw, 7rem) 5vw !important; }
 
-@media (max-width: 900px) { .programs-section, .cost-page .programs-section { grid-template-columns: 1fr; gap: 2.5rem; }.programs-section-intro h2 { max-width: none; }.program-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }.cost-page .hero-image { width: 45vw; opacity: .5; } }
-@media (max-width: 600px) { .programs-hero, .cost-page .hero { min-height: 480px; padding-inline: 7vw; }.programs-section, .cost-page .programs-section { padding-inline: 7vw; }.program-grid, .cost-facts, .living-summary, .affordability-list, .program-modal-grid { grid-template-columns: 1fr; }.bar-chart > div { grid-template-columns: 7rem 1fr; }.chart-heading { display: block; }.chart-heading span { display: block; margin-top: .5rem; }.stacked-chart > div, .calculator-fields { grid-template-columns: 1fr; }.cost-page .hero-image { width: 70vw; right: 0; opacity: .35; } }
+.programs-page .nav-link:hover,
+.programs-page .nav-link:focus-visible {
+    color: var(--program-white);
+    background: rgba(255, 255, 255, 0.1);
+}
 
-body.cost-page .hero {
-    min-height: 720px;
-    height: auto;
-    grid-template-columns: minmax(0, .9fr) minmax(300px, 1.1fr);
-    padding: clamp(5rem, 9vw, 8rem) clamp(1.25rem, 8vw, 9rem);
+.programs-page .nav-link.is-current {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+/* =========================================================
+   SHARED HERO
+   ========================================================= */
+
+.programs-hero,
+.cost-page .hero {
+    position: relative;
+    width: 100%;
+    min-height: 620px;
+    overflow: hidden;
     background: var(--program-navy);
+    color: var(--program-white);
 }
 
-body.cost-page .hero::before {
+.programs-hero {
+    display: grid;
+    align-items: center;
+    padding: clamp(4rem, 9vw, 8rem) clamp(1.25rem, 8vw, 9rem);
+}
+
+.programs-hero::before,
+.cost-page .hero::before {
     content: "";
     position: absolute;
     inset: 0;
-    z-index: 0;
-    background-image: linear-gradient(rgba(0, 49, 95, .18), rgba(0, 49, 95, .18)), repeating-linear-gradient(90deg, transparent 0, transparent 79px, rgba(168, 212, 235, .12) 80px), repeating-linear-gradient(0deg, transparent 0, transparent 79px, rgba(168, 212, 235, .12) 80px);
+    pointer-events: none;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        );
+    background-size: 80px 80px;
+}
+
+.programs-hero > div:first-child,
+.cost-page .hero-content {
+    position: relative;
+    z-index: 5;
+}
+
+.programs-hero > div:first-child {
+    max-width: 650px;
+}
+
+.programs-hero h1,
+.cost-page .hero h1 {
+    margin: 0;
+    color: var(--program-white);
+    font: 600 clamp(4rem, 9vw, 9rem) / 0.87 "Oswald", sans-serif;
+    letter-spacing: -0.035em;
+}
+
+.programs-hero > div:first-child > p:not(.programs-kicker),
+.cost-page .hero-text {
+    max-width: 40rem;
+    margin: 1.5rem 0 2rem;
+    color: #e3eff7;
+    font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+    line-height: 1.6;
+}
+
+.programs-kicker,
+.cost-page .hero-label {
+    margin: 0 0 0.9rem;
+    color: var(--program-blue);
+    font: 600 0.78rem/1.2 "Oswald", sans-serif;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+}
+
+.programs-hero .programs-kicker,
+.cost-page .hero-label {
+    color: #a8d4eb;
+}
+
+.programs-hero-mark {
+    position: absolute;
+    right: -2vw;
+    bottom: -2rem;
+    z-index: 1;
+    color: rgba(255, 255, 255, 0.07);
+    font: 600 clamp(10rem, 28vw, 30rem) / 0.7 "Oswald", sans-serif;
+    letter-spacing: -0.06em;
+    pointer-events: none;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.programs-button,
+.cost-page .hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    min-height: 48px;
+    padding: 0.7rem 1rem;
+    border: 2px solid currentColor;
+    color: var(--program-white);
+    font: 600 0.8rem/1.2 "Oswald", sans-serif;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+.programs-button:hover,
+.programs-button:focus-visible,
+.cost-page .hero-button:hover,
+.cost-page .hero-button:focus-visible {
+    background: var(--program-white);
+    color: var(--program-navy);
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+.programs-section,
+.cost-page .programs-section {
+    width: 100%;
+    max-width: none;
+    padding: clamp(5rem, 9vw, 8rem) clamp(1.25rem, 4vw, 4rem);
+}
+
+.programs-section-intro {
+    min-width: 0;
+}
+
+.programs-section-intro h2 {
+    max-width: 8ch;
+    margin: 0;
+    color: var(--program-blue);
+    font: 600 clamp(3.4rem, 6.5vw, 7rem) / 0.88 "Oswald", sans-serif;
+    letter-spacing: -0.035em;
+}
+
+.programs-section-intro > p:last-child {
+    max-width: 55ch;
+    margin-top: 1.5rem;
+    color: var(--program-muted);
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+.program-browser,
+.cost-content,
+.cost-tool-content,
+.affordability-copy {
+    width: 100%;
+    min-width: 0;
+}
+
+/* =========================================================
+   PROGRAM EXPLORER
+   ========================================================= */
+
+.programs-explorer {
+    display: block;
+}
+
+.programs-explorer .programs-section-intro {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 3.5rem;
+}
+
+.programs-explorer .programs-section-intro h2 {
+    max-width: none;
+    margin: 0;
+    font-size: clamp(4rem, 7vw, 7rem);
+}
+
+.programs-explorer .programs-section-intro > p:last-child {
+    max-width: 75ch;
+}
+
+/* =========================================================
+   SEARCH + FILTERS
+   ========================================================= */
+
+.program-controls {
+    display: grid;
+    gap: 1.25rem;
+    width: 100%;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--program-blue);
+}
+
+.program-search {
+    display: grid;
+    gap: 0.45rem;
+    color: var(--program-blue);
+    font: 600 0.8rem "Oswald", sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.program-search input {
+    width: 100%;
+    min-height: 56px;
+    margin-top: 0.1rem;
+    padding: 1rem 1.25rem;
+    border: 0;
+    border-bottom: 3px solid var(--program-blue);
+    border-radius: 0;
+    outline: none;
+    background: var(--program-white);
+    color: var(--program-ink);
+    font: 400 1.05rem var(--font-body, "Outfit", sans-serif);
+    transition:
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.program-search input:focus {
+    border-color: var(--program-blue-light);
+    box-shadow: 0 4px 0 rgba(0, 86, 166, 0.12);
+}
+
+/* =========================================================
+   FILTERS
+   ========================================================= */
+
+.program-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    width: 100%;
+}
+
+.program-filter {
+    padding: 0.6rem 0.9rem;
+    border: 1px solid rgba(0, 58, 112, 0.3);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--program-blue);
+    font: 600 0.75rem "Oswald", sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+.program-filter:hover,
+.program-filter:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--program-blue-light);
+    background: var(--program-sky);
+    outline: none;
+}
+
+.program-filter.is-active {
+    border-color: var(--program-blue);
+    background: var(--program-blue);
+    color: var(--program-white);
+}
+
+/* =========================================================
+   PROGRAM GRID
+   ========================================================= */
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1.75rem;
+    counter-reset: program-card;
+}
+
+/* =========================================================
+   PROGRAM CARDS
+   ========================================================= */
+
+.program-card {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 340px;
+    padding: 2rem;
+    overflow: hidden;
+    border: 1px solid var(--program-blue);
+    border-radius: 0;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.035) 25%,
+            transparent 25%
+        ),
+        var(--program-blue);
+    background-size: 28px 28px;
+    box-shadow: 0 12px 28px rgba(0, 41, 79, 0.13);
+    cursor: pointer;
+    transition:
+        transform 260ms ease,
+        box-shadow 260ms ease,
+        background-color 260ms ease,
+        border-color 260ms ease;
+}
+
+.program-card::before {
+    content: counter(program-card);
+    counter-increment: program-card;
+    position: absolute;
+    top: -1.5rem;
+    right: 0.5rem;
+    z-index: -1;
+    color: rgba(255, 255, 255, 0.075);
+    font: 700 clamp(7rem, 10vw, 10rem) / 1 "Oswald", sans-serif;
+    pointer-events: none;
+    transition:
+        color 260ms ease,
+        transform 260ms ease;
+}
+
+.program-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 6px;
+    background: var(--program-sky);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 260ms ease;
+}
+
+.program-card > span {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 0.35rem 0.7rem;
+    background: var(--program-white);
+    color: var(--program-blue);
+    font: 500 0.72rem "Oswald", sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease;
+}
+
+.program-card h3 {
+    position: relative;
+    z-index: 2;
+    margin: 2.5rem 0 0.8rem;
+    color: var(--program-white);
+    font: 500 clamp(1.8rem, 2.5vw, 2.7rem) / 1.05 "Oswald", sans-serif;
+    letter-spacing: -0.025em;
+    transition:
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+.program-card p {
+    position: relative;
+    z-index: 2;
+    max-width: 46ch;
+    margin-bottom: 1.4rem;
+    color: rgba(255, 255, 255, 0.84);
+    line-height: 1.6;
+    transition: color 180ms ease;
+}
+
+.program-card b {
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin-bottom: 1.2rem;
+    color: var(--program-sky);
+    font: 500 0.78rem "Oswald", sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 180ms ease;
+}
+
+.program-card-button {
+    position: relative;
+    z-index: 3;
+    align-self: flex-start;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--program-white);
+    font: 600 0.9rem "Oswald", sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        color 180ms ease,
+        letter-spacing 180ms ease;
+}
+
+.program-card-button::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    margin-top: 0.25rem;
+    background: var(--program-blue-light);
+    transition: width 220ms ease;
+}
+
+.program-card:hover,
+.program-card:focus-visible {
+    z-index: 2;
+    transform: translateY(-8px);
+    border-color: var(--program-blue);
+    background: var(--program-white);
+    box-shadow:
+        0 22px 45px rgba(0, 41, 79, 0.18),
+        8px 8px 0 rgba(0, 58, 112, 0.12);
+    outline: none;
+}
+
+.program-card:hover::before,
+.program-card:focus-visible::before {
+    color: rgba(0, 58, 112, 0.07);
+    transform: translate(-8px, 6px);
+}
+
+.program-card:hover::after,
+.program-card:focus-visible::after {
+    transform: scaleY(1);
+}
+
+.program-card:hover > span,
+.program-card:focus-visible > span {
+    background: var(--program-blue);
+    color: var(--program-white);
+}
+
+.program-card:hover h3,
+.program-card:focus-visible h3 {
+    color: var(--program-blue);
+    transform: translateX(5px);
+}
+
+.program-card:hover p,
+.program-card:focus-visible p {
+    color: var(--program-ink);
+}
+
+.program-card:hover b,
+.program-card:focus-visible b {
+    color: var(--program-blue);
+}
+
+.program-card:hover .program-card-button,
+.program-card:focus-visible .program-card-button {
+    color: var(--program-blue);
+    letter-spacing: 0.08em;
+}
+
+.program-card:hover .program-card-button::after,
+.program-card:focus-visible .program-card-button::after {
+    width: 100%;
+}
+
+/* =========================================================
+   EMPTY SEARCH
+   ========================================================= */
+
+.program-empty {
+    margin: 1.5rem 0 0;
+    padding: 4rem 1rem;
+    border-top: 1px solid var(--program-line);
+    border-bottom: 1px solid var(--program-line);
+    background: var(--program-white);
+    color: var(--program-blue);
+    font: 500 1.5rem "Oswald", sans-serif;
+    text-align: center;
+}
+
+.program-source {
+    margin: 1.25rem 0 0;
+    color: #667781;
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+/* =========================================================
+   PROGRAM MODAL
+   ========================================================= */
+
+.program-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+        opacity 220ms ease,
+        visibility 220ms ease;
+}
+
+.program-modal.is-open,
+.program-modal[aria-hidden="false"] {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.program-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(13, 30, 57, 0.84);
+    backdrop-filter: blur(8px);
+}
+
+.program-modal-dialog {
+    position: relative;
+    z-index: 2;
+    width: min(1100px, 100%);
+    max-height: min(850px, 90vh);
+    overflow: auto;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-top: 7px solid var(--program-sky);
+    background: var(--program-paper);
+    box-shadow: 0 35px 100px rgba(0, 0, 0, 0.35);
+    transform: translateY(25px) scale(0.97);
+    transition: transform 260ms ease;
+}
+
+.program-modal.is-open .program-modal-dialog,
+.program-modal[aria-hidden="false"] .program-modal-dialog {
+    transform: translateY(0) scale(1);
+}
+
+.program-modal-close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    z-index: 5;
+    width: 46px;
+    height: 46px;
+    border: 1px solid rgba(0, 58, 112, 0.25);
+    border-radius: 50%;
+    background: var(--program-white);
+    color: var(--program-blue);
+    font: 400 1.8rem/1 "Outfit", sans-serif;
+    cursor: pointer;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+.program-modal-close:hover,
+.program-modal-close:focus-visible {
+    background: var(--program-blue);
+    color: var(--program-white);
+    transform: rotate(90deg);
+    outline: none;
+}
+
+.program-modal-header {
+    position: relative;
+    padding: clamp(2.5rem, 6vw, 5rem);
+    overflow: hidden;
+    background:
+        linear-gradient(
+            125deg,
+            var(--program-blue) 0%,
+            var(--program-blue) 72%,
+            var(--program-blue-light) 72%,
+            var(--program-blue-light) 100%
+        );
+    color: var(--program-white);
+}
+
+.program-modal-header::after {
+    content: "KEAN";
+    position: absolute;
+    right: 2rem;
+    bottom: -1rem;
+    color: rgba(255, 255, 255, 0.08);
+    font: 700 clamp(5rem, 11vw, 10rem) / 1 "Oswald", sans-serif;
+    pointer-events: none;
+}
+
+.program-modal-header .programs-kicker {
+    position: relative;
+    z-index: 2;
+    color: var(--program-sky);
+}
+
+.program-modal-header h3 {
+    position: relative;
+    z-index: 2;
+    max-width: 75%;
+    margin: 1rem 0 0;
+    color: var(--program-white);
+    font: 500 clamp(3rem, 7vw, 6rem) / 0.95 "Oswald", sans-serif;
+    letter-spacing: -0.03em;
+}
+
+.program-modal-body {
+    padding: clamp(2rem, 5vw, 4rem);
+}
+
+.program-modal-summary {
+    max-width: 75ch;
+    margin-bottom: 3rem;
+    padding-left: 1.25rem;
+    border-left: 4px solid var(--program-blue);
+    color: var(--program-ink);
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    line-height: 1.7;
+}
+
+.program-modal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    background: rgba(0, 58, 112, 0.2);
+}
+
+.program-modal-grid article {
+    min-height: 230px;
+    padding: 1.75rem;
+    background: var(--program-white);
+    transition:
+        background-color 180ms ease,
+        transform 180ms ease;
+}
+
+.program-modal-grid article:hover {
+    background: var(--program-sky);
+    transform: translateY(-3px);
+}
+
+.program-modal-grid article h4 {
+    margin-bottom: 1.25rem;
+    color: var(--program-blue);
+    font: 600 1.15rem "Oswald", sans-serif;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.program-modal-grid article h4::before {
+    content: "↳ ";
+    color: var(--program-silver);
+}
+
+.program-modal-grid article div,
+.program-modal-grid p,
+.program-modal-grid li {
+    color: var(--program-muted);
+    font-size: 0.96rem;
+    line-height: 1.6;
+}
+
+.program-modal-grid ul {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+/* =========================================================
+   PROGRAMS BOTTOM SECTION
+   ========================================================= */
+
+.programs-next {
+    display: block;
+    width: 100%;
+    max-width: none;
+    padding: clamp(5rem, 8vw, 9rem) clamp(1.25rem, 4vw, 4rem);
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 58, 112, 0.045) 1px,
+            transparent 1px
+        ),
+        var(--program-paper);
+    background-size: 70px 70px;
+}
+
+.programs-next .programs-section-intro {
+    width: 100%;
+    max-width: none;
+}
+
+.programs-next .programs-section-intro h2 {
+    max-width: none;
+    white-space: nowrap;
+}
+
+.programs-next .programs-section-intro > p:last-child {
+    max-width: 75ch;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.programs-next > div:last-child {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2.5rem;
+}
+
+.programs-button-dark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    min-height: 58px;
+    padding: 0.9rem 1.5rem;
+    border: 2px solid var(--program-blue);
+    background: var(--program-blue);
+    color: var(--program-white) !important;
+    font: 600 0.9rem "Oswald", sans-serif;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        transform 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.programs-button-dark:hover,
+.programs-button-dark:focus-visible {
+    background: var(--program-sky);
+    color: var(--program-blue) !important;
+    transform: translateY(-3px);
+    box-shadow: 6px 6px 0 rgba(0, 58, 112, 0.18);
+    outline: none;
+}
+
+.programs-button-dark span {
+    font-size: 1.2rem;
+    transition: transform 180ms ease;
+}
+
+.programs-button-dark:hover span,
+.programs-button-dark:focus-visible span {
+    transform: translateX(5px);
+}
+
+.programs-button,
+.programs-button-dark,
+.program-card-button,
+.site-footer-meta a {
+    white-space: nowrap;
+}
+
+/* =========================================================
+   =========================================================
+   COST PAGE
+   =========================================================
+   ========================================================= */
+
+/* =========================================================
+   COST HERO — NO OVERLAPPING ELEMENTS
+   ========================================================= */
+
+body.cost-page .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.9fr);
+    grid-template-rows: 1fr auto;
+    column-gap: clamp(2rem, 6vw, 7rem);
+    min-height: 760px;
+    padding: clamp(5rem, 8vw, 7rem) clamp(1.25rem, 7vw, 8rem);
+    background: var(--program-navy);
 }
 
 body.cost-page .hero-content {
     grid-column: 1;
-    max-width: 620px;
-    padding-block: 2rem;
+    grid-row: 1 / span 2;
+    align-self: center;
+    width: 100%;
+    max-width: 650px;
+    padding: 2rem 0;
 }
 
 body.cost-page .hero h1 {
     max-width: 8ch;
     font-size: clamp(4.5rem, 9vw, 9rem);
-    line-height: .84;
+    line-height: 0.84;
 }
 
 body.cost-page .hero-image {
-    position: absolute;
-    z-index: 1;
-    top: 9%;
-    right: clamp(1.25rem, 8vw, 9rem);
-    width: min(43vw, 650px);
-    height: 78%;
-    background: linear-gradient(180deg, rgba(0, 52, 95, .06), rgba(0, 20, 40, .62)), url("students.png") center / cover;
-    clip-path: polygon(12% 0, 100% 0, 100% 88%, 76% 100%, 0 92%, 0 14%);
+    position: relative;
+    top: auto;
+    right: auto;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    width: 100%;
+    height: clamp(350px, 48vw, 570px);
+    margin-bottom: 1.5rem;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 52, 95, 0.03),
+            rgba(0, 20, 40, 0.6)
+        ),
+        url("students.png") center / cover;
+    clip-path: polygon(
+        8% 0,
+        100% 0,
+        100% 86%,
+        76% 100%,
+        0 91%,
+        0 12%
+    );
 }
 
 .cost-hero-card {
-    position: absolute;
-    right: clamp(3rem, 28vw, 28rem);
-    bottom: 12%;
-    z-index: 3;
+    position: relative;
+    right: auto;
+    bottom: auto;
+    grid-column: 2;
+    grid-row: 2;
+    z-index: 5;
     display: grid;
-    gap: .6rem;
-    width: min(290px, 42vw);
-    padding: 1.4rem;
-    border-left: 5px solid #a8d4eb;
-    background: #fff;
+    gap: 0.6rem;
+    width: min(100%, 430px);
+    margin-left: auto;
+    padding: 1.5rem 1.6rem;
+    border-left: 5px solid var(--program-sky);
+    background: var(--program-white);
     color: var(--program-navy);
-    box-shadow: 0 20px 50px rgba(0, 20, 40, .28);
+    box-shadow: 12px 12px 0 rgba(0, 58, 112, 0.28);
 }
 
 .cost-hero-card p,
-.cost-hero-card span { margin: 0; color: #526572; font-size: .85rem; line-height: 1.45; }
-.cost-hero-card p { color: var(--program-blue); font: 600 .72rem/1.2 "Oswald", sans-serif; letter-spacing: .1em; text-transform: uppercase; }
-.cost-hero-card strong { font: 600 1.65rem/1 "Oswald", sans-serif; }
+.cost-hero-card span {
+    margin: 0;
+    color: var(--program-muted);
+    font-size: 0.85rem;
+    line-height: 1.45;
+}
 
-body.cost-page .hero-scroll { position: absolute; right: clamp(1.25rem, 8vw, 9rem); bottom: 2.5rem; z-index: 3; }
+.cost-hero-card p {
+    color: var(--program-blue);
+    font: 600 0.72rem/1.2 "Oswald", sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
 
-@media (max-width: 700px) {
-    body.cost-page .hero { display: block; min-height: 700px; padding: 4.5rem 7vw 8rem; }
-    body.cost-page .hero-content { max-width: 100%; padding: 0; }
-    body.cost-page .hero h1 { font-size: clamp(4rem, 17vw, 6.5rem); }
-    body.cost-page .hero-image { top: 42%; right: 7vw; width: 76vw; height: 42%; opacity: .9; }
-    .cost-hero-card { right: 7vw; bottom: 10%; width: min(78vw, 300px); }
-    body.cost-page .hero-scroll { display: none; }
+.cost-hero-card strong {
+    font: 600 1.65rem/1 "Oswald", sans-serif;
+}
+
+body.cost-page .hero-scroll {
+    position: absolute;
+    right: clamp(1.25rem, 7vw, 8rem);
+    bottom: 2rem;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    font: 600 0.72rem "Oswald", sans-serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+body.cost-page .scroll-line {
+    width: 62px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.cost-page .intro-section {
+    padding: clamp(4rem, 8vw, 7rem) 5vw !important;
+}
+
+/* =========================================================
+   COST OVERVIEW
+   ========================================================= */
+
+.cost-overview {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0, 58, 112, 0.05),
+            transparent 45%
+        ),
+        var(--program-sky);
+}
+
+.cost-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.cost-facts div {
+    position: relative;
+    min-height: 170px;
+    padding: 1.5rem;
+    overflow: hidden;
+    border-top: 5px solid var(--program-blue);
+    background: var(--program-white);
+    box-shadow: 0 8px 25px rgba(0, 41, 79, 0.08);
+}
+
+.cost-facts div::after {
+    content: "";
+    position: absolute;
+    right: -1rem;
+    bottom: -2rem;
+    width: 90px;
+    height: 90px;
+    border: 15px solid var(--program-sky);
+    border-radius: 50%;
+}
+
+.cost-facts strong {
+    display: block;
+    position: relative;
+    z-index: 1;
+    color: var(--program-navy);
+    font: 600 clamp(2.4rem, 4vw, 4rem) / 1 "Oswald", sans-serif;
+}
+
+.cost-facts span {
+    display: block;
+    position: relative;
+    z-index: 1;
+    max-width: 25ch;
+    margin-top: 0.75rem;
+    color: var(--program-muted);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* =========================================================
+   DATA VISUALIZATION
+   ========================================================= */
+
+.chart-block {
+    position: relative;
+    margin-top: 4rem;
+    padding: 2rem 0 0;
+    border-top: 2px solid var(--program-blue);
+}
+
+.chart-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.chart-heading h3,
+.calculator h3 {
+    margin: 0;
+    color: var(--program-navy);
+    font: 600 1.8rem / 1 "Oswald", sans-serif;
+}
+
+.chart-heading span {
+    color: var(--program-muted);
+    font-size: 0.9rem;
+}
+
+/* Tuition chart */
+
+.bar-chart {
+    display: grid;
+    gap: 1.1rem;
+    margin-top: 2rem;
+}
+
+.bar-chart > div {
+    display: grid;
+    grid-template-columns: 10rem minmax(0, 1fr);
+    align-items: center;
+    gap: 1rem;
+}
+
+.bar-chart b {
+    color: var(--program-navy);
+    font-size: 0.88rem;
+}
+
+.bar-chart i {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: var(--value);
+    min-width: 6rem;
+    height: 42px;
+    padding: 0 0.9rem;
+    overflow: visible;
+    background:
+        linear-gradient(
+            90deg,
+            var(--program-blue),
+            var(--program-blue-light)
+        );
+    color: var(--program-white);
+    font-size: 0.82rem;
+    font-style: normal;
+    box-shadow: 6px 6px 0 rgba(0, 58, 112, 0.1);
+    transition: width 500ms ease;
+}
+
+.bar-chart i::after {
+    content: "";
+    position: absolute;
+    right: -12px;
+    top: 0;
+    width: 12px;
+    height: 100%;
+    background: var(--program-sky);
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.bar-chart i span {
+    position: relative;
+    z-index: 2;
+    white-space: nowrap;
+}
+
+/* Add visual differentiation to each bar without red */
+
+.bar-chart > div:nth-child(2) i {
+    background: var(--program-blue-light);
+}
+
+.bar-chart > div:nth-child(3) i {
+    background: #4d7ea3;
+}
+
+.bar-chart > div:nth-child(4) i {
+    background: var(--program-navy);
+}
+
+/* Stacked chart */
+
+.stacked-chart {
+    display: grid;
+    gap: 1.4rem;
+    margin-top: 2rem;
+}
+
+.stacked-chart > div {
+    display: grid;
+    grid-template-columns: 7rem minmax(0, 1fr) 5rem;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stacked-chart b {
+    color: var(--program-navy);
+    font-size: 0.88rem;
+}
+
+.stacked-chart i {
+    display: flex;
+    height: 32px;
+    overflow: hidden;
+    background: #c7d4dd;
+    box-shadow: inset 0 0 0 1px rgba(0, 58, 112, 0.08);
+}
+
+.stacked-chart i span {
+    display: block;
+    height: 100%;
+}
+
+.bar-tuition {
+    width: 34%;
+    background: var(--program-blue);
+}
+
+.bar-living {
+    width: 58%;
+    background: #5d8cab;
+}
+
+.bar-living.commuter {
+    width: 15%;
+}
+
+.bar-other {
+    width: 8%;
+    background: var(--program-silver);
+}
+
+.stacked-chart strong {
+    color: var(--program-navy);
+    font: 600 0.85rem "Oswald", sans-serif;
+    white-space: nowrap;
+}
+
+.chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    color: var(--program-muted);
+    font-size: 0.78rem;
+}
+
+.chart-legend span::before {
+    display: inline-block;
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-right: 0.35rem;
+    background: var(--program-blue);
+    content: "";
+}
+
+.chart-legend span:nth-child(2)::before {
+    background: #5d8cab;
+}
+
+.chart-legend span:nth-child(3)::before {
+    background: var(--program-silver);
+}
+
+/* =========================================================
+   COST TOOL
+   ========================================================= */
+
+.cost-tools {
+    background: var(--program-white);
+}
+
+.living-toggle {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.living-option {
+    min-width: 120px;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--program-blue);
+    background: transparent;
+    color: var(--program-blue);
+    font: 600 0.75rem "Oswald", sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        transform 180ms ease;
+}
+
+.living-option:hover,
+.living-option:focus-visible {
+    transform: translateY(-2px);
+    background: var(--program-sky);
+    outline: none;
+}
+
+.living-option.is-active {
+    background: var(--program-blue);
+    color: var(--program-white);
+}
+
+.living-summary {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.living-summary div {
+    padding: 1.25rem 0;
+    border-bottom: 3px solid var(--program-blue);
+}
+
+.living-summary span {
+    display: block;
+    color: var(--program-muted);
+    font-size: 0.85rem;
+}
+
+.living-summary strong {
+    display: block;
+    margin-top: 0.4rem;
+    color: var(--program-navy);
+    font: 600 2rem "Oswald", sans-serif;
+}
+
+/* =========================================================
+   CALCULATOR
+   ========================================================= */
+
+.calculator {
+    margin-top: 3rem;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.035),
+            transparent 50%
+        ),
+        var(--program-navy);
+    color: var(--program-white);
+}
+
+.calculator h3 {
+    color: var(--program-white);
+}
+
+.calculator p {
+    color: var(--program-sky);
+}
+
+.calculator-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.calculator label {
+    display: grid;
+    gap: 0.4rem;
+    color: #a8d4eb;
+    font: 600 0.78rem "Oswald", sans-serif;
+    text-transform: uppercase;
+}
+
+.calculator select {
+    min-height: 48px;
+    padding: 0.7rem;
+    border: 0;
+    background: var(--program-white);
+    color: var(--program-ink);
+    font: 400 1rem var(--font-body, "Outfit", sans-serif);
+}
+
+.calculator output {
+    display: block;
+    margin-top: 1.75rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    color: var(--program-white);
+    font: 600 1.6rem "Oswald", sans-serif;
+}
+
+/* =========================================================
+   AFFORDABILITY
+   ========================================================= */
+
+.affordability {
+    background: var(--program-blue);
+    color: var(--program-white);
+}
+
+.affordability .programs-section-intro h2,
+.affordability .programs-kicker {
+    color: var(--program-white);
+}
+
+.affordability-copy > p {
+    max-width: 55ch;
+    color: #e3eff7;
+    font-size: 1.15rem;
+    line-height: 1.65;
+}
+
+.affordability-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+    margin: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.affordability-list div {
+    display: grid;
+    gap: 0.3rem;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.affordability-list b {
+    color: var(--program-white);
+    font: 600 1.2rem "Oswald", sans-serif;
+}
+
+.affordability-list span {
+    color: var(--program-sky);
+    line-height: 1.5;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .program-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .program-modal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .program-modal-grid article {
+        min-height: auto;
+    }
+
+    body.cost-page .hero {
+        grid-template-columns: minmax(0, 1fr) minmax(300px, 0.85fr);
+        column-gap: 3rem;
+        padding-inline: 5vw;
+    }
+
+    .cost-hero-card {
+        width: min(100%, 380px);
+    }
+}
+
+@media (max-width: 900px) {
+
+    .programs-section,
+    .cost-page .programs-section {
+        padding-inline: 5vw;
+    }
+
+    body.cost-page .hero {
+        min-height: 700px;
+    }
+
+    .cost-facts,
+    .living-summary {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+
+    .program-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .program-card {
+        min-height: 300px;
+    }
+
+    .program-modal {
+        padding: 0;
+    }
+
+    .program-modal-dialog {
+        width: 100%;
+        max-height: 100vh;
+        height: 100%;
+    }
+
+    .program-modal-header h3 {
+        max-width: 90%;
+        font-size: clamp(2.8rem, 13vw, 5rem);
+    }
+
+    .program-modal-body {
+        padding: 1.5rem;
+    }
+
+    .programs-next .programs-section-intro h2 {
+        white-space: normal;
+    }
+
+    /* -----------------------------------------
+       COST HERO
+       Everything gets its own row.
+       Nothing sits on top of anything else.
+       ----------------------------------------- */
+
+    body.cost-page .hero {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        min-height: auto;
+        padding: 5rem 7vw 5rem;
+    }
+
+    body.cost-page .hero-content {
+        grid-column: 1;
+        grid-row: 1;
+        align-self: auto;
+        padding: 0;
+    }
+
+    body.cost-page .hero h1 {
+        max-width: 7ch;
+        font-size: clamp(4rem, 17vw, 6.5rem);
+    }
+
+    body.cost-page .hero-image {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        height: 350px;
+        margin-top: 3rem;
+        margin-bottom: 0;
+        clip-path: polygon(
+            5% 0,
+            100% 0,
+            100% 91%,
+            78% 100%,
+            0 91%,
+            0 8%
+        );
+    }
+
+    .cost-hero-card {
+        grid-column: 1;
+        grid-row: 3;
+        width: min(92%, 430px);
+        margin: -0.5rem 0 0 auto;
+    }
+
+    body.cost-page .hero-scroll {
+        display: none;
+    }
+
+    .cost-facts,
+    .living-summary,
+    .affordability-list {
+        grid-template-columns: 1fr;
+    }
+
+    .cost-facts div {
+        min-height: 145px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .programs-hero,
+    .cost-page .hero {
+        padding-inline: 7vw;
+    }
+
+    .programs-section,
+    .cost-page .programs-section {
+        padding-inline: 7vw;
+    }
+
+    .bar-chart > div {
+        grid-template-columns: 7rem minmax(0, 1fr);
+        gap: 0.6rem;
+    }
+
+    .bar-chart b {
+        font-size: 0.78rem;
+    }
+
+    .bar-chart i {
+        height: 36px;
+        min-width: 4rem;
+        padding-inline: 0.6rem;
+    }
+
+    .chart-heading {
+        display: block;
+    }
+
+    .chart-heading span {
+        display: block;
+        margin-top: 0.5rem;
+    }
+
+    .stacked-chart > div,
+    .calculator-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .stacked-chart i {
+        order: 2;
+    }
+
+    .stacked-chart strong {
+        order: 3;
+    }
+
+    .cost-page .intro-section {
+        padding-inline: 7vw !important;
+    }
+
+    .living-toggle {
+        width: 100%;
+    }
+
+    .living-option {
+        flex: 1;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .program-filters {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .program-filter {
+        width: 100%;
+    }
+
+    .program-card h3 {
+        font-size: 1.6rem;
+    }
+
+    .program-card {
+        padding: 1.35rem;
+    }
+
+    .cost-hero-card {
+        width: 94%;
+        padding: 1.25rem;
+    }
+
+    .bar-chart > div {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+    }
+
+    .bar-chart i {
+        width: var(--value);
+    }
+}
+
+/* =========================================================
+   ACCESSIBILITY / REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .program-card,
+    .programs-button,
+    .programs-button-dark,
+    .program-filter,
+    .living-option,
+    .program-modal,
+    .program-modal-dialog,
+    .program-modal-close,
+    .program-card-button,
+    .program-modal-grid article,
+    .bar-chart i {
+        transition: none;
+    }
 }

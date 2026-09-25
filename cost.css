@@ -1,0 +1,172 @@
+/* Tuition graph values */
+
+body.cost-page .bar-chart > div:nth-child(1) i {
+    --value: 34%;
+}
+
+body.cost-page .bar-chart > div:nth-child(2) i {
+    --value: 43%;
+}
+
+body.cost-page .bar-chart > div:nth-child(3) i {
+    --value: 39%;
+}
+
+body.cost-page .bar-chart > div:nth-child(4) i {
+    --value: 100%;
+}
+
+
+/* Purple accent for the third bar */
+
+body.cost-page .bar-chart > div:nth-child(3) i {
+    background: linear-gradient(
+        90deg,
+        #9b8cff 0 var(--value),
+        #e9edf2 var(--value) 100%
+    );
+}
+
+
+/* Remove Bootstrap's default blue from the Cost page */
+
+body.cost-page {
+    --bs-primary: #003a70;
+    --bs-link-color: #003a70;
+    --bs-link-hover-color: #0056a6;
+}
+
+
+/* Navbar */
+
+body.cost-page .navbar {
+    background: #003a70 !important;
+}
+
+body.cost-page .navbar .nav-link {
+    color: #ffffff !important;
+}
+
+body.cost-page .navbar .nav-link:hover,
+body.cost-page .navbar .nav-link:focus {
+    color: #dfeef7 !important;
+}
+
+
+/* Buttons */
+
+body.cost-page .btn-primary,
+body.cost-page .btn-primary:hover,
+body.cost-page .btn-primary:focus {
+    background-color: #003a70 !important;
+    border-color: #003a70 !important;
+}
+
+
+/* Selects / form controls */
+
+body.cost-page .form-select:focus,
+body.cost-page .form-control:focus {
+    border-color: #0056a6;
+    box-shadow: 0 0 0 0.2rem rgba(0, 86, 166, 0.15);
+}
+
+
+/* Links */
+
+body.cost-page a {
+    color: #003a70;
+}
+
+body.cost-page a:hover {
+    color: #0056a6;
+}
+
+
+/* Living buttons */
+
+body.cost-page .living-option {
+    color: #003a70;
+}
+
+body.cost-page .living-option.is-active {
+    background: #003a70;
+    color: #ffffff;
+    border-color: #003a70;
+}
+
+
+/* See the whole picture */
+
+body.cost-page .cost-overview .programs-section-intro {
+    background: #f4f1ea !important;
+    color: var(--program-ink);
+}
+
+body.cost-page .cost-overview .programs-section-intro h2,
+body.cost-page .cost-overview .programs-section-intro p {
+    color: var(--program-ink);
+}
+
+body.cost-page .cost-overview .programs-section-intro .programs-kicker {
+    color: var(--program-blue-light);
+}
+
+body.cost-page .cost-overview .programs-section-intro h2 {
+    white-space: nowrap;
+}
+
+
+/* Allow the heading to wrap on mobile */
+
+@media (max-width: 767px) {
+    body.cost-page .cost-overview .programs-section-intro h2 {
+        white-space: normal;
+    }
+}
+/* See the whole picture — change the entire left panel */
+
+body.cost-page .cost-overview {
+    background: #f4f1ea;
+}
+
+body.cost-page .cost-overview .programs-section-intro {
+    background: #f4f1ea !important;
+}
+
+body.cost-page .cost-overview .programs-section-intro h2,
+body.cost-page .cost-overview .programs-section-intro p {
+    color: var(--program-ink);
+}
+
+body.cost-page .cost-overview .programs-section-intro .programs-kicker {
+    color: var(--program-blue-light);
+}
+
+body.cost-page .cost-overview .programs-section-intro h2 {
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    body.cost-page .cost-overview .programs-section-intro h2 {
+        white-space: normal;
+    }
+}
+body.cost-page .cost-tools .programs-section-intro h2 {
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    body.cost-page .cost-tools .programs-section-intro h2 {
+        white-space: normal;
+    }
+}
+body.cost-page .affordability .programs-section-intro h2 {
+    white-space: nowrap;
+}
+
+@media (max-width: 767px) {
+    body.cost-page .affordability .programs-section-intro h2 {
+        white-space: normal;
+    }
+}
