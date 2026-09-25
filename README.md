@@ -1,41 +1,94 @@
-## AI Use Summary
+# Kean University Website
 
-### What I Asked AI
+This project is a static multi-page recruitment website for Kean University. The final implementation includes a restored homepage KEAN collage, a content-rich About page, a Student Life experience page, a Programs explorer, and a Cost and planning page.
 
-I used AI to help troubleshoot and improve the layout and styling of my Kean University recruitment website. I asked for help with:
+## Project purpose
 
-* Creating a large KEAN hero section using photo collages inside each letter.
-* Making each letter display multiple images instead of one stretched image.
-* Creating hover effects that display labels such as Athletics, Science, Arts, and Student Life.
-* Fixing problems with image cropping, stretching, letter outlines, spacing, and positioning.
-* Adjusting the hero section size and spacing so the tagline and button did not overlap the KEAN letters.
-* Identifying ways to reduce empty space and make the website use the screen more effectively.
-* Fixing layout problems on the About and Student Life pages, including excessive whitespace, narrow sections, and squished text.
+The site is built to present Kean as a public university with:
 
-### What AI Suggested
+- strong New Jersey roots
+- a wider national and global reach
+- practical, career-connected programs
+- active student life and campus community
+- clear admissions and affordability information
 
-AI suggested using CSS `background-clip: text` and multiple layered elements to create photo collages inside the KEAN letters. It also suggested:
+## File structure
 
-* Dividing each letter into four photo sections.
-* Using different images for each section of a letter.
-* Using `clip-path` to create the four collage areas.
-* Adding visible outlines around the letters.
-* Adding hover labels over each letter.
-* Using responsive CSS with `clamp()`, media queries, and flexible widths.
-* Using full-width sections with Bootstrap containers inside them to prevent sections from becoming unnecessarily narrow.
-* Adjusting padding, margins, font sizes, and section widths to better balance the pages.
+- `index.html` — homepage hero, intro content, feature cards, and footer
+- `about.html` — university story, campus locations, map, and storytelling sections
+- `studentLife.html` — Student Life overview, residence information, first-year foundation, and campus engagement content
+- `programs.html` — program explorer, categories, and detail modal
+- `admissions.html` — cost and affordability planning page
+- `apply.html` — application entry page
+- `styles.css` — shared navigation, footer, homepage hero, and global site styling
+- `about.css` — page-specific About layout, map section, timeline, and big visual storytelling blocks
+- `student-life.css` — Student Life page-specific layouts and content styling
+- `programs.css` — programs/cost visual styling, chart layout, modal styling, and responsive forms
+- `script.js` — global behavior for campus map interactions, tab-like toggles, and reveal animations
+- `student-life.js` — Student Life academic area toggles
+- `programs.js` — program search/filtering, modal behavior, and cost estimate interactions
+- `artimgs/`, `scienceimgs/`, `sportimgs/` — image assets used across the site
+- `campus.jpeg`, `students.png`, `nj-map.png` — shared campus and map imagery
 
-### What I Changed or Created Myself
+## Dependencies
 
-I created and assembled the website's overall design and structure, including:
+- Bootstrap 5.3.8 via CDN for layout, navbar, spacing, and component behavior
+- Google Fonts used for the site theme, with the special KEAN hero collage using the custom display-style treatment in the home page CSS
+- No build toolchain is required; the site is served as static files
 
-* The Kean University navigation and page structure.
-* The overall color palette, typography, and visual style.
-* The KEAN photo-collage concept.
-* The categories represented by each letter: Athletics, Science, Arts, and Student Life.
-* The HTML structure for the individual KEAN letters and their collage sections.
-* The selection and placement of my own images for the collage.
-* The overall content, text, page organization, and navigation between pages.
-* The final design decisions about how the website should look and what information it should communicate.
+## Homepage hero and collage
 
-I used AI primarily for troubleshooting, CSS suggestions, layout adjustments, and debugging while making the design and content decisions myself.
+The homepage uses an oversized KEAN collage built from four letter blocks with image-filled masks. The collage is intentionally kept separate from the global typography so the rest of the site retains its normal fonts and spacing.
+
+The letter treatment includes:
+
+- four large letter forms for K, E, A, and N
+- image fills associated with athletics, science, arts, and student life
+- an outline treatment that follows the actual letter shape
+- hover emphasis without introducing a duplicate black letter beneath the visible image layer
+
+## About page map
+
+The About page uses the real `nj-map.png` asset and positions interactive campus pins relative to the map container. It includes a selected-campus detail preview and a responsive stacked layout for smaller screens.
+
+## Student Life interactions
+
+The Student Life page includes:
+
+- a responsive hero layout
+- content blocks emphasizing residence life, academics, and student engagement
+- academic-area accordion toggles
+- a first-year foundation section and timeline-based storytelling
+
+## Programs and cost functionality
+
+The Programs and Cost experience includes:
+
+- searchable and filterable program cards
+- a compact program detail modal
+- cost planning estimates for resident vs commuter models
+- undergraduate cost comparison visuals and planning summaries
+
+## Responsive behavior
+
+The site is designed to respond across desktop and mobile widths using:
+
+- Bootstrap layout utilities
+- CSS Grid and Flexbox-based section layouts
+- `clamp()` sizing for large headings and responsive spacing
+- breakpoint-driven stacking for the map, timeline, and mobile navigation
+
+## How to run locally
+
+```bash
+cd /workspaces/Kean-Website
+python3 -m http.server 8000
+```
+
+Then open `http://localhost:8000` in a browser.
+
+## Notes
+
+- Page-specific JavaScript is guarded so it only runs when the relevant elements exist.
+- Shared styles are kept broad enough for site-wide consistency while page-specific CSS remains in dedicated files.
+- The project is intentionally static and documentation reflects the final code structure rather than a hypothetical future build system.

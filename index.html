@@ -1,141 +1,119 @@
 <!doctype html>
-
 <html lang="en" data-bs-theme="light">
-
 <head>
-
-
-<title>Kean University</title>
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!-- Bootstrap CSS v5.3.8 -->
-<link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-    crossorigin="anonymous">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Roboto+Slab:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-
+    <title>Kean University</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-
-<body>
-
-
-<!-- STICKY NAVBAR -->
-<header>
-
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-
-        <div class="container-fluid">
-
-            <a class="navbar-brand" href="index.html">
-                <img src="kean-logo.png" alt="Kean University" class="kean-logo">
-            </a>
-
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#mainNav"
-                aria-controls="mainNav"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
-
-                <span class="navbar-toggler-icon"></span>
-
-            </button>
-
-            <div class="collapse navbar-collapse" id="mainNav">
-
-                <ul class="navbar-nav ms-auto">
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="studentLife.html">Student Life</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="programs.html">Programs</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="admissions.html">Cost</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link apply-link" href="apply.html">Apply</a>
-                    </li>
-
-                </ul>
-
+<body class="home-page">
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html" aria-label="Kean University home">
+                    <span class="site-wordmark">KEAN <small>UNIVERSITY</small></span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="studentLife.html">Student Life</a></li>
+                        <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+                        <li class="nav-item"><a class="nav-link" href="admissions.html">Cost</a></li>
+                        <li class="nav-item"><a class="nav-link apply-link" href="apply.html">Apply</a></li>
+                    </ul>
+                </div>
             </div>
+        </nav>
+    </header>
 
-        </div>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title" aria-label="KEAN">
+                    <span class="hero-letter" data-letter="K" data-label="ATHLETICS">
+                        <span class="letter-photo photo-1">K</span>
+                        <span class="letter-photo photo-2">K</span>
+                        <span class="letter-photo photo-3">K</span>
+                        <span class="letter-photo photo-4">K</span>
+                    </span>
+                    <span class="hero-letter" data-letter="E" data-label="SCIENCE">
+                        <span class="letter-photo photo-1">E</span>
+                        <span class="letter-photo photo-2">E</span>
+                        <span class="letter-photo photo-3">E</span>
+                        <span class="letter-photo photo-4">E</span>
+                    </span>
+                    <span class="hero-letter" data-letter="A" data-label="ARTS">
+                        <span class="letter-photo photo-1">A</span>
+                        <span class="letter-photo photo-2">A</span>
+                        <span class="letter-photo photo-3">A</span>
+                        <span class="letter-photo photo-4">A</span>
+                    </span>
+                    <span class="hero-letter" data-letter="N" data-label="STUDENT LIFE">
+                        <span class="letter-photo photo-1">N</span>
+                        <span class="letter-photo photo-2">N</span>
+                        <span class="letter-photo photo-3">N</span>
+                        <span class="letter-photo photo-4">N</span>
+                    </span>
+                </h1>
 
-    </nav>
+                <p class="hero-tagline">Make your mark.</p>
+                <p class="hero-subtitle">Explore programs, people, and possibilities.</p>
+                <a href="#explore" class="hero-button">Start Exploring <span>→</span></a>
+            </div>
+        </section>
 
-</header>
+        <section class="home-intro" id="explore">
+            <div class="container">
+                <p class="section-label">Welcome to Kean</p>
+                <h2>More than a university.<br>A place to become.</h2>
+                <div class="home-intro-grid">
+                    <div>
+                        <p>Kean brings together career-focused learning, active student life, and access that helps ambitious students move forward. From academic programs to campus communities, there is room to grow and a place to belong.</p>
+                    </div>
+                    <div>
+                        <p>Students study in New Jersey, connect across the country and the world, and build the skills to pursue meaningful work and a stronger future.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="home-feature-grid">
+            <article class="home-feature-card">
+                <span class="home-feature-badge">Academics</span>
+                <h3>Programs built for momentum</h3>
+                <p>Explore majors, pathways, and support designed to help students turn interests into action.</p>
+                <a href="programs.html">Explore programs</a>
+            </article>
+            <article class="home-feature-card alt">
+                <span class="home-feature-badge">Campus life</span>
+                <h3>Students who stay active</h3>
+                <p>From residence halls and athletics to clubs and events, Kean helps students build community.</p>
+                <a href="studentLife.html">See student life</a>
+            </article>
+            <article class="home-feature-card">
+                <span class="home-feature-badge">Affordability</span>
+                <h3>Plan for the real cost</h3>
+                <p>Find the information needed to compare tuition, living arrangements, and the bigger financial picture.</p>
+                <a href="admissions.html">Review cost</a>
+            </article>
+        </section>
+    </main>
 
-<main>
+    <footer class="site-footer">
+        <div class="site-footer-brand"><strong>Kean University</strong><span>New Jersey to the world</span><p>Accessible education. Ambitious futures.</p></div>
+        <div class="site-footer-column"><h2>Explore</h2><nav aria-label="Footer navigation"><a href="about.html">About</a><a href="studentLife.html">Student Life</a><a href="programs.html">Programs</a></nav></div>
+        <div class="site-footer-column"><h2>Plan</h2><nav aria-label="Planning navigation"><a href="admissions.html">Cost</a><a href="apply.html">Apply</a><a href="index.html#explore">Visit Kean</a></nav></div>
+        <div class="site-footer-meta"><small>1855 — PRESENT</small><a href="apply.html">Start your application <span aria-hidden="true">→</span></a></div>
+    </footer>
 
-    <!-- HERO -->
-    <section class="hero">
-    <div class="hero-content">
-        <h1 class="hero-title" aria-label="KEAN">
-    <span class="hero-letter" data-image="kean-k.jpg">K</span>
-    <span class="hero-letter" data-image="kean-e.jpg">E</span>
-    <span class="hero-letter" data-image="kean-a.jpg">A</span>
-    <span class="hero-letter" data-image="kean-n.jpg">N</span>
-</h1>
-        <p class="hero-tagline">Make your mark.</p>
-        <p class="hero-subtitle">Explore programs, people, and possibilities.</p>
-        <a href="#" class="hero-button">Start Exploring <span>→</span></a>
-    </div>
-</section>
-
-    <!-- INTRO -->
-    <section id="explore" class="intro-section">
-
-        <div class="container">
-
-            <p class="section-label">WELCOME TO KEAN</p>
-
-            <h2>
-                More than a university.<br>
-                A place to become.
-            </h2>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<footer>
-
-</footer>
-
-
-<!-- Bootstrap JavaScript Bundle -->
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous">
-</script>
-
-<script src="script.js"></script>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>

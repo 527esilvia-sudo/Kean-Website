@@ -1,4 +1,16 @@
+/* =========================================================
+   PROGRAMS / COST PAGE
+   Handles search and filtering for the academic program explorer,
+   the program detail modal, and the cost-planning estimate tool.
+   Scope: programs.html and admissions.html
+========================================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
+    /* ---------------------------------------------------------
+       PROGRAM FILTER + SEARCH
+       Keeps the program explorer usable without affecting pages
+       that do not render the .program-card markup.
+    --------------------------------------------------------- */
     const cards = [...document.querySelectorAll(".program-card")];
     const filters = document.querySelectorAll(".program-filter");
     const search = document.getElementById("program-search");
@@ -32,6 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
         search.addEventListener("input", renderPrograms);
     }
 
+    /* ---------------------------------------------------------
+       PROGRAM DETAIL MODAL
+       Opens a compact review panel with key program information.
+       HTML: #program-modal and .program-card
+    --------------------------------------------------------- */
     const modal = document.getElementById("program-modal");
     const modalTitle = document.getElementById("program-modal-title");
     const modalSummary = document.getElementById("program-modal-summary");
@@ -40,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalMatters = document.getElementById("program-modal-matters");
 
     const openModal = (card) => {
-        if (!modal) return;
+        if (!modal || !modalTitle || !modalSummary || !modalAudience || !modalDoing || !modalMatters) return;
         modalTitle.textContent = card.dataset.title || card.querySelector("h3").textContent;
         modalSummary.textContent = card.dataset.description || "";
         modalAudience.innerHTML = `<p>${card.dataset.category || "Kean students exploring a direction"}. ${card.dataset.semester || "Course sequencing varies by specialization and advising plan."}</p>`;
@@ -70,13 +87,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (modal) {
-        modal.querySelector(".program-modal-close").addEventListener("click", closeModal);
-        modal.querySelector(".program-modal-backdrop").addEventListener("click", closeModal);
+        const closeButton = modal.querySelector(".program-modal-close");
+        const backdrop = modal.querySelector(".program-modal-backdrop");
+
+        if (closeButton) closeButton.addEventListener("click", closeModal);
+        if (backdrop) backdrop.addEventListener("click", closeModal);
+
         document.addEventListener("keydown", (event) => {
             if (event.key === "Escape") closeModal();
         });
     }
 
+    /* ---------------------------------------------------------
+       COST PLANNER
+       Keeps the living-arrangement estimate aligned with the
+       selected residency and housing type.
+    --------------------------------------------------------- */
     const livingData = {
         commuter: { housing: "$1,900", transport: "$1,800", total: "$13,100" },
         resident: { housing: "$14,600", transport: "$700", total: "$25,200" }
@@ -88,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const transportEl = document.getElementById("living-transport");
         const totalEl = document.getElementById("living-total");
 
+        if (!values) return;
         if (housingEl) housingEl.textContent = values.housing;
         if (transportEl) transportEl.textContent = values.transport;
         if (totalEl) totalEl.textContent = values.total;

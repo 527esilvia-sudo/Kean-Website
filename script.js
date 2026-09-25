@@ -1,8 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("main section").forEach((section) => {
-        section.classList.add("container-fluid");
-    });
+/* =========================================
+   GLOBAL SITE INTERACTIONS
+   ========================================= */
 
+/* =========================================================
+   GLOBAL SITE INTERACTIONS
+   Shared behaviors for the public Kean site.
+   Safe page scoping keeps this script from breaking pages
+   that do not contain the targeted markup.
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+    /* ---------------------------------------------------------
+       ABOUT PAGE — CAMPUS MAP
+       Updates the selected campus card when a map pin is clicked.
+       HTML: .map-pin, #preview-count, #preview-name, etc.
+    --------------------------------------------------------- */
     const campusData = {
         union: {
             number: "01",
@@ -41,35 +53,40 @@ document.addEventListener("DOMContentLoaded", () => {
     const previewDescription = document.getElementById("preview-description");
     const previewButton = document.querySelector(".preview-button");
 
-    const setActiveCampus = (campusKey) => {
-        const campus = campusData[campusKey];
-        if (!campus) return;
+    if (pins.length > 0 && previewCount && previewName && previewLocation && previewDescription) {
+        const setActiveCampus = (campusKey) => {
+            const campus = campusData[campusKey];
+            if (!campus) return;
+
+            pins.forEach((pin) => {
+                pin.classList.toggle("is-active", pin.dataset.campus === campusKey);
+            });
+
+            previewCount.textContent = campus.number;
+            previewName.textContent = campus.name;
+            previewLocation.textContent = campus.location;
+            previewDescription.textContent = campus.description;
+
+            if (previewButton) {
+                previewButton.dataset.target = campus.target;
+            }
+        };
 
         pins.forEach((pin) => {
-            pin.classList.toggle("is-active", pin.dataset.campus === campusKey);
+            pin.addEventListener("click", () => {
+                setActiveCampus(pin.dataset.campus);
+            });
         });
 
-        previewCount.textContent = campus.number;
-        previewName.textContent = campus.name;
-        previewLocation.textContent = campus.location;
-        previewDescription.textContent = campus.description;
-        previewButton.dataset.target = campus.target;
-    };
-
-    pins.forEach((pin) => {
-        pin.addEventListener("click", () => {
-            setActiveCampus(pin.dataset.campus);
-        });
-    });
-
-    if (previewButton) {
-        previewButton.addEventListener("click", () => {
-            const targetId = previewButton.dataset.target;
-            const target = document.getElementById(targetId);
-            if (target) {
-                target.scrollIntoView({ behavior: "smooth", block: "start" });
-            }
-        });
+        if (previewButton) {
+            previewButton.addEventListener("click", () => {
+                const targetId = previewButton.dataset.target;
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            });
+        }
     }
 
     document.querySelectorAll(".map-back").forEach((button) => {
@@ -82,45 +99,42 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    const heroPhoto = document.querySelector(".hero-photo");
-    if (heroPhoto) {
-        heroPhoto.addEventListener("pointermove", (event) => {
-            const rect = heroPhoto.getBoundingClientRect();
-            const x = (event.clientX - rect.left) / rect.width;
-            const y = (event.clientY - rect.top) / rect.height;
-            heroPhoto.style.transform = `translate(${(x - 0.5) * 8}px, ${(y - 0.5) * 8}px)`;
-        });
+    /* ---------------------------------------------------------
+       STUDENT LIFE — PROGRAM AREA TOGGLES
+       Opens and closes the academic-area accordion cards.
+       HTML: .student-life-academic-areas article button
+    --------------------------------------------------------- */
+    document.querySelectorAll(".student-life-academic-areas article button").forEach((button) => {
+        button.addEventListener("click", () => {
+            const card = button.closest("article");
+            if (!card) return;
 
-        heroPhoto.addEventListener("pointerleave", () => {
-            heroPhoto.style.transform = "translate(0, 0)";
+            const isOpen = card.classList.toggle("is-open");
+            button.setAttribute("aria-expanded", String(isOpen));
+            const sign = button.querySelector("b");
+            if (sign) sign.textContent = isOpen ? "−" : "+";
         });
-    }
-
-    const revealItems = document.querySelectorAll(".reveal");
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.15
     });
 
-    revealItems.forEach((item) => revealObserver.observe(item));
+    /* ---------------------------------------------------------
+       REVEAL ANIMATIONS
+       Adds reveal states for sections that use the .reveal class.
+       Trigger: IntersectionObserver when supported; graceful fallback
+       on browsers without it.
+    --------------------------------------------------------- */
+    const revealItems = document.querySelectorAll(".reveal");
+    if (revealItems.length > 0 && "IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("is-visible");
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
 
-    const mapGraphic = document.querySelector(".map-graphic");
-    if (mapGraphic) {
-        mapGraphic.addEventListener("pointermove", (event) => {
-            const rect = mapGraphic.getBoundingClientRect();
-            const offsetX = (event.clientX - rect.left) / rect.width - 0.5;
-            const offsetY = (event.clientY - rect.top) / rect.height - 0.5;
-            mapGraphic.style.transform = `translate(${offsetX * 4}px, ${offsetY * 4}px)`;
-        });
-
-        mapGraphic.addEventListener("pointerleave", () => {
-            mapGraphic.style.transform = "translate(0, 0)";
-        });
+        revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
     }
 });
