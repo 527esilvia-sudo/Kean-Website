@@ -1273,3 +1273,377 @@
         transition: none !important;
     }
 }
+/* =========================================================
+   RESPONSIVE NAVBAR
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .student-life-navbar-toggler {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .student-life-navbar-collapse {
+        width: 100%;
+        padding-top: 0.5rem;
+    }
+
+    .student-life-nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+        padding: 0.5rem 0 1rem;
+    }
+
+    .student-life-nav-list .nav-item {
+        width: 100%;
+    }
+
+    .student-life-nav-link {
+        display: block;
+        width: 100%;
+        padding: 0.85rem 0 !important;
+    }
+
+    .student-life-nav-link.active::after {
+        right: auto;
+        bottom: 0.25rem;
+        left: 0;
+        width: 4rem;
+    }
+
+    .student-life-apply-link {
+        width: fit-content;
+        margin: 0.4rem 0 0;
+        padding-inline: 1rem !important;
+    }
+
+    .student-life-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .student-life-hero-image {
+        max-width: none;
+    }
+
+    .student-life-section,
+    .student-life-connect,
+    .student-life-paths,
+    .student-life-choose {
+        grid-template-columns: 1fr;
+    }
+
+    .student-life-paths-footer,
+    .student-life-checklist {
+        grid-column: auto;
+    }
+
+    .student-life-checklist {
+        margin-top: 0;
+    }
+}
+@media (max-width: 991.98px) {
+
+    /* Show hamburger */
+    .student-life-navbar-toggler {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    /* Mobile menu */
+    .student-life-navbar-collapse {
+        width: 100%;
+    }
+
+    /* Let Bootstrap control whether the menu is open */
+    .student-life-navbar-collapse.collapse:not(.show) {
+        display: none;
+    }
+
+    /* Menu links when open */
+    .student-life-nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+        padding: 0.75rem 0 1rem;
+    }
+
+    .student-life-nav-list .nav-item {
+        width: 100%;
+    }
+
+    .student-life-nav-link {
+        display: block;
+        width: 100%;
+        padding: 0.85rem 0 !important;
+    }
+
+    .student-life-nav-link.active::after {
+        right: auto;
+        bottom: 0.25rem;
+        left: 0;
+        width: 4rem;
+    }
+
+    .student-life-apply-link {
+        width: fit-content;
+        margin: 0.4rem 0 0;
+        padding-inline: 1rem !important;
+    }
+
+
+    /* Rest of tablet layout */
+    .student-life-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .student-life-hero-image {
+        max-width: none;
+    }
+
+    .student-life-section,
+    .student-life-connect,
+    .student-life-paths,
+    .student-life-choose {
+        grid-template-columns: 1fr;
+    }
+
+    .student-life-paths-footer,
+    .student-life-checklist {
+        grid-column: auto;
+    }
+
+    .student-life-checklist {
+        margin-top: 0;
+    }
+}
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.student-life-header {
+    position: relative;
+    z-index: 1050;
+}
+
+.student-life-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+    width: 100%;
+    min-height: 76px;
+    padding: 0;
+    background: var(--student-blue-dark);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.student-life-nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 76px;
+    padding: 0 clamp(1rem, 5vw, 5rem);
+}
+
+.student-life-brand {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.55rem;
+    flex-shrink: 0;
+    color: #ffffff;
+}
+
+.student-life-brand:hover {
+    color: #ffffff;
+}
+
+.student-life-brand-main {
+    font-family: "Oswald", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    line-height: 1;
+}
+
+.student-life-brand-sub {
+    font-family: "Oswald", sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    line-height: 1;
+}
+
+
+/* Hamburger */
+
+.student-life-navbar-toggler {
+    display: none;
+    width: 46px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 2px;
+    background: transparent;
+    box-shadow: none;
+    position: relative;
+    z-index: 1100;
+}
+
+.student-life-navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.student-life-menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 22px;
+    height: 22px;
+    margin: auto;
+}
+
+.student-life-menu-icon span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+}
+
+
+/* Desktop menu */
+
+.student-life-navbar-collapse {
+    flex-grow: 0;
+}
+
+.student-life-nav-list {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.3rem, 1.2vw, 1.25rem);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.student-life-nav-link {
+    position: relative;
+    display: block;
+    padding: 0.55rem 0.7rem !important;
+    color: rgba(255, 255, 255, 0.78) !important;
+    font-family: "Oswald", sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.student-life-nav-link:hover,
+.student-life-nav-link:focus-visible {
+    color: #ffffff !important;
+}
+
+.student-life-nav-link.active {
+    color: #ffffff !important;
+}
+
+.student-life-nav-link.active::after {
+    position: absolute;
+    right: 0.7rem;
+    bottom: 0.1rem;
+    left: 0.7rem;
+    height: 2px;
+    background: var(--student-sky);
+    content: "";
+}
+
+.student-life-apply-link {
+    margin-left: 0.4rem;
+    padding-inline: 1rem !important;
+    border: 1px solid var(--student-sky);
+    color: #ffffff !important;
+}
+
+.student-life-apply-link:hover,
+.student-life-apply-link:focus-visible {
+    background: var(--student-sky);
+    color: var(--student-blue-dark) !important;
+}
+
+
+/* =========================================================
+   MOBILE NAVBAR
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .student-life-nav-container {
+        position: relative;
+        flex-wrap: wrap;
+    }
+
+    .student-life-navbar-toggler {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        cursor: pointer;
+        pointer-events: auto;
+    }
+
+    .student-life-navbar-collapse {
+        flex-basis: 100%;
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    .student-life-nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 0;
+        padding: 0.75rem 0 1rem;
+    }
+
+    .student-life-nav-list .nav-item {
+        width: 100%;
+    }
+
+    .student-life-nav-link {
+        width: 100%;
+        padding: 0.85rem 0 !important;
+    }
+
+    .student-life-nav-link.active::after {
+        right: auto;
+        bottom: 0.25rem;
+        left: 0;
+        width: 4rem;
+    }
+
+    .student-life-apply-link {
+        width: fit-content;
+        margin: 0.4rem 0 0;
+    }
+}
+@media (max-width: 991.98px) {
+
+    .student-life-navbar-toggler {
+        display: block;
+    }
+
+    .student-life-navbar-toggler .navbar-toggler-icon {
+        filter: brightness(0) invert(1);
+    }
+
+}
