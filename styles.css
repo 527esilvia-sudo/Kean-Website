@@ -1352,3 +1352,271 @@ label {
         font-size: 0.55rem;
     }
 }
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.navbar {
+    padding: 14px 5%;
+    background: var(--kean-navy-deep);
+}
+
+.navbar-brand {
+    margin: 0;
+    color: var(--kean-white) !important;
+}
+
+.site-wordmark {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+}
+
+.site-wordmark small {
+    font-family: var(--font-display);
+    font-size: .48em;
+    font-weight: 500;
+    letter-spacing: .18em;
+}
+
+.navbar-nav {
+    gap: 8px;
+}
+
+.nav-link {
+    position: relative;
+    padding: 8px 14px !important;
+    color: rgba(255, 255, 255, .85) !important;
+    font-family: var(--font-display);
+    font-size: .82rem;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    transition: color .2s ease;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    right: 14px;
+    bottom: 3px;
+    left: 14px;
+    height: 2px;
+    background: var(--kean-white);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .2s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+    color: var(--kean-white) !important;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.nav-link.is-current {
+    color: var(--kean-white) !important;
+}
+
+.nav-link.is-current::after {
+    transform: scaleX(1);
+}
+
+.apply-link {
+    margin-left: 8px;
+    border: 1px solid rgba(255, 255, 255, .65);
+    border-radius: 100px;
+    padding-inline: 18px !important;
+}
+
+.apply-link::after {
+    display: none;
+}
+
+.apply-link:hover,
+.apply-link:focus-visible {
+    background: var(--kean-white);
+    color: var(--kean-navy-deep) !important;
+}
+
+/* =========================================================
+   GLOBAL NAVIGATION
+   SAME NAVBAR COLOR ON EVERY PAGE
+   ========================================================= */
+
+.navbar {
+    background-color: #0d1e39 !important;
+    padding: 14px 5%;
+}
+
+.navbar-brand,
+.navbar-brand:hover,
+.navbar-brand:focus {
+    color: #ffffff !important;
+}
+
+.site-wordmark {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    color: #ffffff !important;
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+}
+
+.site-wordmark small {
+    color: #ffffff !important;
+    font-family: "Oswald", sans-serif;
+    font-size: .48em;
+    font-weight: 500;
+    letter-spacing: .18em;
+}
+
+.navbar-nav {
+    gap: 8px;
+}
+
+.nav-link,
+.nav-link:visited {
+    position: relative;
+    padding: 8px 14px !important;
+    color: #ffffff !important;
+    font-family: "Oswald", sans-serif;
+    font-size: .82rem;
+    font-weight: 500;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active,
+.nav-link.is-current {
+    color: #ffffff !important;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    right: 14px;
+    bottom: 3px;
+    left: 14px;
+    height: 2px;
+    background-color: #ffffff;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform .2s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after,
+.nav-link.is-current::after {
+    transform: scaleX(1);
+}
+
+.apply-link {
+    margin-left: 8px;
+    border: 1px solid #ffffff;
+    border-radius: 100px;
+    padding-inline: 18px !important;
+    color: #ffffff !important;
+}
+
+.apply-link::after {
+    display: none;
+}
+
+.apply-link:hover,
+.apply-link:focus-visible {
+    background-color: #ffffff !important;
+    color: #0d1e39 !important;
+}
+
+/* HAMBURGER */
+
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, .7) !important;
+    box-shadow: none !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+    filter: none;
+}
+
+
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .navbar {
+        padding: 10px 6%;
+    }
+
+    .navbar-collapse {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 12px;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        gap: 0;
+        align-items: flex-start;
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        width: fit-content;
+        padding: 10px 0 !important;
+    }
+
+    .nav-link::after {
+        right: 0;
+        left: 0;
+        bottom: 4px;
+    }
+
+    .apply-link {
+        width: fit-content;
+        margin-top: 6px;
+        margin-left: 0;
+        padding: 8px 16px !important;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 10px 5%;
+    }
+
+    .site-wordmark {
+        font-size: 1.35rem;
+    }
+
+    .site-wordmark small {
+        font-size: .45em;
+    }
+}
+
+

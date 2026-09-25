@@ -29,14 +29,15 @@
 
 
 <!-- STICKY NAVBAR -->
+```html
 <header>
-
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
         <div class="container-fluid">
 
             <a class="navbar-brand" href="index.html">
-                <span class="site-wordmark">KEAN <small>UNIVERSITY</small></span>
+                <span class="site-wordmark">
+                    KEAN <small>UNIVERSITY</small>
+                </span>
             </a>
 
             <button
@@ -46,14 +47,12 @@
                 data-bs-target="#mainNav"
                 aria-controls="mainNav"
                 aria-expanded="false"
-                aria-label="Toggle navigation">
-
+                aria-label="Toggle navigation"
+            >
                 <span class="navbar-toggler-icon"></span>
-
             </button>
 
             <div class="collapse navbar-collapse" id="mainNav">
-
                 <ul class="navbar-nav ms-auto">
 
                     <li class="nav-item">
@@ -73,18 +72,23 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link apply-link" href="https://www.kean.edu/apply-now" target="_blank">Apply</a>
+                        <a
+                            class="nav-link apply-link"
+                            href="https://www.kean.edu/apply-now"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Apply
+                        </a>
                     </li>
 
                 </ul>
-
             </div>
 
         </div>
-
     </nav>
-
 </header>
+```
 
 
 <main>
