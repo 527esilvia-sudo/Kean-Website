@@ -909,7 +909,7 @@ body.cost-page .hero-image {
             rgba(0, 52, 95, 0.03),
             rgba(0, 20, 40, 0.6)
         ),
-        url("students.png") center / cover;
+        url("students-4.jpg") center / cover;
     clip-path: polygon(
         8% 0,
         100% 0,
@@ -1657,4 +1657,34 @@ body.cost-page .scroll-line {
     .bar-chart i {
         transition: none;
     }
+}
+/* =========================================================
+   FOOTER — WHITE TEXT
+   ========================================================= */
+
+.programs-page .site-footer,
+.cost-page .site-footer {
+    color: #ffffff;
+}
+
+.programs-page .site-footer strong,
+.programs-page .site-footer span,
+.programs-page .site-footer p,
+.programs-page .site-footer h2,
+.programs-page .site-footer small,
+.programs-page .site-footer a,
+.cost-page .site-footer strong,
+.cost-page .site-footer span,
+.cost-page .site-footer p,
+.cost-page .site-footer h2,
+.cost-page .site-footer small,
+.cost-page .site-footer a {
+    color: #ffffff;
+}
+
+.programs-page .site-footer a:hover,
+.programs-page .site-footer a:focus-visible,
+.cost-page .site-footer a:hover,
+.cost-page .site-footer a:focus-visible {
+    color: #bfe1f2;
 }

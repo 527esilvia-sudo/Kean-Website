@@ -1369,3 +1369,63 @@
     line-height: 0.9;
     letter-spacing: -0.04em;
 }
+.about-page .photo-union {
+    grid-column: 2;
+    grid-row: 1;
+    aspect-ratio: 4 / 5;
+    background-image:
+        linear-gradient(180deg, rgba(0, 52, 95, .04), rgba(0, 20, 40, .45)),
+        url("kean-union.png");
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(12% 0, 100% 5%, 92% 100%, 0 92%);
+}
+
+.about-page .photo-jersey {
+    grid-column: 1;
+    grid-row: 1;
+    aspect-ratio: 16 / 9;
+    background-image:
+        linear-gradient(180deg, rgba(0, 52, 95, .05), rgba(0, 20, 40, .5)),
+        url("city-kean.png");
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(0 7%, 85% 0, 100% 92%, 10% 100%);
+}
+
+.about-page .ocean-photo {
+    grid-column: 1;
+    grid-row: 1;
+    aspect-ratio: 16 / 9;
+    background-image:
+        linear-gradient(90deg, rgba(0, 20, 40, .55), rgba(0, 20, 40, .08)),
+        url("kean-ocean.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.about-page .skylands-photo {
+    grid-column: 2;
+    grid-row: 1;
+    aspect-ratio: 3 / 2;
+    background-image:
+        linear-gradient(180deg, rgba(0, 52, 95, .04), rgba(0, 20, 40, .45)),
+        url("kean-skylands.jpg");
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(21% 0, 100% 9%, 89% 100%, 0 90%);
+}
+.about-page .global-photo {
+    position: absolute;
+    z-index: 1;
+    right: var(--content-padding);
+    bottom: 0;
+    width: min(36%, 500px);
+    aspect-ratio: 4 / 5;
+
+    background:
+        linear-gradient(180deg, rgba(0, 52, 95, .08), rgba(0, 20, 40, .6)),
+        url("students-2.jpg") center / cover;
+
+    clip-path: polygon(14% 0, 100% 8%, 86% 100%, 0 92%);
+}
