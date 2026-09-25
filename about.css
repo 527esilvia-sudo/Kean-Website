@@ -1152,6 +1152,3 @@
     .about-page .global-content { width: min(58%, 760px); padding-top: clamp(5rem, 10vw, 9rem); }
     .about-page .final-copy { padding-block: clamp(5rem, 8vw, 7rem); }
 }
-.arrow {
-    font-size:1em;
-}

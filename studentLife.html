@@ -1,57 +1,798 @@
+
 <!doctype html>
 <html lang="en" data-bs-theme="light">
 <head>
-    <title>Student Life at Kean University</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIlFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <meta name="description" content="Student Life at Kean University — residence life, first-year academics, programs, campus involvement and more.">
+    <title>Student Life at Kean University</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-sRIlFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+          crossorigin="anonymous">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="student-life.css">
 </head>
+
 <body class="student-life-page">
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html" aria-label="Kean University home">
-                <span class="site-wordmark">KEAN <small>UNIVERSITY</small></span>
+
+<!-- =========================================================
+     NAVIGATION
+     This navbar is intentionally scoped to Student Life so
+     styles from the rest of the website cannot break it.
+========================================================= -->
+<header class="student-life-header">
+    <nav class="student-life-navbar navbar navbar-expand-lg"
+         aria-label="Main navigation">
+
+        <div class="student-life-nav-container">
+
+            <a class="student-life-brand"
+               href="index.html"
+               aria-label="Kean University home">
+                <span class="student-life-brand-main">KEAN</span>
+                <span class="student-life-brand-sub">UNIVERSITY</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+
+            <button class="student-life-navbar-toggler navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#studentLifeNav"
+                    aria-controls="studentLifeNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="student-life-menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
             </button>
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link is-current" href="studentLife.html" aria-current="page">Student Life</a></li>
-                    <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="admissions.html">Cost</a></li>
-                    <li class="nav-item"><a class="nav-link apply-link" href="apply.html">Apply</a></li>
+
+            <div class="student-life-navbar-collapse collapse"
+                 id="studentLifeNav">
+
+                <ul class="student-life-nav-list navbar-nav">
+                    <li class="nav-item">
+                        <a class="student-life-nav-link nav-link"
+                           href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="student-life-nav-link nav-link active"
+                           href="studentLife.html"
+                           aria-current="page">
+                            Student Life
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="student-life-nav-link nav-link"
+                           href="programs.html">
+                            Programs
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="student-life-nav-link nav-link"
+                           href="admissions.html">
+                            Cost
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="student-life-nav-link student-life-apply-link nav-link"
+                           href="apply.html">
+                            Apply
+                        </a>
+                    </li>
                 </ul>
+
             </div>
         </div>
     </nav>
 </header>
+
+
 <main>
-    <section class="student-life-hero" aria-labelledby="student-life-title"><div class="student-life-hero-copy"><p class="student-life-kicker">Student guide / Kean University</p><h1 id="student-life-title">STUDENT<br><span>LIFE</span></h1><p class="student-life-hero-lede">A practical look at where you live, how your first semester starts, what you can study and how you can find your people.</p><a class="student-life-button student-life-button-light" href="#live">Start with the essentials <span aria-hidden="true">↓</span></a></div><figure class="student-life-hero-image"><img src="students.png" alt="Two Kean students walking together on campus"></figure><div class="student-life-hero-note"><strong>LIVE</strong><span>LEARN</span><span>CHOOSE</span><span>CONNECT</span></div></section>
 
-    <section class="student-life-section student-life-live" id="live" aria-labelledby="live-title"><div class="student-life-section-heading"><p class="student-life-kicker">01 / Live</p><h2 id="live-title">LIVE<br>AT<br><em>KEAN</em></h2><p>Residence life is more than a room. It is a place to study, reset and share everyday campus life with other students.</p></div><div class="student-life-residence-showcase"><article class="student-life-residence-feature student-life-residence-feature-primary"><figure><img src="campus.jpeg" alt="Students walking through Kean University's campus"></figure><div class="student-life-residence-copy"><p class="student-life-panel-label">Residence hall / 01</p><h3>Cougar Hall</h3><p>Freshman-oriented suite-style living with two double bedrooms connected by a kitchenette and private bathroom. Shared lounges, a game room, business center and other common spaces make room for both focus and community.</p></div></article><article class="student-life-residence-feature student-life-residence-feature-secondary"><figure><img src="students.png" alt="Students building community on the Kean campus"></figure><div class="student-life-residence-copy"><p class="student-life-panel-label">Residence hall / 02</p><h3>Freshman Residence Hall</h3><p>Suite-style rooms connect two double bedrooms to a common area and private bathroom, with a Learning Center, lounge, game room and laundry facilities close by.</p></div></article><div class="student-life-residence-strip" aria-label="Everyday residence experiences"><div><span>01</span><strong>STUDY</strong><small>Learning Center and shared study spaces</small></div><div><span>02</span><strong>HANG OUT</strong><small>Lounges and game rooms</small></div><div><span>03</span><strong>LIVE</strong><small>Suites, common areas and laundry</small></div><div><span>04</span><strong>SHARE</strong><small>A community built into the day</small></div></div></div></section>
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+    <section class="student-life-hero"
+             aria-labelledby="student-life-title">
 
-    <section class="student-life-paths" aria-labelledby="paths-title"><div class="student-life-paths-heading"><p class="student-life-kicker">Different starting points</p><h2 id="paths-title">TWO WAYS<br>TO START<br>AT <em>KEAN</em></h2></div><div class="student-life-path-grid"><article><span class="student-life-path-number">01</span><h3>Live on campus</h3><p>Residence halls, lounges, study spaces, dining and campus activities can become part of your everyday routine.</p></article><article><span class="student-life-path-number">02</span><h3>Commute to campus</h3><p>Classes, student organizations, events, academic resources and campus life are still part of your Kean experience when you live at home.</p></article></div><p class="student-life-paths-footer">Different starting points. Same Kean community.</p></section>
+        <div class="student-life-hero-copy">
+            <p class="student-life-kicker">Student guide / Kean University</p>
 
-    <section class="student-life-section student-life-learn" id="learn" aria-labelledby="learn-title"><div class="student-life-learn-heading"><p class="student-life-kicker">02 / Learn</p><h2 id="learn-title">YOUR<br>FIRST-YEAR<br><em>FOUNDATION</em></h2><p>Your freshman schedule is a mix of major-related coursework and General Education requirements.</p></div><div class="student-life-foundation"><p class="student-life-panel-label">A useful starting point</p><p class="student-life-foundation-intro">These areas help build the skills and context you will use across your degree. Exact courses can vary by major, especially mathematics.</p><div class="student-life-foundation-list"><article><h3>Transition to Kean</h3><p>GE 1000 is a one-credit course about academic and student life, General Education and university resources.</p></article><article><h3>College Composition</h3><p>Build a foundation for clear, effective college writing.</p></article><article><h3>Mathematics</h3><p>The requirement varies based on your major.</p></article><article><h3>Speech Communication</h3><p>Practice communication and civic participation.</p></article><article><h3>Research + Technology</h3><p>Develop research and information skills for college work.</p></article></div></div><aside class="student-life-checklist" aria-labelledby="checklist-title"><p class="student-life-panel-label">Your first steps</p><h3 id="checklist-title">Build your first-semester rhythm.</h3><label><input type="checkbox"> Attend orientation</label><label><input type="checkbox"> Find one campus resource</label><label><input type="checkbox"> Meet a classmate to study</label><label><input type="checkbox"> Try one campus activity</label></aside></section>
+            <h1 id="student-life-title">
+                STUDENT<br>
+                <span>LIFE</span>
+            </h1>
 
-    <section class="student-life-section student-life-choose" id="choose" aria-labelledby="choose-title"><div class="student-life-choose-intro"><p class="student-life-kicker">03 / Choose</p><h2 id="choose-title">WHAT CAN<br>I <em>STUDY?</em></h2><p>Start with an area that sounds like you. Select an area to reveal the kinds of work and questions it can open up.</p><a class="student-life-button student-life-button-blue" href="programs.html">Explore programs <span aria-hidden="true">→</span></a></div><div class="student-life-academic-areas"><article><button type="button" aria-expanded="false"><span>01</span><h3>Business</h3><b>+</b></button><p>Accounting, finance, marketing, economics and business analytics.</p></article><article><button type="button" aria-expanded="false"><span>02</span><h3>Science + Technology</h3><b>+</b></button><p>Computer Science, Artificial Intelligence, Biology, Chemistry and Information Technology.</p></article><article><button type="button" aria-expanded="false"><span>03</span><h3>Health</h3><b>+</b></button><p>Nursing, Public Health, Exercise Science, Psychology and Speech-Language-Hearing Sciences.</p></article><article><button type="button" aria-expanded="false"><span>04</span><h3>Education</h3><b>+</b></button><p>Elementary, early childhood, biology, chemistry, mathematics and Spanish education.</p></article><article><button type="button" aria-expanded="false"><span>05</span><h3>Art + Design</h3><b>+</b></button><p>Graphic Design, Architectural Studies, Interior Design, Industrial Design and Studio Art.</p></article><article><button type="button" aria-expanded="false"><span>06</span><h3>Liberal Arts</h3><b>+</b></button><p>Communication, English, History, Political Science, Sociology, Music and Theatre.</p></article></div></section>
+            <p class="student-life-hero-lede">
+                A practical look at where you live, how your first semester
+                starts, what you can study and how you can find your people.
+            </p>
 
-    <section class="student-life-first-semester" id="first-semester" aria-labelledby="first-semester-title"><div class="student-life-first-semester-heading"><p class="student-life-kicker">04 / Your first semester</p><h2 id="first-semester-title">YOUR FIRST<br><em>SEMESTER</em></h2><p>One clear path from getting oriented to finding a rhythm that feels like your own.</p></div><div class="student-life-timeline" aria-label="Six stages of a first semester at Kean"><article><span class="student-life-timeline-number">01</span><figure><img src="students.png" alt="Students walking together on campus"></figure><div><h3>Before you arrive</h3><p>Orientation introduces you to Kean and its resources before classes begin.</p></div></article><article><span class="student-life-timeline-number">02</span><div><h3>Orientation</h3><p>New Student Orientation introduces incoming freshmen to campus culture and university resources through sessions led by Orientation Leaders.</p></div></article><article><span class="student-life-timeline-number">03</span><figure><img src="campus.jpeg" alt="Kean campus buildings and walkways"></figure><div><h3>Starting classes</h3><p>Begin major-related coursework alongside General Education requirements while you learn your new schedule.</p></div></article><article><span class="student-life-timeline-number">04</span><div><h3>Transition to Kean</h3><p>GE 1000 helps students transition into academic and student life and become familiar with university resources. It is required for students entering with fewer than 30 earned credits.</p></div></article><article><span class="student-life-timeline-number">05</span><figure><img src="scienceimgs/group.jpg" alt="Students collaborating in a science setting"></figure><div><h3>Find your routine</h3><p>Balance classes, studying, campus activities and the way you choose to participate in campus life.</p></div></article><article><span class="student-life-timeline-number">06</span><div><h3>Spring reset</h3><p>Use your first semester's experience to adjust your habits, stay involved and plan what your second year can look like.</p></div></article></div></section>
+            <a class="student-life-button student-life-button-light"
+               href="#live">
+                Start with the essentials
+                <span aria-hidden="true">↓</span>
+            </a>
+        </div>
 
-    <section class="student-life-connect" id="connect" aria-labelledby="connect-title"><div><p class="student-life-kicker">05 / Connect</p><h2 id="connect-title">FIND YOUR<br>PLACE<br><em>OUTSIDE CLASS</em></h2></div><div class="student-life-connect-content"><p>Student organizations, events, service, leadership, recreation and athletics give you different ways to build a campus routine.</p><ul><li><strong>Student organizations</strong><span>Join around an interest, identity or shared goal.</span></li><li><strong>Events + traditions</strong><span>Make campus gatherings part of your week.</span></li><li><strong>Service + leadership</strong><span>Take on responsibility and contribute to the community.</span></li></ul><a class="student-life-text-link" href="programs.html">Keep exploring Kean <span aria-hidden="true">→</span></a></div></section>
-    <section class="student-life-explore-more" aria-labelledby="explore-title"><div><p class="student-life-kicker">06 / Explore</p><h2 id="explore-title">READY FOR<br>THE NEXT<br><em>ANSWER?</em></h2></div><div class="student-life-resource-links"><a href="programs.html"><span>Programs</span><b>See the full academic directory →</b></a><a href="apply.html"><span>Admissions</span><b>Take the next application step →</b></a></div></section>
+        <figure class="student-life-hero-image">
+            <img src="students.png"
+                 alt="Two Kean students walking together on campus">
+        </figure>
+
+        <div class="student-life-hero-note"
+             aria-label="Student Life sections">
+            <strong>LIVE</strong>
+            <span>LEARN</span>
+            <span>CHOOSE</span>
+            <span>CONNECT</span>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         LIVE AT KEAN
+    ====================================================== -->
+    <section class="student-life-section student-life-live"
+             id="live"
+             aria-labelledby="live-title">
+
+        <div class="student-life-section-heading">
+            <p class="student-life-kicker">01 / Live</p>
+
+            <h2 id="live-title">
+                LIVE<br>
+                AT<br>
+                <em>KEAN</em>
+            </h2>
+
+            <p>
+                Residence life is more than a room. It is a place to study,
+                reset and share everyday campus life with other students.
+            </p>
+        </div>
+
+        <div class="student-life-residence-showcase">
+
+            <article class="student-life-residence-feature student-life-residence-feature-primary">
+                <figure>
+                    <img src="campus.jpeg"
+                         alt="Students walking through Kean University's campus">
+                </figure>
+
+                <div class="student-life-residence-copy">
+                    <p class="student-life-panel-label">Residence hall / 01</p>
+
+                    <h3>Cougar Hall</h3>
+
+                    <p>
+                        Freshman-oriented suite-style living with two double
+                        bedrooms connected by a kitchenette and private bathroom.
+                        Shared lounges, a game room, business center and other
+                        common spaces make room for both focus and community.
+                    </p>
+                </div>
+            </article>
+
+
+            <article class="student-life-residence-feature student-life-residence-feature-secondary">
+                <figure>
+                    <img src="students.png"
+                         alt="Students building community on the Kean campus">
+                </figure>
+
+                <div class="student-life-residence-copy">
+                    <p class="student-life-panel-label">Residence hall / 02</p>
+
+                    <h3>Freshman Residence Hall</h3>
+
+                    <p>
+                        Suite-style rooms connect two double bedrooms to a
+                        common area and private bathroom, with a Learning Center,
+                        lounge, game room and laundry facilities close by.
+                    </p>
+                </div>
+            </article>
+
+
+            <div class="student-life-residence-strip"
+                 aria-label="Everyday residence experiences">
+
+                <div>
+                    <span>01</span>
+                    <strong>STUDY</strong>
+                    <small>Learning Center and shared study spaces</small>
+                </div>
+
+                <div>
+                    <span>02</span>
+                    <strong>HANG OUT</strong>
+                    <small>Lounges and game rooms</small>
+                </div>
+
+                <div>
+                    <span>03</span>
+                    <strong>LIVE</strong>
+                    <small>Suites, common areas and laundry</small>
+                </div>
+
+                <div>
+                    <span>04</span>
+                    <strong>SHARE</strong>
+                    <small>A community built into the day</small>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         TWO WAYS TO START
+    ====================================================== -->
+    <section class="student-life-paths"
+             aria-labelledby="paths-title">
+
+        <div class="student-life-paths-heading">
+            <p class="student-life-kicker">Different starting points</p>
+
+            <h2 id="paths-title">
+                TWO WAYS<br>
+                TO START<br>
+                AT <em>KEAN</em>
+            </h2>
+        </div>
+
+        <div class="student-life-path-grid">
+
+            <article>
+                <span class="student-life-path-number">01</span>
+
+                <h3>Live on campus</h3>
+
+                <p>
+                    Residence halls, lounges, study spaces, dining and campus
+                    activities can become part of your everyday routine.
+                </p>
+            </article>
+
+            <article>
+                <span class="student-life-path-number">02</span>
+
+                <h3>Commute to campus</h3>
+
+                <p>
+                    Classes, student organizations, events, academic resources
+                    and campus life are still part of your Kean experience
+                    when you live at home.
+                </p>
+            </article>
+
+        </div>
+
+        <p class="student-life-paths-footer">
+            Different starting points. Same Kean community.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         FIRST-YEAR FOUNDATION
+    ====================================================== -->
+    <section class="student-life-section student-life-learn"
+             id="learn"
+             aria-labelledby="learn-title">
+
+        <div class="student-life-learn-heading">
+            <p class="student-life-kicker">02 / Learn</p>
+
+            <h2 id="learn-title">
+                YOUR<br>
+                FIRST-YEAR<br>
+                <em>FOUNDATION</em>
+            </h2>
+
+            <p>
+                Your freshman schedule is a mix of major-related coursework
+                and General Education requirements.
+            </p>
+        </div>
+
+        <div class="student-life-foundation">
+
+            <p class="student-life-panel-label">
+                A useful starting point
+            </p>
+
+            <p class="student-life-foundation-intro">
+                These areas help build the skills and context you will use
+                across your degree. Exact courses can vary by major,
+                especially mathematics.
+            </p>
+
+            <div class="student-life-foundation-list">
+
+                <article>
+                    <h3>Transition to Kean</h3>
+                    <p>
+                        GE 1000 is a one-credit course about academic and
+                        student life, General Education and university resources.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>College Composition</h3>
+                    <p>
+                        Build a foundation for clear, effective college writing.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Mathematics</h3>
+                    <p>
+                        The requirement varies based on your major.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Speech Communication</h3>
+                    <p>
+                        Practice communication and civic participation.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Research + Technology</h3>
+                    <p>
+                        Develop research and information skills for college work.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+
+        <aside class="student-life-checklist"
+               aria-labelledby="checklist-title">
+
+            <p class="student-life-panel-label">
+                Your first steps
+            </p>
+
+            <h3 id="checklist-title">
+                Build your first-semester rhythm.
+            </h3>
+
+            <label>
+                <input type="checkbox">
+                <span>Attend orientation</span>
+            </label>
+
+            <label>
+                <input type="checkbox">
+                <span>Find one campus resource</span>
+            </label>
+
+            <label>
+                <input type="checkbox">
+                <span>Meet a classmate to study</span>
+            </label>
+
+            <label>
+                <input type="checkbox">
+                <span>Try one campus activity</span>
+            </label>
+
+        </aside>
+
+    </section>
+
+
+    <!-- =====================================================
+         WHAT CAN I STUDY?
+    ====================================================== -->
+    <section class="student-life-section student-life-choose"
+             id="choose"
+             aria-labelledby="choose-title">
+
+        <div class="student-life-choose-intro">
+            <p class="student-life-kicker">03 / Choose</p>
+
+            <h2 id="choose-title">
+                WHAT CAN<br>
+                I <em>STUDY?</em>
+            </h2>
+
+            <p>
+                Start with an area that sounds like you. Select an area to
+                reveal the kinds of work and questions it can open up.
+            </p>
+
+            <a class="student-life-button student-life-button-blue"
+               href="programs.html">
+                Explore programs
+                <span aria-hidden="true">→</span>
+            </a>
+        </div>
+
+
+        <div class="student-life-academic-areas">
+
+            <article>
+                <button type="button"
+                        aria-expanded="false">
+                    <span>01</span>
+                    <h3>Business</h3>
+                    <b aria-hidden="true">+</b>
+                </button>
+
+                <p>
+                    Accounting, finance, marketing, economics and business analytics.
+                </p>
+            </article>
+
+
+            <article>
+                <button type="button"
+                        aria-expanded="false">
+                    <span>02</span>
+                    <h3>Science + Technology</h3>
+                    <b aria-hidden="true">+</b>
+                </button>
+
+                <p>
+                    Computer Science, Artificial Intelligence, Biology,
+                    Chemistry and Information Technology.
+                </p>
+            </article>
+
+
+            <article>
+                <button type="button"
+                        aria-expanded="false">
+                    <span>03</span>
+                    <h3>Health</h3>
+                    <b aria-hidden="true">+</b>
+                </button>
+
+                <p>
+                    Nursing, Public Health, Exercise Science, Psychology
+                    and Speech-Language-Hearing Sciences.
+                </p>
+            </article>
+
+
+            <article>
+                <button type="button"
+                        aria-expanded="false">
+                    <span>04</span>
+                    <h3>Education</h3>
+                    <b aria-hidden="true">+</b>
+                </button>
+
+                <p>
+                    Elementary, early childhood, biology, chemistry,
+                    mathematics and Spanish education.
+                </p>
+            </article>
+
+
+            <article>
+                <button type="button"
+                        aria-expanded="false">
+                    <span>05</span>
+                    <h3>Art + Design</h3>
+                    <b aria-hidden="true">+</b>
+                </button>
+
+                <p>
+                    Graphic Design, Architectural Studies, Interior Design,
+                    Industrial Design and Studio Art.
+                </p>
+            </article>
+
+
+            <article>
+                <button type="button"
+                        aria-expanded="false">
+                    <span>06</span>
+                    <h3>Liberal Arts</h3>
+                    <b aria-hidden="true">+</b>
+                </button>
+
+                <p>
+                    Communication, English, History, Political Science,
+                    Sociology, Music and Theatre.
+                </p>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         FIRST SEMESTER
+    ====================================================== -->
+    <section class="student-life-first-semester"
+             id="first-semester"
+             aria-labelledby="first-semester-title">
+
+        <div class="student-life-first-semester-heading">
+
+            <p class="student-life-kicker">
+                04 / Your first semester
+            </p>
+
+            <h2 id="first-semester-title">
+                YOUR FIRST<br>
+                <em>SEMESTER</em>
+            </h2>
+
+            <p>
+                One clear path from getting oriented to finding a rhythm
+                that feels like your own.
+            </p>
+
+        </div>
+
+
+        <div class="student-life-timeline"
+             aria-label="Six stages of a first semester at Kean">
+
+            <article>
+                <span class="student-life-timeline-number">01</span>
+
+                <figure>
+                    <img src="students.png"
+                         alt="Students walking together on campus">
+                </figure>
+
+                <div>
+                    <h3>Before you arrive</h3>
+                    <p>
+                        Orientation introduces you to Kean and its resources
+                        before classes begin.
+                    </p>
+                </div>
+            </article>
+
+
+            <article>
+                <span class="student-life-timeline-number">02</span>
+
+                <div>
+                    <h3>Orientation</h3>
+                    <p>
+                        New Student Orientation introduces incoming freshmen
+                        to campus culture and university resources through
+                        sessions led by Orientation Leaders.
+                    </p>
+                </div>
+            </article>
+
+
+            <article>
+                <span class="student-life-timeline-number">03</span>
+
+                <figure>
+                    <img src="campus.jpeg"
+                         alt="Kean campus buildings and walkways">
+                </figure>
+
+                <div>
+                    <h3>Starting classes</h3>
+                    <p>
+                        Begin major-related coursework alongside General
+                        Education requirements while you learn your new schedule.
+                    </p>
+                </div>
+            </article>
+
+
+            <article>
+                <span class="student-life-timeline-number">04</span>
+
+                <div>
+                    <h3>Transition to Kean</h3>
+                    <p>
+                        GE 1000 helps students transition into academic and
+                        student life and become familiar with university
+                        resources. It is required for students entering with
+                        fewer than 30 earned credits.
+                    </p>
+                </div>
+            </article>
+
+
+            <article>
+                <span class="student-life-timeline-number">05</span>
+
+                <figure>
+                    <img src="scienceimgs/group.jpg"
+                         alt="Students collaborating in a science setting">
+                </figure>
+
+                <div>
+                    <h3>Find your routine</h3>
+                    <p>
+                        Balance classes, studying, campus activities and the
+                        way you choose to participate in campus life.
+                    </p>
+                </div>
+            </article>
+
+
+            <article>
+                <span class="student-life-timeline-number">06</span>
+
+                <div>
+                    <h3>Spring reset</h3>
+                    <p>
+                        Use your first semester's experience to adjust your
+                        habits, stay involved and plan what your second year
+                        can look like.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         CONNECT
+    ====================================================== -->
+    <section class="student-life-connect"
+             id="connect"
+             aria-labelledby="connect-title">
+
+        <div>
+            <p class="student-life-kicker">05 / Connect</p>
+
+            <h2 id="connect-title">
+                FIND YOUR<br>
+                PLACE<br>
+                <em>OUTSIDE CLASS</em>
+            </h2>
+        </div>
+
+        <div class="student-life-connect-content">
+
+            <p>
+                Student organizations, events, service, leadership,
+                recreation and athletics give you different ways to build
+                a campus routine.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Student organizations</strong>
+                    <span>Join around an interest, identity or shared goal.</span>
+                </li>
+
+                <li>
+                    <strong>Events + traditions</strong>
+                    <span>Make campus gatherings part of your week.</span>
+                </li>
+
+                <li>
+                    <strong>Service + leadership</strong>
+                    <span>Take on responsibility and contribute to the community.</span>
+                </li>
+            </ul>
+
+            <a class="student-life-text-link"
+               href="programs.html">
+                Keep exploring Kean
+                <span aria-hidden="true">→</span>
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+         EXPLORE MORE
+    ====================================================== -->
+    <section class="student-life-explore-more"
+             aria-labelledby="explore-title">
+
+        <div>
+            <p class="student-life-kicker">06 / Explore</p>
+
+            <h2 id="explore-title">
+                READY FOR<br>
+                THE NEXT<br>
+                <em>ANSWER?</em>
+            </h2>
+        </div>
+
+        <div class="student-life-resource-links">
+
+            <a href="programs.html">
+                <span>Programs</span>
+                <b>See the full academic directory →</b>
+            </a>
+
+            <a href="apply.html">
+                <span>Admissions</span>
+                <b>Take the next application step →</b>
+            </a>
+
+        </div>
+    </section>
+
 </main>
-<footer class="site-footer"><div class="site-footer-brand"><strong>Kean University</strong><span>New Jersey to the world</span><p>Accessible education. Ambitious futures.</p></div><div class="site-footer-column"><h2>Explore</h2><nav aria-label="Footer navigation"><a href="about.html">About</a><a href="studentLife.html">Student Life</a><a href="programs.html">Programs</a></nav></div><div class="site-footer-column"><h2>Plan</h2><nav aria-label="Planning navigation"><a href="admissions.html">Cost</a><a href="apply.html">Apply</a><a href="index.html#explore">Visit Kean</a></nav></div><div class="site-footer-meta"><small>1855 — PRESENT</small><a href="apply.html">Start your application <span aria-hidden="true">→</span></a></div></footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+<footer class="site-footer">
+
+    <div class="site-footer-brand">
+        <strong>Kean University</strong>
+        <span>New Jersey to the world</span>
+        <p>Accessible education. Ambitious futures.</p>
+    </div>
+
+    <div class="site-footer-column">
+        <h2>Explore</h2>
+
+        <nav aria-label="Footer navigation">
+            <a href="about.html">About</a>
+            <a href="studentLife.html">Student Life</a>
+            <a href="programs.html">Programs</a>
+        </nav>
+    </div>
+
+    <div class="site-footer-column">
+        <h2>Plan</h2>
+
+        <nav aria-label="Planning navigation">
+            <a href="admissions.html">Cost</a>
+            <a href="apply.html">Apply</a>
+            <a href="index.html#explore">Visit Kean</a>
+        </nav>
+    </div>
+
+    <div class="site-footer-meta">
+        <small>1855 — PRESENT</small>
+
+        <a href="apply.html">
+            Start your application
+            <span aria-hidden="true">→</span>
+        </a>
+    </div>
+
+</footer>
+
+
+<!-- Bootstrap must load before the Student Life interaction script. -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
 <script src="script.js"></script>
 <script src="student-life.js"></script>
+
 </body>
 </html>
+
