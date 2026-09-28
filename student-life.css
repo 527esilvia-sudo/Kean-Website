@@ -1,3 +1,4 @@
+
 /* =========================================================
    STUDENT LIFE PAGE
    ========================================================= */
@@ -56,12 +57,13 @@
 
 /* =========================================================
    NAVBAR
-   Completely scoped to Student Life
    ========================================================= */
 
 .student-life-header {
     position: relative;
     z-index: 1050;
+    margin: 0;
+    padding: 0;
 }
 
 .student-life-navbar {
@@ -71,6 +73,7 @@
     width: 100%;
     min-height: 76px;
     padding: 0;
+    margin: 0;
     background: var(--student-blue-dark);
     border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
@@ -112,19 +115,29 @@
     line-height: 1;
 }
 
+
+/* Hamburger */
+
 .student-life-navbar-toggler {
     display: none;
+    align-items: center;
+    justify-content: center;
     width: 46px;
     height: 42px;
     padding: 0;
+    margin-left: auto;
     border: 1px solid rgba(255, 255, 255, 0.45);
     border-radius: 2px;
     background: transparent;
     box-shadow: none;
+    flex-shrink: 0;
 }
 
-.student-life-navbar-toggler:focus {
+.student-life-navbar-toggler:focus,
+.student-life-navbar-toggler:focus-visible {
     box-shadow: none;
+    outline: 3px solid #8dc6ea;
+    outline-offset: 3px;
 }
 
 .student-life-menu-icon {
@@ -143,6 +156,9 @@
     height: 2px;
     background: #ffffff;
 }
+
+
+/* Desktop navigation */
 
 .student-life-navbar-collapse {
     flex-grow: 0;
@@ -736,7 +752,6 @@
 
 /* =========================================================
    FIRST SEMESTER
-   6 FULL-WIDTH CARDS / 3 ROWS / 2 COLUMNS
    ========================================================= */
 
 .student-life-first-semester {
@@ -780,7 +795,7 @@
 }
 
 
-/* Six-card grid */
+/* Timeline */
 
 .student-life-timeline {
     display: grid;
@@ -791,30 +806,21 @@
     margin: 0 auto;
 }
 
-
-/* Individual cards */
-
 .student-life-timeline article {
     position: relative;
     min-width: 0;
     min-height: 230px;
     padding: 2.25rem 2.5rem;
-
     display: grid;
     grid-template-columns: 5rem minmax(0, 1fr);
     gap: 1.75rem;
     align-items: start;
-
     background: rgba(255, 255, 255, 0.055);
     border: 1px solid rgba(255, 255, 255, 0.18);
-
     transition:
         background-color 0.25s ease,
         border-color 0.25s ease;
 }
-
-
-/* Slightly different heights — still aligned in 3 rows */
 
 .student-life-timeline article:nth-child(1) {
     min-height: 250px;
@@ -840,16 +846,10 @@
     min-height: 220px;
 }
 
-
-/* Hover only — cards are not interactive */
-
 .student-life-timeline article:hover {
     background: #145b91;
     border-color: rgba(255, 255, 255, 0.32);
 }
-
-
-/* Numbers */
 
 .student-life-timeline-number {
     font-family: "Oswald", sans-serif;
@@ -858,9 +858,6 @@
     line-height: 0.9;
     color: rgba(255, 255, 255, 0.38);
 }
-
-
-/* Card text */
 
 .student-life-timeline article > div {
     min-width: 0;
@@ -983,23 +980,56 @@
 
 @media (max-width: 991.98px) {
 
+    /* Show hamburger */
     .student-life-navbar-toggler {
         display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
+    /*
+       IMPORTANT:
+       Bootstrap's .collapse normally controls this,
+       but these rules make the behavior reliable even
+       with the custom Student Life classes.
+    */
+
+    .student-life-navbar-collapse.collapse:not(.show) {
+        display: none !important;
+    }
+
+    .student-life-navbar-collapse.collapse.show {
+        display: block !important;
+    }
+
+    /*
+       Make the expanded menu a full-width dropdown
+       underneath the navbar.
+    */
     .student-life-navbar-collapse {
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
+        padding: 0 clamp(1rem, 5vw, 5rem);
+        background: var(--student-blue-dark);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.18);
     }
 
     .student-life-nav-list {
+        display: flex;
+        flex-direction: column;
         align-items: stretch;
         gap: 0;
+        width: 100%;
         padding: 0.75rem 0 1rem;
     }
 
+    .student-life-nav-list .nav-item {
+        width: 100%;
+    }
+
     .student-life-nav-link {
+        width: 100%;
         padding: 0.8rem 0 !important;
     }
 
@@ -1011,7 +1041,7 @@
     }
 
     .student-life-apply-link {
-        width: fit-content;
+        width: fit-content !important;
         margin: 0.4rem 0 0;
     }
 
@@ -1037,14 +1067,6 @@
 
     .student-life-checklist {
         margin-top: 0;
-    }
-
-    .student-life-first-semester-heading {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .student-life-first-semester-heading > p:last-child {
-        grid-column: 2;
     }
 }
 
@@ -1093,6 +1115,10 @@
 
     .student-life-brand-sub {
         font-size: 0.55rem;
+    }
+
+    .student-life-navbar-collapse {
+        padding-inline: 1rem;
     }
 
     .student-life-hero {
@@ -1273,7 +1299,12 @@
         transition: none !important;
     }
 }
-/* Remove unwanted space above Student Life navbar */
+
+
+/* =========================================================
+   REMOVE UNWANTED SPACE ABOVE NAVBAR
+   ========================================================= */
+
 html,
 body.student-life-page {
     margin: 0 !important;
@@ -1288,3 +1319,4 @@ body.student-life-page {
 .student-life-page .student-life-navbar {
     margin-top: 0 !important;
 }
+

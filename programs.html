@@ -1,57 +1,107 @@
 <!doctype html>
 <html lang="en" data-bs-theme="light">
+
 <head>
     <title>Programs | Kean University</title>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Bootstrap 5.3.8 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous"
+    >
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Site CSS -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="programs.css">
 </head>
+
+
 <body class="programs-page">
 
-<header>
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" aria-label="Main navigation">
+<!-- =====================================================
+     NAVBAR
+     ===================================================== -->
+
+<header class="programs-header">
+
+    <nav
+        class="navbar navbar-expand-lg navbar-dark sticky-top programs-navbar"
+        aria-label="Main navigation"
+    >
+
         <div class="container-fluid">
 
+            <!-- Brand -->
             <a class="navbar-brand" href="index.html">
                 <span class="site-wordmark">
-                    KEAN <small>UNIVERSITY</small>
+                    KEAN
+                    <small>UNIVERSITY</small>
                 </span>
             </a>
 
+
+            <!-- Mobile hamburger -->
             <button
-                class="navbar-toggler"
+                class="navbar-toggler programs-navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
-                data-bs-target="#mainNav"
-                aria-controls="mainNav"
+                data-bs-target="#programsMainNav"
+                aria-controls="programsMainNav"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
             >
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav ms-auto">
+
+            <!-- Navigation links -->
+            <div
+                class="collapse navbar-collapse programs-navbar-collapse"
+                id="programsMainNav"
+            >
+
+                <ul class="navbar-nav ms-auto programs-nav-list">
 
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html">
+                            About
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="studentLife.html">Student Life</a>
+                        <a class="nav-link" href="studentLife.html">
+                            Student Life
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="programs.html">Programs</a>
+                        <a
+                            class="nav-link is-current"
+                            href="programs.html"
+                            aria-current="page"
+                        >
+                            Programs
+                        </a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="admissions.html">Cost</a>
+                        <a class="nav-link" href="admissions.html">
+                            Cost
+                        </a>
                     </li>
 
                     <li class="nav-item">
@@ -66,51 +116,813 @@
                     </li>
 
                 </ul>
+
             </div>
 
         </div>
+
     </nav>
+
 </header>
 
 
+<!-- =====================================================
+     MAIN
+     ===================================================== -->
+
 <main>
-<section class="programs-hero"><div><p class="programs-kicker">Programs / Kean University</p><h1>Find the work you  want to do.</h1><p>Explore academic areas, compare the kinds of questions they ask and find a direction that feels like yours.</p><a class="programs-button" href="#explorer">Explore programs <span>↓</span></a></div><div class="programs-hero-mark" aria-hidden="true">KEAN</div></section>
-<section class="programs-section programs-explorer" id="explorer"><div class="programs-section-intro"><p class="programs-kicker">01 / Explore</p><h2>Start with<br>curiosity.</h2><p>Search the academic areas below. Program names and degree types reflect Kean offerings; confirm current requirements and availability on official Kean program pages.</p></div><div class="program-browser"><div class="program-controls"><label class="program-search">Search programs<input id="program-search" type="search" placeholder="Try biology or design" aria-label="Search programs"></label><div class="program-filters" role="group" aria-label="Filter programs by category"><button class="program-filter is-active" type="button" data-category="all">All</button><button class="program-filter" type="button" data-category="Business">Business</button><button class="program-filter" type="button" data-category="Education">Education</button><button class="program-filter" type="button" data-category="Health Sciences">Health</button><button class="program-filter" type="button" data-category="Science & Technology">Science + Tech</button><button class="program-filter" type="button" data-category="Arts & Design">Arts + Design</button><button class="program-filter" type="button" data-category="Humanities & Social Sciences">Humanities + Social</button></div></div><div class="program-grid" id="program-grid">
-<article class="program-card" tabindex="0" data-title="Accounting" data-category="Business" data-search="accounting business bachelor" data-description="Accounting prepares students to interpret financial information, assess risk, and support decision-making in businesses, nonprofits, and public organizations." data-courses="Financial Accounting|Managerial Accounting|Business Law|Taxation|Auditing" data-semester="Typical progression begins with introductory accounting and business foundations in the first year, with upper-level finance and accounting concepts in later semesters." data-related="Finance|Business Analytics|Economics|Marketing" data-opportunities="Internships, campus business clubs, and financial literacy experiences can help students apply classroom concepts in real settings." data-orgs="Beta Alpha Psi|Accounting Society|Finance Club"><span>Business</span><h3>Accounting</h3><p>Build a foundation in financial reporting, analysis and business decision-making.</p><b>B.S. / Undergraduate</b><button type="button" class="program-card-button">View details →</button></article>
-<article class="program-card" tabindex="0" data-title="Finance" data-category="Business" data-search="finance business bachelor" data-description="Finance explores how individuals, firms, and institutions manage capital, investments, and financial planning in a changing economy." data-courses="Financial Management|Investment Analysis|Corporate Finance|Economics|Financial Markets" data-semester="Students often complete foundational business courses in year one and then move into finance-focused coursework as they advance." data-related="Accounting|Economics|Business Analytics|Marketing" data-opportunities="Case competitions, financial workshops, and employer site visits can deepen understanding of the field." data-orgs="Finance Club|Economics Society|Student Investment Group"><span>Business</span><h3>Finance</h3><p>Study markets, investments and the financial choices shaping organizations.</p><b>B.S. / Undergraduate</b><button type="button" class="program-card-button">View details →</button></article>
-<article class="program-card" tabindex="0" data-title="Elementary Education" data-category="Education" data-search="elementary education teaching" data-description="Elementary Education builds the knowledge and classroom experience needed to support young learners across core subject areas." data-courses="Child Development|Literacy Methods|Curriculum Planning|Assessment|Teaching Practicum" data-semester="Foundational education and general studies typically begin early, with classroom observation and practice in later semesters." data-related="Psychology|English|Mathematics|Special Education" data-opportunities="Field observation, classroom partnerships, and community-based learning can support hands-on preparation." data-orgs="Education Club|Future Teachers Association|Community Service Groups"><span>Education</span><h3>Elementary Education</h3><p>Prepare to support young learners through subject knowledge and classroom practice.</p><b>B.A. / Undergraduate</b><button type="button" class="program-card-button">View details →</button></article>
-<article class="program-card" tabindex="0" data-title="Special Education" data-category="Education" data-search="special education teaching" data-description="Special Education prepares future teachers to support learners with diverse needs through inclusive planning, assessment, and classroom practice." data-courses="Inclusive Education|Behavior Support|Assessment Methods|Learning Differences|Field Experience" data-semester="Early coursework introduces teaching foundations, while specialized instruction and field experience become more central in later semesters." data-related="Psychology|School Counseling|Childhood Education|Speech-Language-Hearing Sciences" data-opportunities="Clinical observation, collaboration with schools, and student support partnerships can build professional confidence." data-orgs="Education Club|Service Learning Groups|Student Advocacy Organizations"><span>Education</span><h3>Special Education</h3><p>Explore inclusive teaching, learner development and educational support.</p><b>B.A. / Undergraduate</b><button type="button" class="program-card-button">View details →</button></article>
-<article class="program-card" tabindex="0" data-title="Nursing" data-category="Health Sciences" data-search="nursing health healthcare" data-description="Nursing combines science, patient care, and communication to prepare students to contribute to healing environments and health systems." data-courses="Anatomy and Physiology|Nursing Fundamentals|Pharmacology|Clinical Practice|Community Health" data-semester="Science prerequisites and general education work often begin early, with clinical and applied nursing courses in later semesters." data-related="Public Health|Psychology|Biology|Health Administration" data-opportunities="Clinical placements, health screenings, and community educational experiences can connect theory with patient-centered practice." data-orgs="Nursing Student Association|Health & Wellness Groups|Volunteer Networks"><span>Health Sciences</span><h3>Nursing</h3><p>Develop the knowledge and clinical habits used in professional nursing care.</p><b>B.S.N. / Undergraduate</b><button type="button" class="program-card-button">View details →</button></article>
-<article class="program-card" tabindex="0" data-title="Public Health" data-category="Health Sciences" data-search="public health community" data-description="Public Health explores the social, environmental, and policy factors that shape health outcomes across communities and populations." data-courses="Intro to Public Health|Epidemiology|Health Policy|Research Methods|Community Health" data-semester="Students often begin with foundational science and social science coursework before moving into health policy and applied public health work." data-related="Biology|Psychology|Sociology|Health Administration" data-opportunities="Community engagement, public-facing campus events, and outreach partnerships can connect learning to local needs." data-orgs="Public Health Club|Community Service Teams|Student Wellness Groups"><span>Health Sciences</span><h3>Public Health</h3><p>Study the systems, behaviors and communities that shape population health.</p><b>B.S. / Undergraduate</b><button type="button" class="program-card-button">View details →</button></article>
-<article class="program-card" tabindex="0" data-title="Computer Science" data-category="Science & Technology" data-search="computer science coding computing" data-description="Computer Science covers programming, systems thinking, and the design of software that supports research, business, and technology-driven problem-solving." data-courses="Intro to Programming|Data Structures|Algorithms|Software Design|Computer Systems" data-semester="The first year usually includes programming fundamentals and math, while upper-level courses build toward specializations and projects." data-related="Information Technology|Data Analytics|Mathematics|Cybersecurity" data-opportunities="Hackathons, coding projects, and internships can turn technical learning into strong portfolio experience." data-orgs="Computer Science Club|Coding Society|STEM Communities"><span>Science + Technology</span><h3>Computer Science</h3><p>Learn computational thinking, programming and the systems behind digital tools.</p><b>B.S. / Undergraduate</b><button type="button" class="program-card-button">View details →</button></article>
-<article class="program-card" tabindex="0" data-title="Biology" data-category="Science & Technology" data-search="biology laboratory natural" data-description="Biology introduces students to living systems through laboratory study, scientific inquiry, and preparation for research or healthcare-related careers." data-courses="General Biology|Cell Biology|Genetics|Laboratory Methods|Ecology" data-semester="Foundation science and math typically begin in the first year, followed by laboratory and topic-specific coursework in later semesters." data-related="Chemistry|Public Health|Environmental Science|Psychology" data-opportunities="Research, field learning, and lab-based projects can strengthen scientific preparation and interest areas." data-orgs="Pre-Health Organizations|STEM Clubs|Research Communities"><span>Science + Technology</span><h3>Biology</h3><p>Investigate living systems through laboratory learning and scientific inquiry.</p><b>B.S. / Undergraduate</b><button type="button" class="program-card-button">View details →</button></article>
-<article class="program-card" tabindex="0" data-title="Graphic Design" data-category="Arts & Design" data-search="graphic design art visual" data-description="Graphic Design blends visual thinking, storytelling, and technical production to create effective communication across digital and print media." data-courses="Foundation Design|Typography|Digital Media|Brand Identity|Portfolio Studio" data-semester="Students usually begin with design foundations and visual studies, then progress into advanced portfolio pieces and professional preparation." data-related="Art History|Marketing|Communication|Interactive Design" data-opportunities="Student work, exhibitions, and collaborative projects help build a portfolio and project experience." data-orgs="Design Club|Student Art Organizations|Creative Communities"><span>Arts & Design</span><h3>Graphic Design</h3><p>Turn research and ideas into visual communication across print and digital media.</p><b>B.F.A. / Undergraduate</b><button type="button" class="program-card-button">View details →</button></article>
-<article class="program-card" tabindex="0" data-title="Architectural Studies" data-category="Arts & Design" data-search="architectural design interior" data-description="Architectural Studies introduces students to spatial design thinking, built environments, and the creative process behind visual structures and places." data-courses="Design Fundamentals|Architectural Drawing|Spatial Studies|Material Thinking|Studio Critique" data-semester="Design foundations often begin early, followed by studio work and more specialized project-based courses as students mature in the discipline." data-related="Interior Design|Art|Construction Management|Urban Studies" data-opportunities="Studio critique, design reviews, and collaborative project work create opportunities to show ideas visually and professionally." data-orgs="Architecture Club|Art and Design Organizations|Student Design Teams"><span>Arts & Design</span><h3>Architectural Studies</h3><p>Explore design, space and the built environment through studio-centered work.</p><b>B.A. / Undergraduate</b><button type="button" class="program-card-button">View details →</button></article>
-<article class="program-card" tabindex="0" data-title="Communication" data-category="Humanities & Social Sciences" data-search="communication media humanities" data-description="Communication develops the ability to analyze audiences, craft messages, and communicate clearly across media, organizations, and public settings." data-courses="Public Speaking|Media Analysis|Writing for Media|Communication Theory|Research Methods" data-semester="Students often begin with foundational communication and writing courses before moving into more specialized media and audiences work." data-related="Journalism|Marketing|Political Science|Theatre" data-opportunities="Student media, presentations, and public-facing projects help sharpen storytelling and professional communication skills." data-orgs="Student Media|Speech & Debate|Communication Organizations"><span>Humanities + Social Sciences</span><h3>Communication</h3><p>Practice clear storytelling, media analysis and communication across audiences.</p><b>B.A. / Undergraduate</b><button type="button" class="program-card-button">View details →</button></article>
-<article class="program-card" tabindex="0" data-title="Political Science" data-category="Humanities & Social Sciences" data-search="political science government social" data-description="Political Science investigates governments, civic life, policy, and the ideas that influence public decisions and communities." data-courses="American Government|International Relations|Research Methods|Political Theory|Public Policy" data-semester="Introductory coursework and social science foundations usually begin in the first year, with upper-level policy and research work later on." data-related="History|Sociology|Economics|Public Administration" data-opportunities="Debates, internships, and community engagement provide practical exposure to civic and policy environments." data-orgs="Model UN|Student Government|Political Organizations"><span>Humanities + Social Sciences</span><h3>Political Science</h3><p>Examine institutions, public life and the ideas that shape civic decisions.</p><b>B.A. / Undergraduate</b><button type="button" class="program-card-button">View details →</button></article>
-</div><p class="program-empty" id="program-empty" hidden>No programs match that search yet.</p>
-<div class="program-modal" id="program-modal" aria-hidden="true">
-    <div class="program-modal-backdrop" data-close="true"></div>
-    <div class="program-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="program-modal-title">
-        <button class="program-modal-close" type="button" aria-label="Close program details">×</button>
-        <div class="program-modal-header">
-            <p class="programs-kicker">Program overview</p>
-            <h3 id="program-modal-title">Program name</h3>
+
+
+    <!-- =================================================
+         HERO
+         ================================================= -->
+
+    <section class="programs-hero">
+
+        <div>
+
+            <p class="programs-kicker">
+                Programs / Kean University
+            </p>
+
+            <h1>
+                Find the work you want to do.
+            </h1>
+
+            <p>
+                Explore academic areas, compare the kinds of questions
+                they ask and find a direction that feels like yours.
+            </p>
+
+            <a
+                class="programs-button"
+                href="#explorer"
+            >
+                Explore programs
+                <span aria-hidden="true">↓</span>
+            </a>
+
         </div>
-        <div class="program-modal-body">
-            <p class="program-modal-summary" id="program-modal-summary"></p>
-            <div class="program-modal-grid">
-                <article><h4>Who it's for</h4><div id="program-modal-audience"></div></article>
-                <article><h4>What you do</h4><div id="program-modal-doing"></div></article>
-                <article><h4>Why it matters</h4><div id="program-modal-matters"></div></article>
+
+
+        <div
+            class="programs-hero-mark"
+            aria-hidden="true"
+        >
+            KEAN
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         PROGRAM EXPLORER
+         ================================================= -->
+
+    <section
+        class="programs-section programs-explorer"
+        id="explorer"
+    >
+
+        <div class="programs-section-intro">
+
+            <p class="programs-kicker">
+                01 / Explore
+            </p>
+
+            <h2>
+                Start with<br>
+                curiosity.
+            </h2>
+
+            <p>
+                Search the academic areas below. Program names and degree
+                types reflect Kean offerings; confirm current requirements
+                and availability on official Kean program pages.
+            </p>
+
+        </div>
+
+
+        <div class="program-browser">
+
+
+            <!-- SEARCH + FILTERS -->
+
+            <div class="program-controls">
+
+                <label class="program-search">
+                    Search programs
+
+                    <input
+                        id="program-search"
+                        type="search"
+                        placeholder="Try biology or design"
+                        aria-label="Search programs"
+                    >
+                </label>
+
+
+                <div
+                    class="program-filters"
+                    role="group"
+                    aria-label="Filter programs by category"
+                >
+
+                    <button
+                        class="program-filter is-active"
+                        type="button"
+                        data-category="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        class="program-filter"
+                        type="button"
+                        data-category="Business"
+                    >
+                        Business
+                    </button>
+
+                    <button
+                        class="program-filter"
+                        type="button"
+                        data-category="Education"
+                    >
+                        Education
+                    </button>
+
+                    <button
+                        class="program-filter"
+                        type="button"
+                        data-category="Health Sciences"
+                    >
+                        Health
+                    </button>
+
+                    <button
+                        class="program-filter"
+                        type="button"
+                        data-category="Science & Technology"
+                    >
+                        Science + Tech
+                    </button>
+
+                    <button
+                        class="program-filter"
+                        type="button"
+                        data-category="Arts & Design"
+                    >
+                        Arts + Design
+                    </button>
+
+                    <button
+                        class="program-filter"
+                        type="button"
+                        data-category="Humanities & Social Sciences"
+                    >
+                        Humanities + Social
+                    </button>
+
+                </div>
+
             </div>
+
+
+            <!-- =================================================
+                 PROGRAM CARDS
+                 ================================================= -->
+
+            <div
+                class="program-grid"
+                id="program-grid"
+            >
+
+
+                <!-- BUSINESS -->
+
+                <article
+                    class="program-card"
+                    data-category="Business"
+                    data-program="accounting"
+                >
+
+                    <span>Business</span>
+
+                    <div>
+                        <h3>Accounting</h3>
+
+                        <p>
+                            Work with financial information, business
+                            decisions and the systems organizations use
+                            to understand money.
+                        </p>
+
+                        <b>
+                            Numbers / Business / Analysis
+                        </b>
+                    </div>
+
+                    <button
+                        class="program-card-button"
+                        type="button"
+                        data-program="accounting"
+                    >
+                        Explore program →
+                    </button>
+
+                </article>
+
+
+                <article
+                    class="program-card"
+                    data-category="Business"
+                    data-program="finance"
+                >
+
+                    <span>Business</span>
+
+                    <div>
+                        <h3>Finance</h3>
+
+                        <p>
+                            Study investments, markets, financial
+                            planning and the decisions that shape
+                            organizations and economies.
+                        </p>
+
+                        <b>
+                            Markets / Strategy / Analysis
+                        </b>
+                    </div>
+
+                    <button
+                        class="program-card-button"
+                        type="button"
+                        data-program="finance"
+                    >
+                        Explore program →
+                    </button>
+
+                </article>
+
+
+                <!-- EDUCATION -->
+
+                <article
+                    class="program-card"
+                    data-category="Education"
+                    data-program="education"
+                >
+
+                    <span>Education</span>
+
+                    <div>
+                        <h3>Education</h3>
+
+                        <p>
+                            Explore how people learn and develop while
+                            building skills for working with students
+                            and communities.
+                        </p>
+
+                        <b>
+                            People / Learning / Service
+                        </b>
+                    </div>
+
+                    <button
+                        class="program-card-button"
+                        type="button"
+                        data-program="education"
+                    >
+                        Explore program →
+                    </button>
+
+                </article>
+
+
+                <!-- HEALTH -->
+
+                <article
+                    class="program-card"
+                    data-category="Health Sciences"
+                    data-program="health-sciences"
+                >
+
+                    <span>Health Sciences</span>
+
+                    <div>
+                        <h3>Health Sciences</h3>
+
+                        <p>
+                            Study health, science and the systems that
+                            support individuals and communities.
+                        </p>
+
+                        <b>
+                            Science / People / Health
+                        </b>
+                    </div>
+
+                    <button
+                        class="program-card-button"
+                        type="button"
+                        data-program="health-sciences"
+                    >
+                        Explore program →
+                    </button>
+
+                </article>
+
+
+                <article
+                    class="program-card"
+                    data-category="Health Sciences"
+                    data-program="nursing"
+                >
+
+                    <span>Health Sciences</span>
+
+                    <div>
+                        <h3>Nursing</h3>
+
+                        <p>
+                            Combine scientific knowledge with
+                            communication and direct patient care.
+                        </p>
+
+                        <b>
+                            Science / Care / Communication
+                        </b>
+                    </div>
+
+                    <button
+                        class="program-card-button"
+                        type="button"
+                        data-program="nursing"
+                    >
+                        Explore program →
+                    </button>
+
+                </article>
+
+
+                <!-- SCIENCE + TECHNOLOGY -->
+
+                <article
+                    class="program-card"
+                    data-category="Science & Technology"
+                    data-program="computer-science"
+                >
+
+                    <span>Science + Tech</span>
+
+                    <div>
+                        <h3>Computer Science</h3>
+
+                        <p>
+                            Learn programming, algorithms and
+                            computational problem-solving.
+                        </p>
+
+                        <b>
+                            Technology / Logic / Problem Solving
+                        </b>
+                    </div>
+
+                    <button
+                        class="program-card-button"
+                        type="button"
+                        data-program="computer-science"
+                    >
+                        Explore program →
+                    </button>
+
+                </article>
+
+
+                <article
+                    class="program-card"
+                    data-category="Science & Technology"
+                    data-program="information-technology"
+                >
+
+                    <span>Science + Tech</span>
+
+                    <div>
+                        <h3>Information Technology</h3>
+
+                        <p>
+                            Explore the technology, systems and digital
+                            infrastructure organizations rely on.
+                        </p>
+
+                        <b>
+                            Technology / Systems / Organizations
+                        </b>
+                    </div>
+
+                    <button
+                        class="program-card-button"
+                        type="button"
+                        data-program="information-technology"
+                    >
+                        Explore program →
+                    </button>
+
+                </article>
+
+
+                <article
+                    class="program-card"
+                    data-category="Science & Technology"
+                    data-program="data-science"
+                >
+
+                    <span>Science + Tech</span>
+
+                    <div>
+                        <h3>Data Science</h3>
+
+                        <p>
+                            Use statistics, computing and data analysis
+                            to find patterns and answer questions.
+                        </p>
+
+                        <b>
+                            Data / Statistics / Technology
+                        </b>
+                    </div>
+
+                    <button
+                        class="program-card-button"
+                        type="button"
+                        data-program="data-science"
+                    >
+                        Explore program →
+                    </button>
+
+                </article>
+
+
+                <!-- ARTS + DESIGN -->
+
+                <article
+                    class="program-card"
+                    data-category="Arts & Design"
+                    data-program="graphic-design"
+                >
+
+                    <span>Arts + Design</span>
+
+                    <div>
+                        <h3>Graphic Design</h3>
+
+                        <p>
+                            Combine visual communication, technology
+                            and creative problem-solving.
+                        </p>
+
+                        <b>
+                            Design / Creativity / Communication
+                        </b>
+                    </div>
+
+                    <button
+                        class="program-card-button"
+                        type="button"
+                        data-program="graphic-design"
+                    >
+                        Explore program →
+                    </button>
+
+                </article>
+
+
+                <article
+                    class="program-card"
+                    data-category="Arts & Design"
+                    data-program="communication"
+                >
+
+                    <span>Arts + Design</span>
+
+                    <div>
+                        <h3>Communication</h3>
+
+                        <p>
+                            Study how people create, interpret and
+                            exchange information across different
+                            forms of media.
+                        </p>
+
+                        <b>
+                            Media / Writing / People
+                        </b>
+                    </div>
+
+                    <button
+                        class="program-card-button"
+                        type="button"
+                        data-program="communication"
+                    >
+                        Explore program →
+                    </button>
+
+                </article>
+
+
+                <!-- HUMANITIES + SOCIAL SCIENCES -->
+
+                <article
+                    class="program-card"
+                    data-category="Humanities & Social Sciences"
+                    data-program="economics"
+                >
+
+                    <span>Humanities + Social</span>
+
+                    <div>
+                        <h3>Economics</h3>
+
+                        <p>
+                            Examine how individuals, businesses and
+                            governments make decisions when resources
+                            are limited.
+                        </p>
+
+                        <b>
+                            Markets / Policy / Analysis
+                        </b>
+                    </div>
+
+                    <button
+                        class="program-card-button"
+                        type="button"
+                        data-program="economics"
+                    >
+                        Explore program →
+                    </button>
+
+                </article>
+
+
+                <article
+                    class="program-card"
+                    data-category="Humanities & Social Sciences"
+                    data-program="english"
+                >
+
+                    <span>Humanities + Social</span>
+
+                    <div>
+                        <h3>English</h3>
+
+                        <p>
+                            Build skills in reading, writing, research
+                            and interpreting complex ideas.
+                        </p>
+
+                        <b>
+                            Writing / Reading / Research
+                        </b>
+                    </div>
+
+                    <button
+                        class="program-card-button"
+                        type="button"
+                        data-program="english"
+                    >
+                        Explore program →
+                    </button>
+
+                </article>
+
+
+            </div>
+
+
+            <!-- EMPTY SEARCH MESSAGE -->
+
+            <p
+                class="program-empty"
+                id="program-empty"
+                hidden
+            >
+                No programs match that search yet.
+            </p>
+
+
+            <!-- =================================================
+                 PROGRAM MODAL
+                 ================================================= -->
+
+            <div
+                class="program-modal"
+                id="program-modal"
+                aria-hidden="true"
+            >
+
+                <div
+                    class="program-modal-backdrop"
+                    data-modal-close
+                ></div>
+
+                <div
+                    class="program-modal-dialog"
+                    role="dialog"
+                    aria-modal="true"
+                    aria-labelledby="program-modal-title"
+                >
+
+                    <button
+                        class="program-modal-close"
+                        type="button"
+                        aria-label="Close program details"
+                        data-modal-close
+                    >
+                        ×
+                    </button>
+
+
+                    <div class="program-modal-header">
+
+                        <p class="programs-kicker">
+                            Kean University
+                        </p>
+
+                        <h3 id="program-modal-title">
+                            Program
+                        </h3>
+
+                    </div>
+
+
+                    <div class="program-modal-body">
+
+                        <p
+                            class="program-modal-summary"
+                            id="program-modal-summary"
+                        ></p>
+
+
+                        <div
+                            class="program-modal-grid"
+                            id="program-modal-grid"
+                        >
+
+                            <article>
+                                <h4>What you'll study</h4>
+                                <div id="program-modal-study"></div>
+                            </article>
+
+                            <article>
+                                <h4>Skills</h4>
+                                <div id="program-modal-skills"></div>
+                            </article>
+
+                            <article>
+                                <h4>Possible directions</h4>
+                                <div id="program-modal-careers"></div>
+                            </article>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <p class="program-source">
+                Program examples: Kean University academic offerings.
+                Confirm current degree requirements and availability
+                on official Kean program pages.
+            </p>
+
         </div>
-    </div>
-</div><p class="program-source">Program examples: Kean University academic offerings. Confirm current degree requirements and availability on official Kean program pages.</p></div></section>
-<section class="programs-section programs-next"><div class="programs-section-intro"><p class="programs-kicker">02 / Next question</p><h2>What will your year look like?</h2><p>Once you have a direction, visit the Cost page to understand the planning categories behind a Kean education.</p></div><div><a class="programs-button programs-button-dark" href="admissions.html">Explore cost planning <span>→</span></a></div></section>
+
+    </section>
+
+
+    <!-- =================================================
+         NEXT SECTION
+         ================================================= -->
+
+    <section class="programs-section programs-next">
+
+        <div class="programs-section-intro">
+
+            <p class="programs-kicker">
+                02 / Keep exploring
+            </p>
+
+            <h2>
+                Your direction<br>
+                can change.
+            </h2>
+
+            <p>
+                Choosing a major does not mean choosing one job forever.
+                Explore different subjects, build useful skills and find
+                the combination that works for you.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <a
+                class="programs-button-dark"
+                href="https://www.kean.edu/academics"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Explore Kean academics
+                <span aria-hidden="true">→</span>
+            </a>
+
+        </div>
+
+    </section>
+
 </main>
-<footer class="site-footer"><div class="site-footer-brand"><strong>Kean University</strong><span>New Jersey to the world</span><p>Accessible education. Ambitious futures.</p></div><div class="site-footer-column"><h2>Explore</h2><nav aria-label="Footer navigation"><a href="about.html">About</a><a href="studentLife.html">Student Life</a><a href="programs.html">Programs</a></nav></div><div class="site-footer-column"><h2>Plan</h2><nav aria-label="Planning navigation"><a href="admissions.html">Cost</a><a href=href="https://www.kean.edu/apply-now" target="_blank">Apply</a><a href="index.html#explore">Visit Kean</a></nav></div><div class="site-footer-meta"><small>1855 — PRESENT</small><a href="https://www.kean.edu/apply-now" target="_blank">Start your application <span aria-hidden="true">→</span></a></div></footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoGlyvwxH9j09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-<script src="script.js"></script><script src="programs.js"></script>
+
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+
+<footer class="site-footer">
+
+    <div class="site-footer-meta">
+
+        <div>
+            <strong>Kean University</strong>
+            <span>
+                Union, New Jersey
+            </span>
+        </div>
+
+        <div>
+            <p>
+                Explore programs, discover opportunities,
+                and find your direction.
+            </p>
+        </div>
+
+        <div>
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="studentLife.html">
+                Student Life
+            </a>
+
+            <a href="programs.html">
+                Programs
+            </a>
+
+            <a href="admissions.html">
+                Cost
+            </a>
+
+            <a
+                href="https://www.kean.edu/apply-now"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Apply
+            </a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     SCRIPTS
+     Bootstrap MUST load before your custom JS
+     ===================================================== -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoGlyvwxH9j09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"
+></script>
+
+<script src="script.js"></script>
+<script src="programs.js"></script>
+
 </body>
 </html>

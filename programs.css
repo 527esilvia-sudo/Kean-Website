@@ -3,6 +3,12 @@
    Clean, editorial, Kean-focused styling
    ========================================================= */
 
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --program-blue: #003a70;
     --program-blue-light: #0056a6;
@@ -36,30 +42,46 @@
     max-width: 100%;
 }
 
+
 /* =========================================================
    NAVBAR
+   Bootstrap handles the collapse.
+   These rules only style it.
    ========================================================= */
 
-.programs-page .navbar {
+.programs-page .programs-header {
     position: relative;
-    z-index: 100;
-    background: var(--program-blue);
-    padding: 0.65rem clamp(1.25rem, 5vw, 5rem);
+    z-index: 1000;
 }
 
-.programs-page .navbar-brand {
+.programs-page .programs-navbar {
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    min-height: 70px;
+    padding: 0.65rem clamp(1.25rem, 5vw, 5rem);
+    background: var(--program-blue);
+}
+
+.programs-page .programs-navbar .container-fluid {
+    position: relative;
+    width: 100%;
+}
+
+.programs-page .programs-navbar .navbar-brand {
+    position: relative;
+    z-index: 1003;
     text-decoration: none;
 }
 
-.programs-wordmark,
-.site-wordmark {
+.programs-page .site-wordmark {
+    display: block;
     color: var(--program-white);
     font: 600 1.35rem/1 "Oswald", sans-serif;
     letter-spacing: 0.05em;
 }
 
-.programs-wordmark span,
-.site-wordmark small {
+.programs-page .site-wordmark small {
     display: block;
     margin-top: 0.25rem;
     color: var(--program-sky);
@@ -67,22 +89,163 @@
     letter-spacing: 0.2em;
 }
 
-.programs-page .nav-link {
+/* Desktop navigation */
+
+.programs-page .programs-nav-list {
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.programs-page .programs-nav-list .nav-link {
+    display: block;
+    padding: 0.7rem 0.85rem;
     color: rgba(255, 255, 255, 0.9);
     font-family: "Oswald", sans-serif;
     text-transform: uppercase;
-    transition: color 180ms ease, background-color 180ms ease;
+    transition:
+        color 180ms ease,
+        background-color 180ms ease;
 }
 
-.programs-page .nav-link:hover,
-.programs-page .nav-link:focus-visible {
+.programs-page .programs-nav-list .nav-link:hover,
+.programs-page .programs-nav-list .nav-link:focus-visible {
     color: var(--program-white);
     background: rgba(255, 255, 255, 0.1);
 }
 
-.programs-page .nav-link.is-current {
+.programs-page .programs-nav-list .nav-link.is-current {
     background: rgba(255, 255, 255, 0.14);
 }
+
+/* Apply link */
+
+.programs-page .programs-nav-list .apply-link {
+    margin-left: 0.35rem;
+    border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+.programs-page .programs-nav-list .apply-link:hover,
+.programs-page .programs-nav-list .apply-link:focus-visible {
+    background: var(--program-white);
+    color: var(--program-blue);
+}
+
+/* Hamburger */
+
+.programs-page .programs-navbar-toggler {
+    position: relative;
+    z-index: 1005;
+    display: none;
+    width: auto;
+    min-width: 48px;
+    min-height: 44px;
+    padding: 0.5rem 0.65rem;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 0;
+    background: transparent;
+    color: var(--program-white);
+    box-shadow: none;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.programs-page .programs-navbar-toggler:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--program-white);
+}
+
+.programs-page .programs-navbar-toggler:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--program-white);
+    box-shadow: none;
+}
+
+.programs-page .programs-navbar-toggler:focus-visible {
+    outline: 2px solid var(--program-sky);
+    outline-offset: 3px;
+}
+
+.programs-page .programs-navbar-toggler .navbar-toggler-icon {
+    display: block;
+    width: 1.5em;
+    height: 1.5em;
+    background-image: var(--bs-navbar-toggler-icon-bg);
+    filter: brightness(0) invert(1);
+}
+
+/*
+   IMPORTANT:
+   Do not force display on .programs-navbar-collapse.
+   Bootstrap controls .collapse / .show.
+*/
+
+.programs-page .programs-navbar-collapse {
+    position: relative;
+    z-index: 1001;
+}
+
+/* Mobile / tablet */
+
+@media (max-width: 991.98px) {
+
+    .programs-page .programs-navbar {
+        padding: 0.65rem 5vw;
+    }
+
+    .programs-page .programs-navbar-toggler {
+        display: block;
+        margin-left: auto;
+    }
+
+    /*
+       Bootstrap still controls whether this is open.
+       The position only determines where the open menu appears.
+    */
+
+    .programs-page .programs-navbar-collapse {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        z-index: 1002;
+        width: 100%;
+        padding: 0.75rem 5vw 1rem;
+        background: var(--program-navy);
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+    }
+
+    .programs-page .programs-navbar-collapse.collapsing {
+        height: auto;
+        overflow: hidden;
+    }
+
+    .programs-page .programs-navbar-collapse.show {
+        display: block;
+    }
+
+    .programs-page .programs-nav-list {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        align-items: stretch;
+        gap: 0.2rem;
+    }
+
+    .programs-page .programs-nav-list .nav-item {
+        width: 100%;
+    }
+
+    .programs-page .programs-nav-list .nav-link {
+        width: 100%;
+        padding: 0.8rem 0.9rem;
+    }
+
+    .programs-page .programs-nav-list .apply-link {
+        margin: 0.4rem 0 0;
+    }
+}
+
 
 /* =========================================================
    SHARED HERO
@@ -175,6 +338,7 @@
     pointer-events: none;
 }
 
+
 /* =========================================================
    BUTTONS
    ========================================================= */
@@ -208,6 +372,7 @@
     color: var(--program-navy);
     transform: translateY(-2px);
 }
+
 
 /* =========================================================
    GENERAL SECTIONS
@@ -248,6 +413,7 @@
     min-width: 0;
 }
 
+
 /* =========================================================
    PROGRAM EXPLORER
    ========================================================= */
@@ -271,6 +437,7 @@
 .programs-explorer .programs-section-intro > p:last-child {
     max-width: 75ch;
 }
+
 
 /* =========================================================
    SEARCH + FILTERS
@@ -316,6 +483,7 @@
     box-shadow: 0 4px 0 rgba(0, 86, 166, 0.12);
 }
 
+
 /* =========================================================
    FILTERS
    ========================================================= */
@@ -358,6 +526,7 @@
     color: var(--program-white);
 }
 
+
 /* =========================================================
    PROGRAM GRID
    ========================================================= */
@@ -370,6 +539,7 @@
     margin-top: 1.75rem;
     counter-reset: program-card;
 }
+
 
 /* =========================================================
    PROGRAM CARDS
@@ -564,6 +734,7 @@
     width: 100%;
 }
 
+
 /* =========================================================
    EMPTY SEARCH
    ========================================================= */
@@ -585,6 +756,7 @@
     font-size: 0.82rem;
     line-height: 1.45;
 }
+
 
 /* =========================================================
    PROGRAM MODAL
@@ -768,6 +940,7 @@
     padding-left: 1rem;
 }
 
+
 /* =========================================================
    PROGRAMS BOTTOM SECTION
    ========================================================= */
@@ -858,14 +1031,9 @@
     white-space: nowrap;
 }
 
-/* =========================================================
-   =========================================================
-   COST PAGE
-   =========================================================
-   ========================================================= */
 
 /* =========================================================
-   COST HERO — NO OVERLAPPING ELEMENTS
+   COST PAGE
    ========================================================= */
 
 body.cost-page .hero {
@@ -981,6 +1149,7 @@ body.cost-page .scroll-line {
     padding: clamp(4rem, 8vw, 7rem) 5vw !important;
 }
 
+
 /* =========================================================
    COST OVERVIEW
    ========================================================= */
@@ -1041,6 +1210,7 @@ body.cost-page .scroll-line {
     line-height: 1.4;
 }
 
+
 /* =========================================================
    DATA VISUALIZATION
    ========================================================= */
@@ -1070,8 +1240,6 @@ body.cost-page .scroll-line {
     color: var(--program-muted);
     font-size: 0.9rem;
 }
-
-/* Tuition chart */
 
 .bar-chart {
     display: grid;
@@ -1130,8 +1298,6 @@ body.cost-page .scroll-line {
     white-space: nowrap;
 }
 
-/* Add visual differentiation to each bar without red */
-
 .bar-chart > div:nth-child(2) i {
     background: var(--program-blue-light);
 }
@@ -1143,6 +1309,7 @@ body.cost-page .scroll-line {
 .bar-chart > div:nth-child(4) i {
     background: var(--program-navy);
 }
+
 
 /* Stacked chart */
 
@@ -1228,6 +1395,7 @@ body.cost-page .scroll-line {
     background: var(--program-silver);
 }
 
+
 /* =========================================================
    COST TOOL
    ========================================================= */
@@ -1294,6 +1462,7 @@ body.cost-page .scroll-line {
     font: 600 2rem "Oswald", sans-serif;
 }
 
+
 /* =========================================================
    CALCULATOR
    ========================================================= */
@@ -1352,6 +1521,7 @@ body.cost-page .scroll-line {
     font: 600 1.6rem "Oswald", sans-serif;
 }
 
+
 /* =========================================================
    AFFORDABILITY
    ========================================================= */
@@ -1398,6 +1568,7 @@ body.cost-page .scroll-line {
     line-height: 1.5;
 }
 
+
 /* =========================================================
    RESPONSIVE
    ========================================================= */
@@ -1427,6 +1598,7 @@ body.cost-page .scroll-line {
     }
 }
 
+
 @media (max-width: 900px) {
 
     .programs-section,
@@ -1443,6 +1615,7 @@ body.cost-page .scroll-line {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+
 
 @media (max-width: 760px) {
 
@@ -1477,18 +1650,14 @@ body.cost-page .scroll-line {
         white-space: normal;
     }
 
-    /* -----------------------------------------
-       COST HERO
-       Everything gets its own row.
-       Nothing sits on top of anything else.
-       ----------------------------------------- */
+    /* Cost hero */
 
     body.cost-page .hero {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto;
         min-height: auto;
-        padding: 5rem 7vw 5rem;
+        padding: 5rem 7vw;
     }
 
     body.cost-page .hero-content {
@@ -1541,6 +1710,7 @@ body.cost-page .scroll-line {
         min-height: 145px;
     }
 }
+
 
 @media (max-width: 600px) {
 
@@ -1604,6 +1774,7 @@ body.cost-page .scroll-line {
     }
 }
 
+
 @media (max-width: 420px) {
 
     .program-filters {
@@ -1638,6 +1809,7 @@ body.cost-page .scroll-line {
     }
 }
 
+
 /* =========================================================
    ACCESSIBILITY / REDUCED MOTION
    ========================================================= */
@@ -1658,6 +1830,8 @@ body.cost-page .scroll-line {
         transition: none;
     }
 }
+
+
 /* =========================================================
    FOOTER — WHITE TEXT
    ========================================================= */
